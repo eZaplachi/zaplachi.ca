@@ -1,0 +1,186 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: [space] 15% [text] 50% [content] 20% [space] 15%;
+  grid-template-rows: repeat(24, 6pc);
+  transition: 0.3s ease;
+}
+
+.container {
+  grid-column: text / space 2;
+  grid-row: 2 / 9;
+  background-color: var(--navbarBkgClr);
+  border: 3px solid var(--inputBorderClr);
+  border-radius: 12px;
+}
+
+.inputCon {
+  grid-row: 2 / 9;
+  grid-column: text;
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-radius: 12px 12px 0px 0px;
+}
+
+.input {
+  grid-row: 3 / 7;
+  grid-column: text;
+  color: var(--neutralClr);
+  width: 100%;
+  justify-self: center;
+  text-align: center;
+}
+
+.contactCon {
+  grid-column: content;
+  grid-row: 2 / 9;
+  background-color: transparent;
+  border: 3px solid transparent;
+  border-radius: 0px 0px 12px 12px;
+}
+
+.contact {
+  height: min-content;
+  color: var(--scndHeaderClr);
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.icon {
+  font-size: calc(20px + 0.5vmin);
+  margin-left: 10%;
+  transition: 0.3s ease;
+}
+
+.contactText {
+  margin-left: 15%;
+  display: inline;
+}
+
+.contactText::after {
+  content: "";
+  position: absolute;
+  width: 22ch;
+  height: 4px;
+  background: var(--scndHeaderClrLight);
+  transform: translateY(6ch) translateX(-22ch);
+}
+
+#aside1 {
+  grid-row: 1 span all;
+  grid-column: space 1;
+}
+
+#aside2 {
+  grid-row: 1 span all;
+  grid-column: space 2;
+}
+
+#memo {
+  grid-column: content;
+  grid-row: 3;
+}
+
+#mail {
+  grid-column: content;
+  grid-row: 5;
+}
+
+#github {
+  grid-column: content;
+  grid-row: 6;
+}
+
+@media (hover) {
+  .icon:hover,
+  .icon:focus-visible {
+    color: var(--scndHeaderClrLight);
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .wrapper {
+    grid-template-columns: [space] 10% [text] 60% [content] 20% [space] 10%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .contact {
+    font-size: 0.7rem;
+  }
+
+  .contactText {
+    margin-left: 10%;
+  }
+
+  .icon {
+    font-size: calc(17px + 0.5vmin);
+    margin-left: 5%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: [space] 10% [text] 80% [space] 10%;
+  }
+
+  .contact {
+    font-size: 1rem;
+  }
+
+  .contactText {
+    margin-left: 10%;
+  }
+
+  .icon {
+    font-size: calc(30px + 0.5vmin);
+    margin-left: 15%;
+  }
+
+  #memo {
+    grid-column: text;
+    grid-row: 9;
+  }
+
+  #mail {
+    grid-column: text;
+    grid-row: 11;
+  }
+
+  #github {
+    grid-column: text;
+    grid-row: 12;
+  }
+
+  .contactCon {
+    grid-column: text;
+    grid-row: 9 / 14;
+    background-color: var(--navbarBkgClr);
+  }
+
+  .inputCon {
+    grid-column: text;
+    grid-row: 2 / 9;
+    background-color: var(--navbarBkgClr);
+  }
+
+  .container {
+    background-color: transparent;
+    border: transparent;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .contact {
+    font-size: 0.6rem;
+  }
+
+  .contactText {
+    margin-left: 7%;
+  }
+
+  .icon {
+    font-size: calc(15px + 0.5vmin);
+    margin-left: 3%;
+  }
+}
