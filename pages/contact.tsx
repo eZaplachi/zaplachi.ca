@@ -26,7 +26,7 @@ const Contact = () => {
           </div>
           <div className={styles.contact} id={styles.github}>
             <FontAwesomeIcon icon={faGithub} className={styles.icon} />
-            <span className={styles.contactText}>www.github.com/eZaplachi</span>
+            <span className={styles.contactText}>github.com/eZaplachi</span>
           </div>
           <div className={styles.input}>
             <ContactForm />
