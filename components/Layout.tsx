@@ -100,6 +100,8 @@ const Layout = (props: { children: ReactChild; footerText: string }) => {
 				console.log("unmount");
 				cancelAnimationFrame(req);
 				renderer.dispose();
+				// particlesGeometry.dispose();
+				// particlesMaterial.dispose();
 			};
 		}
 	}, []);
