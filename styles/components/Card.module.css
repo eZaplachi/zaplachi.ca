@@ -1,0 +1,118 @@
+.card {
+	background-color: var(--cardBkgClr);
+	padding: 10rem 0rem 0rem;
+	width: 40ch;
+	color: var(--appHeaderClr);
+	border-radius: 1rem;
+	position: relative;
+	background-image: url(../../public/heroBG.jpg);
+	background-size: cover;
+	overflow: hidden;
+	transition: transform 0.5s ease;
+	transition: width 0.3s ease;
+	z-index: 30;
+}
+
+.cardContent {
+	--padding: 1.5rem;
+	color: var(--contentClr);
+	padding: var(--padding);
+	background: linear-gradient(hsl(0 0% 0% / 0), hsl(20 0% 0% / 0.3) 20%, hsl(0 0% 0% / 1));
+	transition: transform 0.3s ease;
+}
+
+.cardTitle {
+	position: relative;
+	margin-left: 0.5vw;
+	font-weight: bold;
+	width: max-content;
+}
+
+.cardTitle::after {
+	content: "";
+	position: absolute;
+	height: 4px;
+	width: calc(105% + var(--padding));
+	border-radius: 1px;
+	bottom: 0;
+	left: calc(var(--padding) * -1);
+	background: var(--accentClr);
+	transition: transform 0.5s ease;
+	transform-origin: left;
+}
+
+.card:focus-within .cardContent {
+	transition-duration: 0s;
+}
+
+.cardBody {
+	font-size: 1rem;
+}
+
+.button {
+	background-color: var(--accentClr);
+	border-radius: 12px;
+	color: var(--neutralClr);
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	padding: 0.5em;
+	margin-left: 90%;
+	opacity: 1;
+}
+
+.button:hover,
+.button:focus {
+	opacity: 0.3;
+	border-radius: 18px 6px;
+	transition: 0.5s linear;
+}
+
+@media (hover) {
+	.cardContent {
+		transform: translateY(63%);
+	}
+
+	.card:hover,
+	.card:focus-within {
+		transform: scale(1.05);
+	}
+
+	.card:hover .cardTitle::after,
+	.card:focus-within .cardTitle::after {
+		transform: scaleX(1);
+	}
+
+	.card:hover .cardContent,
+	.card:focus-within .cardContent {
+		transform: translateY(0);
+		transition-delay: 0.4s;
+	}
+
+	.cardContent > *:not(.cardTitle) {
+		opacity: 0;
+		transition: opacity 0.5s;
+	}
+
+	.card:hover .cardContent > *:not(.cardTitle),
+	.card:focus-within .cardContent > *:not(.cardTitle) {
+		opacity: 1;
+		transition-delay: 0.45s;
+	}
+
+	.cardTitle::after {
+		transform: scaleX(0);
+	}
+}
+
+@media screen and (max-width: 450px) {
+	.card {
+		width: 30ch;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.card {
+		width: 20ch;
+	}
+}

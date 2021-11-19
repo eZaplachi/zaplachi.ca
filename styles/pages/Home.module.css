@@ -1,0 +1,39 @@
+.appHeader {
+  background-image: url(../../public/heroBG.jpg);
+  background-size: cover;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  margin: -3vh;
+}
+
+.scndHeader {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--scndHeaderclr);
+  margin-top: 12vh;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+#aside1 {
+  order: 1;
+  width: 25%;
+}
+
+#aside2 {
+  order: 3;
+  width: 25%;
+}
+
+.content {
+  order: 2;
+  flex-grow: 2;
+  color: var(--contentClr);
+  max-width: 50%;
+}

@@ -1,23 +1,21 @@
-import {  useEffect } from 'react';
-  
+import { useEffect } from "react";
+
 const useScroll = (callback: any) => {
-  
-  useEffect(function mount() {
-    const onScroll = () => {
-      const scrollPosition = window.scrollY;
+	useEffect(function mount() {
+		const onScroll = () => {
+			const scrollPosition = window.scrollY;
 
+			callback(scrollPosition);
+		};
 
-      callback(scrollPosition);
-    }
+		window.addEventListener("scroll", onScroll);
 
-    window.addEventListener('scroll', onScroll);
+		return function unMount() {
+			window.removeEventListener("scroll", onScroll);
+		};
+	});
 
-    return function unMount() {
-      window.removeEventListener('scroll', onScroll);
-    };
-  });
-
-  return null;
-}
+	return null;
+};
 
 export default useScroll;

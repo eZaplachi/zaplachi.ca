@@ -1,0 +1,35 @@
+.wrapper {
+    display: block;
+    background: transparent;
+    position: relative;
+    width: 100vw;
+    height: 220vh;
+    transform: 0.3s ease;
+}
+
+.content {
+    z-index: 1;
+    background: transparent;
+    display: inline;
+    position: static;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 1800px) {
+    .wrapper {
+        height: 144pc;
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .wrapper {
+        height: 300pc;
+    }
+}

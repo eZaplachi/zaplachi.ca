@@ -1,4 +1,4 @@
-import styles from "../../styles/projects/Projects.module.css";
+import styles from "../../styles/pages/projects/Projects.module.css";
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 
