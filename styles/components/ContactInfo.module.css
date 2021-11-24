@@ -1,0 +1,97 @@
+.wrapper {
+	display: inline-flex;
+	flex-flow: column nowrap;
+	z-index: 50;
+	height: 80%;
+	text-align: left;
+	justify-content: space-around;
+	align-items: baseline;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.contact {
+	display: inline-block;
+	padding: 1ch;
+
+}
+
+.icon {
+	font-size: calc(20px + 0.5vmin);
+	margin-left: -15%;
+	color: var(--scndHeaderClrDark);
+	transition: 0.3s ease;
+	display: inline-block;
+}
+
+.memoText {
+	margin-left: 20%;
+	margin-bottom: 1ch;
+}
+
+.copyMsg {
+	border-radius: 4px;
+	display: inline-block;
+	overflow: hidden;
+	color: black;
+	opacity: 0;
+	background-color: var(--inputBkgClr);
+	border: 1px solid var(--scndHeaderClrLight);
+	margin: 1ch;
+	padding: 8px;
+	transition: 0.3s ease;
+}
+
+.contactText {
+	margin-left: 15%;
+}
+
+.contactText::after {
+	content: "";
+	position: absolute;
+	height: 4ch;
+	background: var(--navbarActiveClr);
+	opacity: 0.15;
+	border-radius: 8px;
+}
+
+#mail::after {
+	transform: translateY(-0.5ch) translateX(-21.5ch);
+	width: 23.5ch;
+}
+
+#github::after {
+	transform: translateY(-0.5ch) translateX(-30ch);
+	width: 32ch;
+
+}
+
+@media (hover) {
+	.icon:hover,
+	.icon:focus-visible {
+		color: var(--scndHeaderClrLight);
+	}
+	.contactText::after {
+		background: transparent;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	.contact {
+		font-size: 0.7rem;
+	}
+
+	.contactText {
+		margin-left: 10%;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.contact {
+		font-size: 1rem;
+	}
+
+	.contactText {
+		margin-left: 10%;
+	}
+}

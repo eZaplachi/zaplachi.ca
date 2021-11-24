@@ -15,11 +15,9 @@ import useScroll from "../hooks/useScroll";
 const Navbar = () => {
   const [expand, setExpand] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
-  const btnRef = useRef<HTMLAnchorElement>(null);
 
   const expanded = () => {
     setExpand(!expand);
-    themeRotate();
   };
 
   useEffect(() => {
@@ -37,11 +35,6 @@ const Navbar = () => {
     }
   }, [ref, expand]);
 
-  const themeRotate = () => {
-    let icon = document.getElementById("icon")!;
-    icon.style.transform = expand ? "rotate(720deg)" : "rotate(-720deg)";
-  };
-
   useScroll((offset: number) => {
     function scrollRotate() {
       let image = document.getElementById("reload")!;
@@ -54,11 +47,6 @@ const Navbar = () => {
       };
     }
   });
-
-  let rotation = 0;
-  if (expand) {
-    rotation = 720;
-  }
 
   return (
     <div>
