@@ -13,6 +13,12 @@ const ContactForm = () => {
 	const [message, setMessage] = useState("");
 	const [submitted, setSubmitted] = useState("nonSub");
 	const ref = useRef<HTMLInputElement>(null);
+	// TODO: set character limits and responsive counter
+
+	let emailLength = email.length;
+	let subjectLength = subject.length;
+	let messageLength = message.length;
+	const emailLengthMax = 50;
 
 	const formSub = (e: { preventDefault: () => void }) => {
 		e.preventDefault();
@@ -106,8 +112,7 @@ const ContactForm = () => {
 					placeholder='Your Message...'
 					onChange={(e) => {
 						setMessage(e.target.value);
-					}}
-				/>
+					}} />
 				<div ref={ref} className={styles.iconWrapper}>
 					<FontAwesomeIcon icon={faCheckCircle} id={styles.successIcon} className={styles.icon} />
 					<FontAwesomeIcon icon={faTimesCircle} id={styles.failIcon} className={styles.icon} />

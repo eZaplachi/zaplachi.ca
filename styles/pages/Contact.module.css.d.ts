@@ -5,7 +5,6 @@ declare const styles: {
   readonly "input": string;
   readonly "contactCon": string;
   readonly "contact": string;
-  readonly "contactText": string;
 };
 export = styles;
 

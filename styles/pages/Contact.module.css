@@ -50,11 +50,27 @@
 	text-align: center;
 }
 
+@media screen and (max-width: 1550px) {
+	.wrapper {
+		grid-template-columns: [space] 10% [text] 55% [content] 25% [space] 10%;
+	}
+}
+
 @media screen and (max-width: 900px) {
+	.wrapper {
+		grid-template-columns: [space] 15% [text] 70% [space] 15%;
+		grid-template-rows: repeat(15, 6pc);
+	}
 	.contactCon {
 		grid-column: text;
-		grid-row: 9 / 14;
+		grid-row: 9 / 15;
 		background-color: var(--navbarBkgClr);
+		margin-top: -1pc;
+	}
+
+	.contact {
+		grid-column: text;
+		grid-row: 9 / 13;
 	}
 
 	.inputCon {
@@ -66,15 +82,5 @@
 	.container {
 		background-color: transparent;
 		border: transparent;
-	}
-}
-
-@media screen and (max-width: 350px) {
-	.contact {
-		font-size: 0.6rem;
-	}
-
-	.contactText {
-		margin-left: 7%;
 	}
 }

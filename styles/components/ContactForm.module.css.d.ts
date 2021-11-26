@@ -3,6 +3,7 @@ declare const styles: {
   readonly "inputLabel": string;
   readonly "smallInput": string;
   readonly "largeInput": string;
+  readonly "charCount": string;
   readonly "button": string;
   readonly "iconWrapper": string;
   readonly "icon": string;

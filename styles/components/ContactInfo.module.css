@@ -13,7 +13,7 @@
 .contact {
 	display: inline-block;
 	padding: 1ch;
-
+	transition: 0.3s ease;
 }
 
 .icon {
@@ -33,7 +33,7 @@
 	border-radius: 4px;
 	display: inline-block;
 	overflow: hidden;
-	color: black;
+	color: var(--navbarBkyClr);
 	opacity: 0;
 	background-color: var(--inputBkgClr);
 	border: 1px solid var(--scndHeaderClrLight);
@@ -63,7 +63,6 @@
 #github::after {
 	transform: translateY(-0.5ch) translateX(-30ch);
 	width: 32ch;
-
 }
 
 @media (hover) {
@@ -76,13 +75,28 @@
 	}
 }
 
-@media screen and (max-width: 1400px) {
-	.contact {
-		font-size: 0.7rem;
+@media screen and (max-width: 1550px) {
+	.icon {
+		margin-left: -25%;
 	}
 
 	.contactText {
+		margin-left: 12%;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.contactText {
 		margin-left: 10%;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.icon {
+		margin-left: -30%;
+	}
+	.contact {
+		font-size: 0.8rem;
 	}
 }
 
@@ -92,6 +106,68 @@
 	}
 
 	.contactText {
-		margin-left: 10%;
+		margin-left: 15%;
+	}
+
+	.icon {
+		margin-left: -15%;
+	}
+}
+@media screen and (max-width: 500px) {
+	.contact {
+		font-size: 0.8rem;
+		transform: translateX(15%);
+	}
+
+	.contactText {
+		margin-left: 7%;
+	}
+
+	.icon {
+		margin-left: -10%;
+		font-size: calc(15px + 0.5vmin);
+	}
+
+	.copyMsg {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.contact {
+		font-size: 0.7rem;
+		transform: translateX(5%);
+	}
+
+	#mail::after {
+		transform: translateY(-0.4ch) translateX(-19.5ch);
+		width: 20.5ch;
+	}
+
+	#github::after {
+		transform: translateY(-0.4ch) translateX(-28ch);
+		width: 29ch;
+	}
+
+	.copyMsg {
+		font-size: 0.7rem;
+	}
+
+	.memoText {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.contact {
+		font-size: 0.5rem;
+	}
+
+	.copyMsg {
+		font-size: 0.5rem;
+	}
+
+	.memoText {
+		font-size: 0.6rem;
 	}
 }
