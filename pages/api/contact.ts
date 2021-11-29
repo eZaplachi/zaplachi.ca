@@ -1,55 +1,62 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { createTransport } from "nodemailer";
-// import credents from "../../../auth/smiling-matrix-320009-dc22a2a1f92c.json";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-	try {
-		const transporter = createTransport({
-			port: 465,
-			host: "smtp.gmail.com",
-			auth: {
-				type: "OAuth2",
-				user: "evan@zaplachi.ca",
-				serviceClient: process.env.CLIENT_ID,
-				// credents.client_id
-				privateKey: process.env.PRIVATE_KEY,
-				// credents.private_key
-			},
-			secure: true,
-		});
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const keyEnvVar = process.env.CREDS;
+  if (!keyEnvVar) {
+    throw new Error("The $CREDS env variable was not found!");
+  }
 
-		const mailData = {
-			from: process.env.CLIENT_EMAIL,
-			to: ["evan@zaplachi.ca", req.body.email],
-			subject: "Thank you for contacting Evan Zap",
-			text:
-				"I really appreciate the message and I will get back to you as soon as I can. | Your Message: | Subject: " +
-				req.body.subject +
-				"| Message: " +
-				req.body.message,
-			html: `<div>I really appreciate the message and I will get back to you as soon as I can.</div>
+  const keys = JSON.parse(keyEnvVar);
+
+  try {
+    const transporter = createTransport({
+      port: 465,
+      host: "smtp.gmail.com",
+      auth: {
+        type: "OAuth2",
+        user: "evan@zaplachi.ca",
+        serviceClient: keys.client_id,
+        privateKey: keys.private_key,
+      },
+      secure: true,
+    });
+
+    const mailData = {
+      from: process.env.CLIENT_EMAIL,
+      to: ["evan@zaplachi.ca", req.body.email],
+      subject: "Thank you for contacting Evan Zap",
+      text:
+        "I really appreciate the message and I will get back to you as soon as I can. | Your Message: | Subject: " +
+        req.body.subject +
+        "| Message: " +
+        req.body.message,
+      html: `<div>I really appreciate the message and I will get back to you as soon as I can.</div>
             <div><h3>Your Message:</h3>
             <h6>Subject:</h6>
             <p>${req.body.subject}</p>
             <h6>Message:</h6>
             <p>${req.body.message}</p>
             </div>`,
-		};
+    };
 
-		await transporter.verify();
+    await transporter.verify();
 
-		await transporter.sendMail(mailData, function (err, info) {
-			if (err) {
-				console.log(err);
-				res.status(404);
-			} else {
-				console.log(info);
-				res.status(200);
-				res.send(200);
-			}
-		});
-	} catch (error) {
-		console.log(error);
-		res.status(404);
-	}
+    await transporter.sendMail(mailData, function (err, info) {
+      if (err) {
+        console.log(err);
+        res.status(404);
+      } else {
+        console.log(info);
+        res.status(200);
+        res.send(200);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(404);
+  }
 }
