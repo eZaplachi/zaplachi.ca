@@ -14,6 +14,14 @@
     position: static;
 }
 
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    background-color: transparent;
+}
+
 @media screen and (max-width: 1800px) {
     .wrapper {
         height: 144pc;
