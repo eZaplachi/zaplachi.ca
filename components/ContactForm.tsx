@@ -12,6 +12,7 @@ const ContactForm = () => {
 	const [subject, setSubject] = useState("");
 	const [message, setMessage] = useState("");
 	const [submitted, setSubmitted] = useState("nonSub");
+	const [fail, setFail] = useState(String)
 	const ref = useRef<HTMLInputElement>(null);
 	// TODO: set character limits and responsive counter
 
@@ -19,6 +20,8 @@ const ContactForm = () => {
 	let subjectLength = subject.length;
 	let messageLength = message.length;
 	const emailLengthMax = 50;
+
+
 
 	const formSub = (e: { preventDefault: () => void }) => {
 		e.preventDefault();
@@ -45,8 +48,17 @@ const ContactForm = () => {
 				setEmail("");
 				setSubject("");
 				setMessage("");
-			} else {
+			} else { 
+				// Todo: better error messages
 				setSubmitted("fail");
+				switch (res.status) {
+					case 500:
+						setFail("server")
+						break;
+					case 404:
+						setFail("client")
+						break;
+				}
 			}
 		});
 	};

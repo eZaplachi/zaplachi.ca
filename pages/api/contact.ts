@@ -7,6 +7,7 @@ export default async function handler(
 ) {
   const keyEnvVar = process.env.CREDS;
   if (!keyEnvVar) {
+    res.status(500);
     throw new Error("The $CREDS env variable was not found!");
   }
 

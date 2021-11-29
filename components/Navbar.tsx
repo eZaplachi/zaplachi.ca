@@ -48,6 +48,7 @@ const Navbar = () => {
     }
   });
 
+  // Todo: make navbar sticky and add theme switcher logic
   return (
     <div>
       <Link href='/'>
