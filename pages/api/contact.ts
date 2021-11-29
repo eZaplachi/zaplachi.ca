@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { createTransport } from "nodemailer";
-import credents from "../../../auth/smiling-matrix-320009-dc22a2a1f92c.json";
+// import credents from "../../../auth/smiling-matrix-320009-dc22a2a1f92c.json";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	try {
@@ -10,14 +10,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 			auth: {
 				type: "OAuth2",
 				user: "evan@zaplachi.ca",
-				serviceClient: credents.client_id,
-				privateKey: credents.private_key,
+				serviceClient: process.env.CLIENT_ID,
+				// credents.client_id
+				privateKey: process.env.PRIVATE_KEY,
+				// credents.private_key
 			},
 			secure: true,
 		});
 
 		const mailData = {
-			from: credents.client_email,
+			from: process.env.CLIENT_EMAIL,
 			to: ["evan@zaplachi.ca", req.body.email],
 			subject: "Thank you for contacting Evan Zap",
 			text:

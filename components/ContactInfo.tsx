@@ -3,16 +3,23 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/components/ContactInfo.module.css";
+import { contactLinks } from "../lib/types";
+
+const links: contactLinks = {
+	email: "evan@zaplachi.ca",
+	github: "www.github.com/eZaplachi",
+};
 
 const ContactInfo = () => {
 	const copyRef = useRef<HTMLDivElement>(null);
 	const [copy, setCopy] = useState("none");
-	const links = {
-		email: "evan@zaplachi.ca",
-		github: "www.github.com/eZaplachi",
-	};
 
 	useEffect(() => {
+		const links: contactLinks = {
+			email: "evan@zaplachi.ca",
+			github: "www.github.com/eZaplachi",
+		};
+
 		if (copyRef && copyRef.current) {
 			switch (copy) {
 				case "none":

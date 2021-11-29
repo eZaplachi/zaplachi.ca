@@ -104,7 +104,7 @@ const Layout = (props: { children: ReactChild; footerText: string }) => {
 				// particlesMaterial.dispose();
 			};
 		}
-	}, []);
+	}, [renderer, initialCameraPosition, target, scene]);
 
 	useEffect(() => {
 		window.addEventListener("resize", handleWindowResize, false);
