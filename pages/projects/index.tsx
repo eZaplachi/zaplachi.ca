@@ -5,7 +5,7 @@ import Layout from "../../components/Layout";
 const Projects = () => {
   return (
     <main>
-      <Layout footerText='wow'>
+      <Layout footerText='wow' stickyOffset={0} >
         <body className={styles.container}>
           <div id={styles.aside1} />
           <div id={styles.card1}>

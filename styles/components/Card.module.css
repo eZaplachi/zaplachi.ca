@@ -5,8 +5,6 @@
 	color: var(--appHeaderClr);
 	border-radius: 1rem;
 	position: relative;
-	background-image: url(../../public/heroBG.jpg);
-	background-size: cover;
 	overflow: hidden;
 	transition: transform 0.5s ease;
 	transition: width 0.3s ease;

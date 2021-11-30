@@ -4,119 +4,50 @@
   z-index: 10;
   color: var(--appHeaderClr);
   position: relative;
+  font-weight: bolder;
 }
 
 .nameFirstCon {
-  animation-name: firstAn;
-  animation-duration: 4s;
-  animation-delay: 0.2s;
   font-size: calc(50px + 3vmin);
 }
 
 .nameScndCon {
-  animation-name: scndAn;
-  animation-duration: 3.5s;
-  animation-delay: 0.4s;
   font-size: calc(45px + 3vh);
 }
 
 .nameThirdCon {
-  animation-name: thirdAn;
-  animation-duration: 3.7s;
-  animation-delay: 0.3s;
   font-size: calc(47px + 3vh);
 }
 
 .nameFourthCon {
-  animation-name: fourthAn;
-  animation-duration: 3.2s;
-  animation-delay: 0.2s;
   font-size: calc(42px + 3vh);
 }
 
 .nameFifthCon {
-  animation-name: fifthAn;
-  animation-duration: 3.6s;
-  animation-delay: 0.5s;
   font-size: calc(51px + 3vh);
 }
 
 .nameFirstCon:hover {
   color: #2c598d;
   transition: ease 0.6s;
-  font-size: calc(60px + 3vh);
 }
 
 .nameScndCon:hover {
   color: #d383af;
   transition: ease 0.6s;
-  font-size: calc(55px + 3vh);
 }
 
 .nameThirdCon:hover {
   color: #9d78d8;
   transition: ease 0.6s;
-  font-size: calc(57px + 3vh);
 }
 
 .nameFourthCon:hover {
   color: #eca14f;
-  font-size: calc(52px + 3vh);
   transition: ease 0.6s;
 }
 
 .nameFifthCon:hover {
   color: #82a123;
   transition: ease 0.6s;
-  font-size: calc(56px + 3vh);
-}
-
-@keyframes firstAn {
-  0% {
-    font-size: 0;
-  }
-
-  100% {
-    font-size: calc(50px + 3vh);
-  }
-}
-
-@keyframes scndAn {
-  0% {
-    font-size: 0;
-  }
-
-  100% {
-    font-size: calc(45px + 3vh);
-  }
-}
-
-@keyframes thirdAn {
-  0% {
-    font-size: 0;
-  }
-
-  100% {
-    font-size: calc(47px + 3vh);
-  }
-}
-
-@keyframes fourthAn {
-  0% {
-    font-size: 0;
-  }
-
-  100% {
-    font-size: calc(42px + 3vh);
-  }
-}
-
-@keyframes fifthAn {
-  0% {
-    font-size: 0;
-  }
-
-  100% {
-    font-size: calc(46px + 3vh);
-  }
 }

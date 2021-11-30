@@ -85,7 +85,7 @@ const ContactForm = () => {
 	}
 
 	return (
-		<div>
+		<section>
 			<form onSubmit={formSub} className={styles.wrapper}>
 				<label htmlFor={styles.emailIn} className={styles.inputLabel} id={styles.emailLabel}>
 					Email:
@@ -134,7 +134,7 @@ const ContactForm = () => {
 					</button>
 				</div>
 			</form>
-		</div>
+		</section>
 	);
 };
 

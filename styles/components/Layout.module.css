@@ -1,27 +1,46 @@
 .wrapper {
-    display: block;
-    background: transparent;
-    position: relative;
-    width: 100vw;
-    height: 220vh;
-    transform: 0.3s ease;
+  background: transparent;
+  position: relative;
+  transform: 0.3s ease;
+  height: 100%;
 }
 
 .content {
-    z-index: 1;
-    background: transparent;
-    display: inline;
-    position: static;
+  z-index: 1;
+  background: transparent;
+  position: relative;
+  margin-top: 40vh;
 }
 
-@media screen and (max-width: 1800px) {
-    .wrapper {
-        height: 144pc;
-    }
+.navbar {
+    overflow: hidden;
+    background-color: var(--navbarBkgClr);
+    width: 100%;
+    padding: 5vmin;
+    margin-left: -3vmin;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    border: none;
+    outline: none;
+    z-index: 99;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    overflow: hidden;
+    height: 4ch;
 }
 
-@media screen and (max-width: 1090px) {
-    .wrapper {
-        height: 300pc;
-    }
+#scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#scrolledSpace {
+    margin-top: calc(40vh + 4ch);
+}
+
+#footerSpace {
+  margin-top: 20ch;
 }

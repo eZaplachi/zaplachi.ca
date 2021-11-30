@@ -1,8 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image"
+import Fade from "react-reveal/Fade";
 import Name from "../components/Name";
 import Layout from "../components/Layout";
 import styles from "../styles/pages/Home.module.css";
+import heroBkg from "../public/heroBG.jpg"
 
 const Home: NextPage = () => {
   return (
@@ -18,10 +21,11 @@ const Home: NextPage = () => {
 
       <main>
         <header className={styles.appHeader}>
+          <Image src={heroBkg} layout="fill" alt="bkg-img" objectFit="cover" placeholder="blur" />
           <Name />
         </header>
-        <Layout footerText='cool Footer'>
-          <body>
+        <Layout footerText='cool Footer' stickyOffset={0.8} >
+          <Fade bottom>
             <div className={styles.wrapper} style={{ marginTop: "15vh" }}>
               <div id={styles.aside1}></div>
               <div className={styles.content}>
@@ -36,7 +40,7 @@ const Home: NextPage = () => {
               <div style={{ paddingBottom: "100vh" }} />
               <div id={styles.aside2}></div>
             </div>
-          </body>
+          </Fade>
         </Layout>
       </main>
     </div>

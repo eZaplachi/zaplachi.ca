@@ -5,12 +5,14 @@ import {
   faMeteor,
   faCampground,
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useReducer } from "react";
 import styles from "../styles/components/Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../public/myLogo.png";
 import useScroll from "../hooks/useScroll";
+import ThemeReducer from "../hooks/ThemeReducer";
+import { Themes } from "../lib/theme";
 
 const Navbar = () => {
   const [expand, setExpand] = useState(false);
@@ -48,30 +50,45 @@ const Navbar = () => {
     }
   });
 
-  // Todo: make navbar sticky and add theme switcher logic
+  const initialState = { theme: "themeDefault" };
+  const [state, dispatch] = useReducer(ThemeReducer, initialState);
+
+  // TODO: add theme switcher logic
   return (
-    <div>
-      <Link href='/'>
+    <section>
+      <Link href="/">
         <a className={styles.navbarCon}>Home</a>
       </Link>
-      <Link href='/projects'>
+      <Link href="/projects">
         <a className={styles.navbarCon}>Projects</a>
       </Link>
-      <Link href='/contact'>
+      <Link href="/contact">
         <a className={styles.navbarCon}>Contact</a>
       </Link>
       <a
         onClick={expanded}
         className={
           expand ? styles.themeBtn + " " + styles.rotate : styles.themeBtn
-        }>
-        <FontAwesomeIcon icon={faSun} id='icon' />
+        }
+      >
+        <FontAwesomeIcon icon={faSun} id="icon" />
       </a>
       <div ref={ref} className={styles.themeChg}>
-        <a className={styles.theme} id={styles.firstTheme}>
+        <a
+          className={styles.theme}
+          id={styles.firstTheme}
+          onClick={() =>
+            dispatch({ type: Themes.ThemeDefault, payload: "themeDefault" })
+          }
+        >
           <FontAwesomeIcon icon={faHome} />
         </a>
-        <a className={styles.theme}>
+        <a
+          className={styles.theme}
+          onClick={() =>
+            dispatch({ type: Themes.ThemeCamping, payload: "themeCamping" })
+          }
+        >
           <FontAwesomeIcon icon={faCampground} />
         </a>
         <a className={styles.theme}>
@@ -81,14 +98,15 @@ const Navbar = () => {
       <div className={styles.navbarIcon}>
         <Image
           src={logo}
-          alt='Logo'
-          placeholder='blur'
+          alt="Logo"
+          placeholder="blur"
           className={styles.iconSizing}
           height={75}
           width={75}
-          id='reload'></Image>
+          id="reload"
+        ></Image>
       </div>
-    </div>
+    </section>
   );
 };
 

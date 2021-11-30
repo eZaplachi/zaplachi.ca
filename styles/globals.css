@@ -1,19 +1,19 @@
 :root {
-  --bkgClr: #1d3344;
-  --contentClr: #c9e7f7;
   --accentClr: #84d1fd;
-  --neutralClr: #161616;
   --appHeaderClr: white;
-  --scndHeaderClr: rgba(220, 220, 220, 0.7);
-  --scndHeaderClrLight: rgba(220, 220, 220, 1);
-  --scndHeaderClrDark: rgba(200, 200, 200, 0.5);
+  --bkgClr: #1d3344;
   --cardBkgClr: #3a3e47;
-  --extLinkClr: white;
+  --contentClr: #c9e7f7;
   --extLinkActiveClr: grey;
+  --extLinkClr: white;
   --inputBkgClr: rgba(225, 225, 225, 0.5);
   --inputBorderClr: slategrey;
   --navbarActiveClr: cadetblue;
   --navbarBkgClr: black;
+  --neutralClr: #161616;
+  --scndHeaderClr: rgba(220, 220, 220, 0.7);
+  --scndHeaderClrDark: rgba(200, 200, 200, 0.5);
+  --scndHeaderClrLight: rgba(220, 220, 220, 1);
 }
 
 html {
@@ -38,24 +38,6 @@ body {
 body::-webkit-scrollbar {
   width: 0;
   height: 0;
-}
-
-.navbar {
-  overflow: hidden;
-  background-color: var(--navbarBkgClr);
-  width: 100%;
-  padding: 5vmin;
-  margin-left: -3vmin;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  border: none;
-  outline: none;
-  z-index: 99;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  overflow: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
