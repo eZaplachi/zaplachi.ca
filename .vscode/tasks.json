@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "npm dev",
+            "type": "shell",
+            "command": "npm run dev",
+        },
+        {
+            "label": "tcm dev",
+            "type": "shell",
+            "command": "tcm styles -r -w",
+        },
+        {
+            "label": "dev",
+            "type": "shell",
+            "dependsOn": [
+                "npm dev",
+                "tcm dev"
+            ],
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "dedicated",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": [
+                "$eslint-stylish"
+            ]
+        }
+    ]
+}
