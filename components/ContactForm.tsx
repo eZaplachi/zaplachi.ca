@@ -15,12 +15,6 @@ const ContactForm = () => {
   const [fail, setFail] = useState(String);
   const ref = useRef<HTMLInputElement>(null);
 
-  let sanitized = {
-    Email: "",
-    Subject: "",
-    Message: "",
-  };
-
   // TODO: set character limits and responsive counter
   let emailLength = email.length;
   let subjectLength = subject.length;
@@ -31,12 +25,11 @@ const ContactForm = () => {
     e.preventDefault();
     console.log("Sending");
 
-    const DOMPurify = require("dompurify")
-    sanitized = {
-      Email: DOMPurify.sanitize(email),
-      Subject: DOMPurify.sanitize(subject),
-      Message: DOMPurify.sanitize(message),
-    };
+    let data = {
+      email,
+      subject,
+      message
+    }
 
     fetch("/api/contact", {
       method: "POST",
@@ -44,7 +37,7 @@ const ContactForm = () => {
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(sanitized),
+      body: JSON.stringify(data),
     }).then((res) => {
       console.log("Response received");
       if (res.status === 200) {

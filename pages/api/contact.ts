@@ -1,10 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { createTransport } from "nodemailer";
+import DOMPurify from "isomorphic-dompurify";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // Get email key as json to access google service account
   const keyEnvVar = process.env.CREDS;
   if (!keyEnvVar) {
     res.status(500);
@@ -12,6 +14,15 @@ export default async function handler(
   }
 
   const keys = JSON.parse(keyEnvVar);
+
+  // Sanitize to prevent xss attacks
+  const email: string = req.body.email
+  const subject: string = req.body.subject
+  const message: string = req.body.message
+
+  const sanitizedEmail: string = DOMPurify.sanitize(email)
+  const sanitizedSubject: string = DOMPurify.sanitize(subject)
+  const sanitizedMessage: string = DOMPurify.sanitize(message)
 
   try {
     const transporter = createTransport({
@@ -28,24 +39,24 @@ export default async function handler(
 
     const mailData = {
       from: process.env.CLIENT_EMAIL,
-      to: ["evan@zaplachi.ca", req.body.Email],
+      to: ["evan@zaplachi.ca", sanitizedEmail],
       subject: "Thank you for contacting Evan Zap",
       text:
         "I really appreciate the message and I will get back to you as soon as I can." +
         "| From: " +
-        req.body.Email +
+        sanitizedEmail +
         "| Subject:" +
-        req.body.Subject +
+        sanitizedSubject +
         "| Message: " +
-        req.body.Message,
+        sanitizedMessage,
       html: `<div>I really appreciate the message and I will get back to you as soon as I can.</div>
-            <div>From: ${req.body.Email}</div>
+            <div>From: ${sanitizedEmail}</div>
             <div>
               <h3>Your Message:</h3>
               <h6>Subject:</h6>
-              <p>${req.body.Subject}</p>
+              <p>${sanitizedSubject}</p>
               <h6>Message:</h6>
-              <p>${req.body.Message}</p>
+              <p>${sanitizedMessage}</p>
             </div>`,
     };
 
