@@ -28,19 +28,24 @@ export default async function handler(
 
     const mailData = {
       from: process.env.CLIENT_EMAIL,
-      to: ["evan@zaplachi.ca", req.body.email],
+      to: ["evan@zaplachi.ca", req.body.Email],
       subject: "Thank you for contacting Evan Zap",
       text:
-        "I really appreciate the message and I will get back to you as soon as I can. | Your Message: | Subject: " +
-        req.body.subject +
+        "I really appreciate the message and I will get back to you as soon as I can." +
+        "| From: " +
+        req.body.Email +
+        "| Subject:" +
+        req.body.Subject +
         "| Message: " +
-        req.body.message,
+        req.body.Message,
       html: `<div>I really appreciate the message and I will get back to you as soon as I can.</div>
-            <div><h3>Your Message:</h3>
-            <h6>Subject:</h6>
-            <p>${req.body.subject}</p>
-            <h6>Message:</h6>
-            <p>${req.body.message}</p>
+            <div>From: ${req.body.Email}</div>
+            <div>
+              <h3>Your Message:</h3>
+              <h6>Subject:</h6>
+              <p>${req.body.Subject}</p>
+              <h6>Message:</h6>
+              <p>${req.body.Message}</p>
             </div>`,
     };
 

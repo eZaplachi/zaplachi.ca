@@ -18,6 +18,10 @@ A portfolio website I made to learn some webdev.
 
 **Hosting:** Vercel.com
 
+**Purifications** Dompurify
+
+**Reveal Animations** React-reveal
+
 ## Documentation
 
 [Documentation](https://www.zaplachi.ca/projects)
