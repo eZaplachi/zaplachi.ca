@@ -18,9 +18,9 @@ A portfolio website I made to learn some webdev.
 
 **Hosting:** Vercel.com
 
-**Purifications** Dompurify
+**Purifications** Isometric-Dompurify
 
-**Reveal Animations** React-reveal
+**Reveal Animations** React-Reveal
 
 ## Documentation
 
