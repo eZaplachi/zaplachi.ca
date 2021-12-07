@@ -11,8 +11,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../public/myLogo.png";
 import useScroll from "../hooks/useScroll";
-import ThemeReducer from "../hooks/ThemeReducer";
-import { Themes } from "../lib/theme";
+import { Theme, ThemeDefault, ThemeCamping } from "../lib/themeTypes";
 
 const Navbar = () => {
   const [expand, setExpand] = useState(false);
@@ -50,8 +49,85 @@ const Navbar = () => {
     }
   });
 
-  const initialState = { theme: "themeDefault" };
-  const [state, dispatch] = useReducer(ThemeReducer, initialState);
+  const [theme, setTheme] = useState("Default");
+
+  useEffect(() => {
+    let currentTheme: Theme = ThemeDefault;
+    switch (theme) {
+      case "Default":
+        currentTheme = ThemeDefault;
+        break;
+      case "Camping":
+        currentTheme = ThemeCamping;
+        break;
+    }
+
+    document.documentElement.style.setProperty(
+      "--accentClr",
+      currentTheme.accentClr
+    );
+    document.documentElement.style.setProperty(
+      "--appHeaderClr",
+      currentTheme.appHeaderClr
+    );
+    document.documentElement.style.setProperty("--bkgClr", currentTheme.bkgClr);
+    document.documentElement.style.setProperty(
+      "--cardBkgClr",
+      currentTheme.cardBkgClr
+    );
+    document.documentElement.style.setProperty(
+      "--contentClr",
+      currentTheme.contentClr
+    );
+    document.documentElement.style.setProperty(
+      "--extLinkActiveClr",
+      currentTheme.extLinkActiveClr
+    );
+    document.documentElement.style.setProperty(
+      "--extLinkClr",
+      currentTheme.extLinkClr
+    );
+    document.documentElement.style.setProperty(
+      "--inputBkgClr",
+      currentTheme.inputBkgClr
+    );
+    document.documentElement.style.setProperty(
+      "--inputBorderClr",
+      currentTheme.inputBorderClr
+    );
+    document.documentElement.style.setProperty(
+      "--navbarActiveClr",
+      currentTheme.navbarActiveClr
+    );
+    document.documentElement.style.setProperty(
+      "--navbarBkgClr",
+      currentTheme.navbarBkgClr
+    );
+    document.documentElement.style.setProperty(
+      "--neutralClr",
+      currentTheme.neutralClr
+    );
+    document.documentElement.style.setProperty(
+      "--scndHeaderClr",
+      currentTheme.scndHeaderClr
+    );
+    document.documentElement.style.setProperty(
+      "--scndHeaderClrDark",
+      currentTheme.scndHeaderClrDark
+    );
+    document.documentElement.style.setProperty(
+      "--scndHeaderClrLight",
+      currentTheme.scndHeaderClrLight
+    );
+  }, [theme]);
+
+  const setDefault = () => {
+    setTheme("Default");
+  };
+
+  const setCamping = () => {
+    setTheme("Camping");
+  };
 
   // TODO: add theme switcher logic
   return (
@@ -74,21 +150,10 @@ const Navbar = () => {
         <FontAwesomeIcon icon={faSun} id="icon" />
       </a>
       <div ref={ref} className={styles.themeChg}>
-        <a
-          className={styles.theme}
-          id={styles.firstTheme}
-          onClick={() =>
-            dispatch({ type: Themes.ThemeDefault, payload: "themeDefault" })
-          }
-        >
+        <a className={styles.theme} id={styles.firstTheme} onClick={setDefault}>
           <FontAwesomeIcon icon={faHome} />
         </a>
-        <a
-          className={styles.theme}
-          onClick={() =>
-            dispatch({ type: Themes.ThemeCamping, payload: "themeCamping" })
-          }
-        >
+        <a className={styles.theme} onClick={setCamping}>
           <FontAwesomeIcon icon={faCampground} />
         </a>
         <a className={styles.theme}>
