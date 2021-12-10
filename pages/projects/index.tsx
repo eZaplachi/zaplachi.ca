@@ -1,12 +1,53 @@
+import { GetStaticProps } from "next";
+import { GraphQLClient, gql } from "graphql-request";
 import styles from "../../styles/pages/projects/Projects.module.css";
 import Card from "../../components/Card";
 import Layout from "../../components/Layout";
 
-const Projects = () => {
+export const getStaticProps: GetStaticProps = async () => {
+  const endpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.SPACE_ID}`;
+
+  const graphQLClient = new GraphQLClient(endpoint, {
+    headers: {
+      authorization: `Bearer ${process.env.CDA_TOKEN}`,
+    },
+  });
+
+  const query = gql`
+    {
+      projectsCollection {
+        items {
+          name
+          description
+          thumbnail {
+            title
+            description
+            contentType
+            fileName
+            size
+            url
+            width
+            height
+          }
+        }
+      }
+    }
+  `;
+
+  const data = await graphQLClient.request(query);
+
+  // console.log(data)
+
+  return {
+    props: { myProjects: data.projectsCollection.items },
+  };
+};
+
+const Projects = ({ myProjects }: any) => {
   return (
     <div>
       <Layout footerText='wow' stickyOffset={0} >
-        <body className={styles.container}>
+        <div className={styles.container}>
           <div id={styles.aside1} />
           <div id={styles.card1}>
             <Card
@@ -51,7 +92,7 @@ const Projects = () => {
             />
           </div>
           <div id={styles.aside2} />
-        </body>
+        </div>
       </Layout>
     </div>
   );
