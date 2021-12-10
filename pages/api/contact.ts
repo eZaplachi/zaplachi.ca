@@ -7,6 +7,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   // Get email key as json to access google service account
+  // TODO fix mailer credentials
   const keyEnvVar = process.env.CREDS;
   if (!keyEnvVar) {
     res.status(500);

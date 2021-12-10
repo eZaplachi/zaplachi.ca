@@ -4,7 +4,7 @@ import Layout from "../../components/Layout";
 
 const Projects = () => {
   return (
-    <main>
+    <div>
       <Layout footerText='wow' stickyOffset={0} >
         <body className={styles.container}>
           <div id={styles.aside1} />
@@ -53,7 +53,7 @@ const Projects = () => {
           <div id={styles.aside2} />
         </body>
       </Layout>
-    </main>
+    </div>
   );
 };
 
