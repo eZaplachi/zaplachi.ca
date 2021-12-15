@@ -1,16 +1,17 @@
 .appHeader {
+  background-image: url(../public/heroBG.jpg);
+  background-size: cover;
   min-height: 80vh;
   align-items: center;
   justify-content: center;
   margin: -3vh;
-  position: relative;
 }
 
 .scndHeader {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  color: var(--scndHeaderClr);
+  color: var(--scndHeaderclr);
   margin-top: 12vh;
 }
 
