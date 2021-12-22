@@ -55,7 +55,7 @@ const Projects = ({ myProjects }: any) => {
               <Card
                 key={myProject.name}
                 title={myProject.name}
-                cardLink="website"
+                cardLink={myProject.name}
                 content={myProject.description}
               ></Card>
             ))}

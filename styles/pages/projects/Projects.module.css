@@ -1,144 +1,110 @@
 .container {
-    display: grid;
-    grid-template-columns: [space] 14% [content] 24% [content] 24%  [content] 24% [space] 14%;
-    grid-template-rows: repeat(25, 12pc);
-    background-color: var(--appBkgClr);
-    color: var(--scndHeaderClr);
+  display: grid;
+  grid-template-columns: [space] 15% [content] 70% [space] 15%;
+  background-color: var(--appBkgClr);
+  color: var(--scndHeaderClr);
 }
 
 #aside1 {
-    grid-column: space 1;
-    grid-row: all;
+  grid-column: space 1;
 }
 
 #aside2 {
-    grid-column: space 2;
-    grid-row: all;
+  grid-column: space 2;
 }
 
+.cardContainer {
+    grid-column: content;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    gap: 5ch;
+}
 
-/* Cards */
+/* TODO: fix scaling  */
+@media screen and (max-width: 1800px) {
+  .container {
+    display: grid;
+    grid-template-columns: [space] 10% [content] 40% [content] 40% [space] 10%;
+  }
 
-#card1 {
+  #card1 {
     grid-column: content 1;
     grid-row: 2;
     justify-self: center;
-}
+  }
 
-#card2 {
+  #card2 {
     grid-column: content 2;
-    grid-row: 4;
-    justify-self: center;
-}
-
-#card3 {
-    grid-column: content 3;
     grid-row: 3;
     justify-self: center;
-}
+  }
 
-#card4 {
+  #card3 {
     grid-column: content 1;
     grid-row: 5;
     justify-self: center;
-}
+  }
 
-#card5 {
+  #card4 {
     grid-column: content 2;
-    grid-row: 7;
-    justify-self: center;
-}
-
-#card6 {
-    grid-column: content 3;
     grid-row: 6;
     justify-self: center;
-}
+  }
 
+  #card5 {
+    grid-column: content 1;
+    grid-row: 8;
+    justify-self: center;
+  }
 
-@media screen and (max-width: 1800px) {
-    .container {
-        display: grid;
-        grid-template-columns: [space] 10% [content] 40%  [content] 40% [space] 10%;
-    }
-
-    #card1 {
-        grid-column: content 1;
-        grid-row: 2;
-        justify-self: center;
-    }
-    
-    #card2 {
-        grid-column: content 2;
-        grid-row: 3;
-        justify-self: center;
-    }
-    
-    #card3 {
-        grid-column: content 1;
-        grid-row: 5;
-        justify-self: center;
-    }
-    
-    #card4 {
-        grid-column: content 2;
-        grid-row: 6;
-        justify-self: center;
-    }
-    
-    #card5 {
-        grid-column: content 1;
-        grid-row: 8;
-        justify-self: center;
-    }
-    
-    #card6 {
-        grid-column: content 2;
-        grid-row: 9;
-        justify-self: center;
-    }
- 
+  #card6 {
+    grid-column: content 2;
+    grid-row: 9;
+    justify-self: center;
+  }
 }
 
 @media screen and (max-width: 1090px) {
-    .container {
-        display: grid;
-        grid-template-columns: [space] 5% [content] 90% [space] 5%;
-    }
+  .container {
+    display: grid;
+    grid-template-columns: [space] 5% [content] 90% [space] 5%;
+  }
 
-    #card1 {
-        grid-column: content;
-        grid-row: 2;
-        justify-self: center;
-    }
-    
-    #card2 {
-        grid-column: content;
-        grid-row: 6;
-        justify-self: center;
-    }
-    
-    #card3 {
-        grid-column: content;
-        grid-row: 10;
-        justify-self: center;
-    }
-    
-    #card4 {
-        grid-column: content;
-        grid-row: 14;
-        justify-self: center;
-    }
-    
-    #card5 {
-        grid-column: content;
-        grid-row: 18;
-        justify-self: center;
-    }
-    
-    #card6 {
-        grid-column: content;
-        grid-row: 22;
-        justify-self: center;
-    }
+  #card1 {
+    grid-column: content;
+    grid-row: 2;
+    justify-self: center;
+  }
+
+  #card2 {
+    grid-column: content;
+    grid-row: 6;
+    justify-self: center;
+  }
+
+  #card3 {
+    grid-column: content;
+    grid-row: 10;
+    justify-self: center;
+  }
+
+  #card4 {
+    grid-column: content;
+    grid-row: 14;
+    justify-self: center;
+  }
+
+  #card5 {
+    grid-column: content;
+    grid-row: 18;
+    justify-self: center;
+  }
+
+  #card6 {
+    grid-column: content;
+    grid-row: 22;
+    justify-self: center;
+  }
 }

@@ -7,7 +7,6 @@ const Website = () => {
       <Layout footerText="my intro to webdev" stickyOffset={0}>
         <div className={styles.main}>
           hello there
-          )}
         </div>
       </Layout>
     </div>

@@ -2,6 +2,7 @@ declare const styles: {
   readonly "container": string;
   readonly "aside1": string;
   readonly "aside2": string;
+  readonly "cardContainer": string;
   readonly "card1": string;
   readonly "card2": string;
   readonly "card3": string;

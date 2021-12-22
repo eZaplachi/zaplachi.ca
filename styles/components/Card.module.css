@@ -5,7 +5,6 @@
   color: var(--appHeaderClr);
   border-radius: 1rem;
   position: relative;
-  background-image: url(../public/heroBG.jpg);
   background-size: cover;
   overflow: hidden;
   transition: transform 0.5s ease;
@@ -83,17 +82,17 @@
   .card:hover .cardTitle::after, .card:focus-within .cardTitle::after {
     transform: scaleX(1);
   }
-  
+
   .card:hover .cardContent, .card:focus-within .cardContent {
     transform: translateY(0);
     transition-delay: 0.4s;
   }
-  
+
   .cardContent > *:not(.cardTitle) {
     opacity: 0;
     transition: opacity 0.5s;
   }
-  
+
   .card:hover .cardContent > *:not(.cardTitle) {
     opacity: 1;
     transition-delay: 0.45s;
