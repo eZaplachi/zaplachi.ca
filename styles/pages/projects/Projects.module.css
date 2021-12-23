@@ -14,55 +14,18 @@
 }
 
 .cardContainer {
-    grid-column: content;
-    display: inline-flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-content: space-around;
-    gap: 5ch;
+  grid-column: content;
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  gap: 5ch;
 }
 
-/* TODO: fix scaling  */
 @media screen and (max-width: 1800px) {
   .container {
     display: grid;
-    grid-template-columns: [space] 10% [content] 40% [content] 40% [space] 10%;
-  }
-
-  #card1 {
-    grid-column: content 1;
-    grid-row: 2;
-    justify-self: center;
-  }
-
-  #card2 {
-    grid-column: content 2;
-    grid-row: 3;
-    justify-self: center;
-  }
-
-  #card3 {
-    grid-column: content 1;
-    grid-row: 5;
-    justify-self: center;
-  }
-
-  #card4 {
-    grid-column: content 2;
-    grid-row: 6;
-    justify-self: center;
-  }
-
-  #card5 {
-    grid-column: content 1;
-    grid-row: 8;
-    justify-self: center;
-  }
-
-  #card6 {
-    grid-column: content 2;
-    grid-row: 9;
-    justify-self: center;
+    grid-template-columns: [space] 10% [content] 80% [space] 10%;
   }
 }
 
@@ -70,41 +33,5 @@
   .container {
     display: grid;
     grid-template-columns: [space] 5% [content] 90% [space] 5%;
-  }
-
-  #card1 {
-    grid-column: content;
-    grid-row: 2;
-    justify-self: center;
-  }
-
-  #card2 {
-    grid-column: content;
-    grid-row: 6;
-    justify-self: center;
-  }
-
-  #card3 {
-    grid-column: content;
-    grid-row: 10;
-    justify-self: center;
-  }
-
-  #card4 {
-    grid-column: content;
-    grid-row: 14;
-    justify-self: center;
-  }
-
-  #card5 {
-    grid-column: content;
-    grid-row: 18;
-    justify-self: center;
-  }
-
-  #card6 {
-    grid-column: content;
-    grid-row: 22;
-    justify-self: center;
   }
 }
