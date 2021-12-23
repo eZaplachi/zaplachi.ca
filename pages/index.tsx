@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <div>
         <header className={styles.appHeader}>
           <Image
             src={heroBkg}
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
             <div id={styles.aside2}></div>
           </div>
         </Layout>
-      </main>
+      </div>
     </div>
   );
 };

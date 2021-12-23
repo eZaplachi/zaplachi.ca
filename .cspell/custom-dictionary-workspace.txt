@@ -1,3 +1,10 @@
 # Custom Dictionary Words
+aperiam
 dompurify
+facere
+laudantium
+optio
+pariatur
+Temporibus
+tenetur
 webdev

@@ -9,16 +9,22 @@
             "command": "npm run dev",
         },
         {
-            "label": "tcm dev",
+            "label": "tcm dev comp",
             "type": "shell",
-            "command": "tcm styles -r -w",
+            "command": "tcm styles/components -w",
+        },
+        {
+            "label": "tcm dev pg",
+            "type": "shell",
+            "command": "tcm styles/pages -w",
         },
         {
             "label": "dev",
             "type": "shell",
             "dependsOn": [
-                "npm dev",
-                "tcm dev"
+                "tcm dev comp",
+                "tcm dev pg",
+                "npm dev"
             ],
             "isBackground": true,
             "presentation": {
