@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import styles from "../../styles/pages/projects/website.module.css";
+import styles from "../../styles/pages/projects/[pid].module.css";
 
 const Website = () => {
   return (
