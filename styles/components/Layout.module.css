@@ -16,7 +16,7 @@
     overflow: hidden;
     background-color: var(--navbarBkgClr);
     width: 100%;
-    padding: 5vmin;
+    padding: 8vmin;
     margin-left: -3vmin;
     display: flex;
     flex-flow: column nowrap;

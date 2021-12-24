@@ -49,20 +49,20 @@
 .contactText::after {
 	content: "";
 	position: absolute;
-	height: 4ch;
+	height: 0.5ch;
 	background: var(--navbarActiveClr);
-	opacity: 0.15;
-	border-radius: 8px;
+	opacity: 0.8;
+	border-radius: 6px;
 }
 
 #mail::after {
-	transform: translateY(-0.5ch) translateX(-21.5ch);
-	width: 23.5ch;
+	transform: translateY(2.75ch) translateX(-19ch);
+	width: 21ch;
 }
 
 #github::after {
-	transform: translateY(-0.5ch) translateX(-30ch);
-	width: 32ch;
+	transform: translateY(2.75ch) translateX(-27ch);
+	width: 28ch;
 }
 
 @media (hover) {

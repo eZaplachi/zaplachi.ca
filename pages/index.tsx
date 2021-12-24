@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <div>
         <header className={styles.appHeader}>
           <Image
             src={heroBkg}
@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           />
           <Name />
         </header>
-        <Layout footerText="cool Footer" stickyOffset={0.8}>
+        <Layout footerText="cool Footer" stickyOffset={1}>
           <div className={styles.wrapper} style={{ marginTop: "15vh" }}>
             <div id={styles.aside1}></div>
             <div className={styles.content}>
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
             <div id={styles.aside2}></div>
           </div>
         </Layout>
-      </main>
+      </div>
     </div>
   );
 };
