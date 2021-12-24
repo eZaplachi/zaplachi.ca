@@ -29,7 +29,7 @@ const Home: NextPage = () => {
           />
           <Name />
         </header>
-        <Layout footerText="cool Footer" stickyOffset={0.8}>
+        <Layout footerText="cool Footer" stickyOffset={1}>
           <div className={styles.wrapper} style={{ marginTop: "15vh" }}>
             <div id={styles.aside1}></div>
             <div className={styles.content}>
