@@ -1,5 +1,7 @@
 # Custom Dictionary Words
 aperiam
+automerge
+Automerge
 dompurify
 facere
 laudantium
