@@ -12,8 +12,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@a81bbbf8298c0fa03ea29cdc473d45769f953675
+      - uses: actions/checkout@v2
       # Make changes to pull request here
+      - shell: bash
+        run: |
+          git config user.name "eZaplachi"
+          git config user.email "<evan@zaplachi.ca>"
+          git config push.default "current"
+          ./run
 
       - name: Create Pull Request
         id: cpr
