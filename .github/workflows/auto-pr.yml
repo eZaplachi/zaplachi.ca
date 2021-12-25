@@ -3,12 +3,13 @@ on:
   push:
     branches: [dev]
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   createPullRequest:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
 
     steps:
       - uses: actions/checkout@v2
