@@ -25,3 +25,4 @@ jobs:
         with:
           # The branches on which releases should happen. https://github.com/semantic-release/semantic-release/blob/master/docs/usage/configuration.md#branches
           branches: next, main
+          repository_url: https://github.com/eZaplachi/zaplachi.ca.git
