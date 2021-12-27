@@ -16,6 +16,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const data = await getProject(context.params?.pid);
+  // returns relevant data in the first value of the items array
 
   return {
     props: { myProject: data.projectsCollection.items[0] },
