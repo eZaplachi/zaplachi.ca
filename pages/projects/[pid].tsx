@@ -1,16 +1,7 @@
 import { GetStaticProps, GetStaticPaths } from "next";
-import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
-import { getProjects } from "../../lib/contentfulHelper";
+import { getProjects, getProject } from "../../lib/contentfulHelper";
 import styles from "../../styles/pages/projects/[pid].module.css";
-
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await getProjects();
-
-  return {
-    props: { myProjects: data.projectsCollection.items },
-  };
-};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await getProjects();
@@ -23,16 +14,26 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const Website = () => {
+export const getStaticProps: GetStaticProps = async (context) => {
+  const data = await getProject(context.params?.pid);
+
+  return {
+    props: { myProject: data.projectsCollection.items[0] },
+  };
+};
+
+
+const Website = ({ myProject }: any) => {
+
   // console.log(myProjects);
-  const router = useRouter();
-  const { pid } = router.query;
 
   return (
     <div>
-      <Layout footerText="my intro to webdev" stickyOffset={0}>
+      <Layout footerText={myProject.footerText} stickyOffset={0}>
         <div>
-          <p className={styles.header}>{pid}</p>
+          <p className={styles.header}>{myProject.name}</p>
+          <p>Code for this project:</p>
+          <a href={myProject.githubLink}>{myProject.githubLink}</a>
           <div className={styles.main}>hello there</div>
         </div>
       </Layout>
