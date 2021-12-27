@@ -39,7 +39,7 @@ export const ThemeCamping: Theme = {
   appHeaderClr: "white",
   bkgClr: "#61605A",
   cardBkgClr: "#637F42",
-  contentClr: "#BFAA72",
+  contentClr: "#b79e04",
   extLinkActiveClr: "#B1C4AE",
   extLinkClr: "#3B6B35",
   inputBkgClr: "rgba(245, 245, 245, 0.7)",
