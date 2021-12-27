@@ -17,13 +17,7 @@ export const getProjects = async () => {
             description
             thumbnail {
               title
-              description
-              contentType
-              fileName
-              size
               url
-              width
-              height
             }
             buildLog {
                 json

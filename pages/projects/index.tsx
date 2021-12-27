@@ -28,6 +28,8 @@ const Projects = ({ myProjects }: any) => {
                 title={myProject.name}
                 cardLink={myProject.name}
                 content={myProject.description}
+                bkgImgUrl={myProject.thumbnail?.url}
+                bkgImgTitle={myProject.thumbnail?.title}
               ></Card>
             ))}
           </div>
