@@ -20,7 +20,7 @@ A portfolio website I made to learn some webdev.
 
 **Purifications** Isometric-Dompurify
 
-**Reveal Animations** React-Reveal
+**Animations** Framer Motion
 
 ## Documentation
 
