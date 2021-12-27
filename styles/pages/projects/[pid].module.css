@@ -2,11 +2,29 @@
     margin-top: 400ch;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: [space] 20% [content] 60% [space] 20%;
+}
+
+#aside1 {
+    grid-column: space 1;
+}
+
+#aside2 {
+    grid-column: space 2;
+}
+
+.content {
+    grid-column: content;
+}
+
 .header {
     color: var(--appHeaderClr);
     font-weight: bold;
     font-size: 5ch;
     text-align: center;
+    margin-bottom: 10ch;
 }
 
 .link {

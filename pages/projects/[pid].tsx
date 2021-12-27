@@ -23,19 +23,23 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
 };
 
-
 const Website = ({ myProject }: any) => {
-
   // console.log(myProjects);
 
   return (
     <div>
       <Layout footerText={myProject.footerText} stickyOffset={0}>
-        <div>
-          <p className={styles.header}>{myProject.name}</p>
-          <p>Code for this project:</p>
-          <a className={styles.link} href={myProject.githubLink}>{myProject.githubLink}</a>
-          <div className={styles.main}>hello there</div>
+        <div className={styles.container}>
+          <div id={styles.aside1}></div>
+          <div className={styles.content}>
+            <p className={styles.header}>{myProject.name}</p>
+            <p>Code for this project:</p>
+            <a className={styles.link} href={myProject.githubLink}>
+              {myProject.githubLink}
+            </a>
+            <div className={styles.main}>hello there</div>
+            <div id={styles.aside1}></div>
+          </div>
         </div>
       </Layout>
     </div>
