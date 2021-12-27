@@ -8,3 +8,7 @@
     font-size: 5ch;
     text-align: center;
 }
+
+.link {
+    display: inline;
+}
