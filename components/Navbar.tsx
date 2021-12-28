@@ -132,7 +132,9 @@ const Navbar = () => {
   // TODO: add theme switcher logic
   return (
     <section>
-      <a href="#skip" className={styles.skipToContent}>Skip to content</a>
+      <a href="#skip" className={styles.skipToContent}>
+        Skip to content
+      </a>
       <Link href="/">
         <a className={styles.navbarCon}>Home</a>
       </Link>

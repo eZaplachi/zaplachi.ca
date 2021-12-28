@@ -8,8 +8,9 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false; /* eslint-disable import/first */
 
+// TODO: add titles to all buttons for accessability
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component lang="en-US" dir="ltr" {...pageProps} />;
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
