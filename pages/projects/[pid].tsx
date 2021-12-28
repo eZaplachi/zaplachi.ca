@@ -34,7 +34,7 @@ const Website = ({ myProject }: any) => {
   const dateLength = 10;
   const trimmedDate = myProject.lastUpdated.substring(0, dateLength);
   // console.log(myProjects);
-
+//TODO: maybe find a way to not require any sources
   return (
     <div>
       <Layout footerText={myProject.footerText} stickyOffset={0}>
