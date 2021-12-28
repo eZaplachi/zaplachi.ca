@@ -35,7 +35,7 @@ export const ThemeDefault: Theme = {
 };
 
 export const ThemeCamping: Theme = {
-  accentClr: "#84d1fd",
+  accentClr: "#577353",
   appHeaderClr: "white",
   bkgClr: "#61605A",
   cardBkgClr: "#637F42",
