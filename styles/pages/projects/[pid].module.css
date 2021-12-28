@@ -17,6 +17,7 @@
 
 .content {
     grid-column: content;
+    color: var(--contentClr);
 }
 
 .header {
