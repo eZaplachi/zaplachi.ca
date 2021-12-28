@@ -57,7 +57,7 @@
     transition: 0.3s ease;
 }
 
-.iconContainer:hover {
+.iconContainer:hover, .iconContainer:focus {
     background-color: var(--accentClr);
     color: var(--appHeaderClr);
     border-radius: 18px 6px;

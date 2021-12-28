@@ -29,12 +29,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const Website = ({ myProject }: any) => {
   let backLink = "/projects";
   let codeLink = myProject.githubLink ? myProject.githubLink : "#";
-  let codeLinkText = codeLink ? "Github Link" : "No code required";
+  let codeLinkText = myProject.githubLink ? "Github Link" : "No code required";
 
   const dateLength = 10;
   const trimmedDate = myProject.lastUpdated.substring(0, dateLength);
   // console.log(myProjects);
-//TODO: maybe find a way to not require any sources
+//TODO: maybe find a way to not require any
   return (
     <div>
       <Layout footerText={myProject.footerText} stickyOffset={0}>
