@@ -5,7 +5,11 @@ declare const styles: {
   readonly "aside2": string;
   readonly "content": string;
   readonly "header": string;
+  readonly "scndHeader": string;
   readonly "link": string;
+  readonly "iconContainer": string;
+  readonly "sourcesList": string;
+  readonly "lastUpdated": string;
 };
 export = styles;
 

@@ -1,4 +1,7 @@
+import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GetStaticProps, GetStaticPaths } from "next";
+import Link from "next/link";
 import Layout from "../../components/Layout";
 import { getProjects, getProject } from "../../lib/contentfulHelper";
 import styles from "../../styles/pages/projects/[pid].module.css";
@@ -24,21 +27,47 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 const Website = ({ myProject }: any) => {
+  let backLink = "/projects";
+  let codeLink = myProject.githubLink ? myProject.githubLink : "#";
+  let codeLinkText = codeLink ? "Github Link" : "No code required";
+
+  const dateLength = 10;
+  const trimmedDate = myProject.lastUpdated.substring(0, dateLength);
   // console.log(myProjects);
 
   return (
     <div>
       <Layout footerText={myProject.footerText} stickyOffset={0}>
         <div className={styles.container}>
-          <div id={styles.aside1}></div>
+          <div id={styles.aside1}>
+            <Link href={backLink}>
+              <a className={styles.iconContainer}>
+                <FontAwesomeIcon icon={faLongArrowAltLeft} />
+              </a>
+            </Link>
+          </div>
           <div className={styles.content}>
             <p className={styles.header}>{myProject.name}</p>
-            <p>Code for this project:</p>
-            <a className={styles.link} href={myProject.githubLink}>
-              {myProject.githubLink}
-            </a>
+            <p>
+              Code for this project:&nbsp;
+              <a className={styles.link} href={codeLink}>
+                {codeLinkText}
+              </a>
+            </p>
+            <div className={styles.scndHeader}>Sources:</div>
+            <ul>
+              {myProject.sources.map((url: any) => (
+                <li key={url} className={styles.sourcesList}>
+                  <a href={url} className={styles.link}>
+                    {url}
+                  </a>
+                </li>
+              ))}
+            </ul>
             <div className={styles.main}>hello there</div>
-            <div id={styles.aside1}></div>
+          </div>
+          <div id={styles.aside2}>
+            <p id={styles.lastUpdated}>Last Updated: {trimmedDate}</p>
           </div>
         </div>
       </Layout>

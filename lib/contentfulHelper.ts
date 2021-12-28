@@ -33,10 +33,12 @@ export const getProject = async (name?: string | string[]) => {
     projectsCollection(where: {name: $name}) {
       items {
         name
+        lastUpdated
         buildLog {
           json
         }
         githubLink
+        sources
         footerText
       }
     }
