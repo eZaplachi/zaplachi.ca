@@ -10,23 +10,26 @@
   transition: transform 0.5s ease;
   transition: width 0.3s ease;
   z-index: 30;
+  box-shadow: 8px 8px 5px 4px #0000004d;
 }
 
-
 .cardContent {
-    --padding: 1.5rem;
+  --padding: 1.5rem;
   color: var(--contentClr);
   padding: var(--padding);
-  background: linear-gradient(hsl(0 0% 0% / 0), hsl(20 0% 0% / 0.3) 20%, hsl(0 0% 0% / 1));
+  background: linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(20 0% 0% / 0.3) 20%,
+    hsl(0 0% 0% / 1)
+  );
   transition: transform 0.3s ease;
 }
 
-
 .cardTitle {
-    position: relative;
-    margin-left: 0.5vw;
-    font-weight: bold;
-    width: max-content;
+  position: relative;
+  margin-left: 0.5vw;
+  font-weight: bold;
+  width: max-content;
 }
 
 .cardTitle::after {
@@ -42,32 +45,31 @@
   transform-origin: left;
 }
 
-
 .card:focus-within .cardContent {
   transition-duration: 0s;
 }
 
 .cardBody {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .button {
-    background-color: var(--accentClr);
-    border-radius: 12px;
-    color: var(--neutralClr);
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    padding: 0.5em;
-    margin-left: 90%;
-    opacity: 1;
-
+  background-color: var(--accentClr);
+  border-radius: 12px;
+  color: var(--neutralClr);
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5em;
+  margin-left: 90%;
+  opacity: 1;
 }
 
-.button:hover, .button:focus {
-    opacity: 0.3;
-    border-radius: 18px 6px;
-    transition: 0.5s linear;
+.button:hover,
+.button:focus {
+  opacity: 0.3;
+  border-radius: 18px 6px;
+  transition: 0.5s linear;
 }
 
 @media (hover) {
@@ -75,15 +77,18 @@
     transform: translateY(63%);
   }
 
-  .card:hover, .card:focus-within {
+  .card:hover,
+  .card:focus-within {
     transform: scale(1.05);
   }
 
-  .card:hover .cardTitle::after, .card:focus-within .cardTitle::after {
+  .card:hover .cardTitle::after,
+  .card:focus-within .cardTitle::after {
     transform: scaleX(1);
   }
 
-  .card:hover .cardContent, .card:focus-within .cardContent {
+  .card:hover .cardContent,
+  .card:focus-within .cardContent {
     transform: translateY(0);
     transition-delay: 0.4s;
   }

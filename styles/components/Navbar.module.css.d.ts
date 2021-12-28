@@ -1,5 +1,6 @@
 declare const styles: {
   readonly "navbarCon": string;
+  readonly "skipToContent": string;
   readonly "navbarIcon": string;
   readonly "iconSizing": string;
   readonly "rotate": string;
