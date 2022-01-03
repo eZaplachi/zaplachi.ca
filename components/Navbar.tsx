@@ -5,7 +5,7 @@ import {
   faMeteor,
   faCampground,
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState, useRef, useReducer } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "../styles/components/Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -49,11 +49,18 @@ const Navbar = () => {
     }
   });
 
+
   const [theme, setTheme] = useState("Default");
 
   useEffect(() => {
+    localStorage.setItem("theme", theme);
+  });
+
+  useEffect(() => {
     let currentTheme: Theme = ThemeDefault;
-    switch (theme) {
+    let storedTheme = localStorage.getItem("theme");
+
+    switch (storedTheme) {
       case "Default":
         currentTheme = ThemeDefault;
         break;

@@ -13,22 +13,23 @@
 }
 
 .navbar {
-    overflow: hidden;
-    background-color: var(--navbarBkgClr);
-    width: 100%;
-    padding: 8vmin;
-    margin-left: -3vmin;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    border: none;
-    outline: none;
-    z-index: 99;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    overflow: hidden;
-    height: 4ch;
+  overflow: hidden;
+  background-color: var(--navbarBkgClr);
+  width: 105%;
+  padding: 8vmin;
+  margin-left: -3vmin;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  border: none;
+  outline: none;
+  z-index: 99;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  overflow: hidden;
+  height: 4ch;
+  transition: 0.3s ease;
 }
 
 #scrolled {
@@ -38,9 +39,27 @@
 }
 
 #scrolledSpace {
-    margin-top: calc(40vh + 4ch);
+  margin-top: calc(40vh + 4ch);
 }
 
 #footerSpace {
   margin-top: 20ch;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar {
+    height: 10ch;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar {
+    height: 12ch;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .navbar {
+    height: 15ch;
+  }
 }

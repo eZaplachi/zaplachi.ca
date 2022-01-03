@@ -47,12 +47,13 @@
     text-align: center;
     color: var(--accentClr);
     background-color: #0000006b;
-    font-size: 3em;
+    font-size: 2em;
+    font-weight: bolder;
     margin-top: -10ch;
-    border: 1px solid #0000008a;
     border-radius: 12px;
     box-shadow: 6px 6px 5px 1px #0000004d;
     width: 20%;
+    padding: 5px;
     height: min-content;
     transition: 0.3s ease;
 }
@@ -74,6 +75,6 @@
 
 #lastUpdated::after {
     content: "(y/m/d)";
-    opacity: 0.4;
+    opacity: 0.6;
     padding: 3ch;
 }

@@ -6,6 +6,7 @@
   color: var(--scndHeaderClrDark);
   border-radius: 4px;
   text-align: left;
+  gap: 1ch;
 }
 
 .inputLabel {
@@ -41,13 +42,17 @@
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  padding: 0.6em;
+  padding: 0.4em;
+  width: 5ch;
+  font-size: 3ch;
+  font-weight: bolder;
   opacity: 1;
   order: 5;
   align-self: flex-end;
   border: none;
   margin-left: 90%;
   transform: translateY(-80%);
+  transition: 0.3s ease;
 }
 
 .button:hover,
@@ -109,4 +114,10 @@
 #failIcon {
   color: red;
   opacity: 0;
+}
+
+@media screen  and (max-width: 600px) {
+.button {
+  margin-left: 70%;
+}
 }
