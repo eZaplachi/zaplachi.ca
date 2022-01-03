@@ -38,7 +38,7 @@ const Website = ({ myProject }: any) => {
   return (
     <div>
       <Layout footerText={myProject.footerText} stickyOffset={0}>
-        <div className={styles.container}>
+        <div className={styles.wrapper}>
           <div id={styles.aside1}>
             <Link href={backLink}>
               <a className={styles.iconContainer}>

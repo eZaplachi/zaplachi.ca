@@ -1,6 +1,6 @@
 declare const styles: {
   readonly "main": string;
-  readonly "container": string;
+  readonly "wrapper": string;
   readonly "aside1": string;
   readonly "aside2": string;
   readonly "content": string;

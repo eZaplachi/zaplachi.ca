@@ -2,7 +2,7 @@
     margin-top: 400ch;
 }
 
-.container {
+.wrapper {
     display: grid;
     grid-template-columns: [space] 20% [content] 60% [space] 20%;
 }
