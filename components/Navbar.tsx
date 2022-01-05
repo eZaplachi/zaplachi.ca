@@ -11,6 +11,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "../public/myLogo.png";
 import useScroll from "../hooks/useScroll";
+import useLocalStorage from "../hooks/useLocalStorage";
 import { Theme, ThemeDefault, ThemeCamping } from "../lib/themeTypes";
 
 const Navbar = () => {
@@ -50,17 +51,12 @@ const Navbar = () => {
   });
 
 
-  const [theme, setTheme] = useState("Default");
-
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-  });
+  const [theme, setTheme] = useLocalStorage("theme", "Default");
 
   useEffect(() => {
     let currentTheme: Theme = ThemeDefault;
-    let storedTheme = localStorage.getItem("theme");
 
-    switch (storedTheme) {
+    switch (theme) {
       case "Default":
         currentTheme = ThemeDefault;
         break;
