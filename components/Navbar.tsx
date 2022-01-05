@@ -50,7 +50,6 @@ const Navbar = () => {
     }
   });
 
-
   const [theme, setTheme] = useLocalStorage("theme", "Default");
 
   useEffect(() => {
@@ -65,6 +64,7 @@ const Navbar = () => {
         break;
     }
 
+    // Changing css custom properties to colors defined in theme types
     document.documentElement.style.setProperty(
       "--accentClr",
       currentTheme.accentClr
@@ -132,7 +132,6 @@ const Navbar = () => {
     setTheme("Camping");
   };
 
-  // TODO: add theme switcher logic
   return (
     <section>
       <a href="#skip" className={styles.skipToContent}>

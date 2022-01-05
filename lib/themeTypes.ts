@@ -51,3 +51,5 @@ export const ThemeCamping: Theme = {
   scndHeaderClrLight: "#C4D3C2",
   scndHeaderClrDark: "#5b6859",
 };
+
+// TODO: Add more themes
