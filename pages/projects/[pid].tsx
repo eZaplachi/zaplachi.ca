@@ -34,10 +34,14 @@ const Website = ({ myProject }: any) => {
   const dateLength = 10;
   const trimmedDate = myProject.lastUpdated.substring(0, dateLength);
   // console.log(myProjects);
-//TODO: maybe find a way to not require any
+  //TODO: maybe find a way to not require any url
   return (
     <div>
-      <Layout footerText={myProject.footerText} stickyOffset={0} header={myProject.name}>
+      <Layout
+        footerText={myProject.footerText}
+        stickyOffset={0}
+        header={myProject.name}
+      >
         <div className={styles.wrapper}>
           <div id={styles.aside1}>
             <Link href={backLink}>
@@ -45,6 +49,9 @@ const Website = ({ myProject }: any) => {
                 <FontAwesomeIcon icon={faLongArrowAltLeft} />
               </a>
             </Link>
+          </div>
+          <div id={styles.aside2}>
+            <p id={styles.lastUpdated}>Last Updated: {trimmedDate}</p>
           </div>
           <div className={styles.content}>
             <p className={styles.header}>{myProject.name}</p>
@@ -65,9 +72,6 @@ const Website = ({ myProject }: any) => {
               ))}
             </ul>
             <div className={styles.main}>hello there</div>
-          </div>
-          <div id={styles.aside2}>
-            <p id={styles.lastUpdated}>Last Updated: {trimmedDate}</p>
           </div>
         </div>
       </Layout>

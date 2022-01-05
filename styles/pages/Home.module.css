@@ -35,7 +35,12 @@
 
 .authorImg {
   grid-column: content 1;
-  width: 60%;
+  max-width: 60%;
+  max-height: 20%;
   display: block;
   margin-left: 25%;
+  margin-top: -15%;
+  /* Border testing -- Remove */
+  border-radius: 20px;
+  border: 2px solid black;
 }
