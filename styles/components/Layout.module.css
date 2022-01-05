@@ -46,6 +46,12 @@
   margin-top: 20ch;
 }
 
+#hiddenHeader {
+  top: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 @media screen and (max-width: 900px) {
   .navbar {
     height: 10ch;

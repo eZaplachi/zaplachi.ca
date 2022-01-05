@@ -5,6 +5,7 @@ declare const styles: {
   readonly "scrolled": string;
   readonly "scrolledSpace": string;
   readonly "footerSpace": string;
+  readonly "hiddenHeader": string;
 };
 export = styles;
 

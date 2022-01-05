@@ -15,24 +15,27 @@
 }
 
 .wrapper {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: [space] 17% [content] 22% [content] 22% [content] 22% [space] 17%;
   justify-content: space-between;
 }
 
 #aside1 {
-  order: 1;
-  width: 25%;
+  grid-column: space 1;
 }
 
 #aside2 {
-  order: 3;
-  width: 25%;
+  grid-column: space 2;
 }
 
 .content {
-  order: 2;
-  flex-grow: 2;
+  grid-column: content 2 / space 2;
   color: var(--contentClr);
-  max-width: 50%;
+}
+
+.authorImg {
+  grid-column: content 1;
+  width: 60%;
+  display: block;
+  margin-left: 25%;
 }

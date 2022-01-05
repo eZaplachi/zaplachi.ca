@@ -37,7 +37,7 @@ const Website = ({ myProject }: any) => {
 //TODO: maybe find a way to not require any
   return (
     <div>
-      <Layout footerText={myProject.footerText} stickyOffset={0}>
+      <Layout footerText={myProject.footerText} stickyOffset={0} header={myProject.name}>
         <div className={styles.wrapper}>
           <div id={styles.aside1}>
             <Link href={backLink}>
