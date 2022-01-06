@@ -12,7 +12,12 @@ import Image from "next/image";
 import logo from "../public/myLogo.png";
 import useScroll from "../hooks/useScroll";
 import useLocalStorage from "../hooks/useLocalStorage";
-import { Theme, ThemeDefault, ThemeCamping } from "../lib/themeTypes";
+import {
+  Theme,
+  ThemeDefault,
+  ThemeCamping,
+  ThemeSaturn,
+} from "../lib/themeTypes";
 
 const Navbar = () => {
   const [expand, setExpand] = useState(false);
@@ -62,9 +67,11 @@ const Navbar = () => {
       case "Camping":
         currentTheme = ThemeCamping;
         break;
+      case "Saturn":
+        currentTheme = ThemeSaturn;
     }
 
-    // Changing css custom properties to colors defined in theme types
+    // Changing css custom properties to colors defined in theme types -- easily add more themes
     document.documentElement.style.setProperty(
       "--accentClr",
       currentTheme.accentClr
@@ -132,6 +139,10 @@ const Navbar = () => {
     setTheme("Camping");
   };
 
+  const setSaturn = () => {
+    setTheme("Saturn");
+  };
+
   return (
     <section>
       <a href="#skip" className={styles.skipToContent}>
@@ -161,7 +172,7 @@ const Navbar = () => {
         <a className={styles.theme} onClick={setCamping}>
           <FontAwesomeIcon icon={faCampground} />
         </a>
-        <a className={styles.theme}>
+        <a className={styles.theme} onClick={setSaturn}>
           <FontAwesomeIcon icon={faMeteor} />
         </a>
       </div>
