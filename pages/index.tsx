@@ -11,7 +11,9 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Evan&apos;s Website</title>
-        <meta name="Zaplachi Home Page" content="Evan Zaplachinski Personal Website" />
+        <meta charSet="UTF-8" />
+        <meta name="author" content="Evan Zaplachinski" />
+        <meta name="description" content="Evan Zaplachinski Personal Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
