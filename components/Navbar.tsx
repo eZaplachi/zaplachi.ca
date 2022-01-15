@@ -19,6 +19,7 @@ import {
   ThemeSaturn,
 } from "../lib/themeTypes";
 
+// TODO: fix color switcher
 const Navbar = () => {
   const [expand, setExpand] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
