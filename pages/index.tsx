@@ -11,10 +11,9 @@ const Home: NextPage = () => {
     <div>
       <Head>
         <title>Evan&apos;s Website</title>
-        <meta
-          name="description"
-          content="Evan Zaplachinskis Personal Website"
-        />
+        <meta charSet="UTF-8" />
+        <meta name="author" content="Evan Zaplachinski" />
+        <meta name="description" content="Evan Zaplachinski Personal Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -29,9 +28,12 @@ const Home: NextPage = () => {
           />
           <Name />
         </header>
-        <Layout footerText="cool Footer" stickyOffset={1}>
+        <Layout footerText="cool Footer" stickyOffset={1} header="Home Page">
           <div className={styles.wrapper} style={{ marginTop: "15vh" }}>
             <div id={styles.aside1}></div>
+            <div className={styles.authorImg}>
+              <Image src={heroBkg} alt="photo of author" />
+            </div>
             <div className={styles.content}>
               <h3>Header</h3>
               <p>

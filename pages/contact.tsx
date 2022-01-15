@@ -5,7 +5,7 @@ import styles from "../styles/pages/Contact.module.css";
 
 const Contact = () => {
 	return (
-			<Layout footerText='another footer' stickyOffset={0}>
+			<Layout footerText='another footer' stickyOffset={20} header="Contact Page">
 				<div className={styles.wrapper}>
 					<div className={styles.container} />
 					<div className={styles.inputCon} />

@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import styles from "../styles/components/Layout.module.css";
 
-const Layout = (props: { children: ReactChild; footerText: string, stickyOffset: number }) => {
+const Layout = (props: { children: ReactChild; footerText: string, stickyOffset: number, header: string }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useScroll((offset: number) => {
@@ -20,9 +20,11 @@ const Layout = (props: { children: ReactChild; footerText: string, stickyOffset:
       <div className={styles.navbar} id={scrolled ? styles.scrolled : ""}>
         <Navbar />
       </div>
-      <main className={styles.wrapper} id={scrolled ? styles.scrolledSpace : ""} >
+      {/* Hidden header for screen reader purposes */}
+      <h1 id={styles.hiddenHeader}>{props.header}</h1>
+      <div className={styles.wrapper} id={scrolled ? styles.scrolledSpace : ""} >
           <div className={styles.content}>{props.children}</div>
-      </main>
+      </div>
       <footer id={styles.footerSpace}>
         <Footer text={props.footerText} />
       </footer>

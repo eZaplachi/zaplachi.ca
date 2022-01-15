@@ -5,14 +5,21 @@ import {
   faMeteor,
   faCampground,
 } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState, useRef, useReducer } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "../styles/components/Navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../public/myLogo.png";
 import useScroll from "../hooks/useScroll";
-import { Theme, ThemeDefault, ThemeCamping } from "../lib/themeTypes";
+import useLocalStorage from "../hooks/useLocalStorage";
+import {
+  Theme,
+  ThemeDefault,
+  ThemeCamping,
+  ThemeSaturn,
+} from "../lib/themeTypes";
 
+// TODO: fix color switcher
 const Navbar = () => {
   const [expand, setExpand] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
@@ -49,10 +56,11 @@ const Navbar = () => {
     }
   });
 
-  const [theme, setTheme] = useState("Default");
+  const [theme, setTheme] = useLocalStorage("theme", "Default");
 
   useEffect(() => {
     let currentTheme: Theme = ThemeDefault;
+
     switch (theme) {
       case "Default":
         currentTheme = ThemeDefault;
@@ -60,8 +68,11 @@ const Navbar = () => {
       case "Camping":
         currentTheme = ThemeCamping;
         break;
+      case "Saturn":
+        currentTheme = ThemeSaturn;
     }
 
+    // Changing css custom properties to colors defined in theme types -- easily add more themes
     document.documentElement.style.setProperty(
       "--accentClr",
       currentTheme.accentClr
@@ -129,10 +140,15 @@ const Navbar = () => {
     setTheme("Camping");
   };
 
-  // TODO: add theme switcher logic
+  const setSaturn = () => {
+    setTheme("Saturn");
+  };
+
   return (
     <section>
-      <a href="#skip" className={styles.skipToContent}>Skip to content</a>
+      <a href="#skip" className={styles.skipToContent}>
+        Skip to content
+      </a>
       <Link href="/">
         <a className={styles.navbarCon}>Home</a>
       </Link>
@@ -157,7 +173,7 @@ const Navbar = () => {
         <a className={styles.theme} onClick={setCamping}>
           <FontAwesomeIcon icon={faCampground} />
         </a>
-        <a className={styles.theme}>
+        <a className={styles.theme} onClick={setSaturn}>
           <FontAwesomeIcon icon={faMeteor} />
         </a>
       </div>

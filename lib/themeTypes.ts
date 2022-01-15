@@ -51,3 +51,23 @@ export const ThemeCamping: Theme = {
   scndHeaderClrLight: "#C4D3C2",
   scndHeaderClrDark: "#5b6859",
 };
+
+// TODO: Add more themes
+
+export const ThemeSaturn: Theme = {
+  accentClr: "#CC5A71",
+  appHeaderClr: "white",
+  bkgClr: "#34344A",
+  cardBkgClr: "#f79d65",
+  contentClr: "#fffcf2",
+  extLinkActiveClr: "#009292",
+  extLinkClr: "#8187dc",
+  inputBkgClr: "rgba(245, 245, 245, 0.7)",
+  inputBorderClr: "slategrey",
+  navbarActiveClr: "#ddbdfc",
+  navbarBkgClr: "#80475E",
+  neutralClr: "#C89B7B",
+  scndHeaderClr: "#a4b4a1",
+  scndHeaderClrLight: "#C4D3C2",
+  scndHeaderClrDark: "##685963",
+};
