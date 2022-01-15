@@ -64,6 +64,16 @@
     border-radius: 18px 6px;
 }
 
+.codeLink {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.richText {
+    margin: 5ch;
+    padding: 3ch;
+}
+
 .sourcesList {
     padding: 2ch;
 }
