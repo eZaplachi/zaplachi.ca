@@ -1,5 +1,5 @@
 import {
-  faArrowAltCircleRight,
+  faLongArrowAltRight,
   faCheckCircle,
   faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
@@ -149,7 +149,7 @@ const ContactForm = () => {
           />
           <p id={styles.resMessage}>Confirmation email sent!</p>
           <button className={styles.button} type="submit">
-            <FontAwesomeIcon icon={faArrowAltCircleRight} />
+            <FontAwesomeIcon icon={faLongArrowAltRight} />
           </button>
         </div>
       </form>

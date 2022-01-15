@@ -1,6 +1,6 @@
 declare const styles: {
   readonly "main": string;
-  readonly "container": string;
+  readonly "wrapper": string;
   readonly "aside1": string;
   readonly "aside2": string;
   readonly "content": string;
@@ -8,6 +8,8 @@ declare const styles: {
   readonly "scndHeader": string;
   readonly "link": string;
   readonly "iconContainer": string;
+  readonly "codeLink": string;
+  readonly "richText": string;
   readonly "sourcesList": string;
   readonly "lastUpdated": string;
 };

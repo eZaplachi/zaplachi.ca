@@ -35,6 +35,7 @@
   order: 3;
   margin-left: 60%;
   transition: margin-left 0.3s ease;
+  transition: display 0.5s ease-in-out;
 }
 
 .iconSizing {

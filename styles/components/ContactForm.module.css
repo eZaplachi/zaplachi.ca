@@ -2,10 +2,10 @@
   display: inline-flex;
   flex-flow: column nowrap;
   width: 80%;
-  background-color: var(--navbarBkgClr);
   color: var(--scndHeaderClrDark);
   border-radius: 4px;
   text-align: left;
+  gap: 1ch;
 }
 
 .inputLabel {
@@ -41,20 +41,24 @@
   cursor: pointer;
   display: inline-block;
   text-decoration: none;
-  padding: 0.6em;
+  padding: 0.4em;
+  width: 5ch;
+  font-size: 3ch;
+  font-weight: bolder;
   opacity: 1;
   order: 5;
   align-self: flex-end;
   border: none;
   margin-left: 90%;
   transform: translateY(-80%);
+  transition: 0.3s ease;
 }
 
 .button:hover,
 .button:focus {
-  opacity: 0.3;
-  border-radius: 14px 8px;
-  transition: 0.5s linear;
+  opacity: 0.5;
+  border-radius: 18px 6px;
+  transition: 0.4s ease-in-out;
 }
 
 .iconWrapper {
@@ -109,4 +113,10 @@
 #failIcon {
   color: red;
   opacity: 0;
+}
+
+@media screen  and (max-width: 600px) {
+.button {
+  margin-left: 70%;
+}
 }

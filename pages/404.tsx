@@ -4,8 +4,8 @@ import styles from "../styles/pages/404.module.css";
 const NotFound = () => {
   return (
     <div>
-      <Layout footerText="Error 404" stickyOffset={0}>
-        <div className={styles.container}>
+      <Layout footerText="Error 404" stickyOffset={20} header="Error Page">
+        <div className={styles.wrapper}>
           <div id={styles.aside1}></div>
           <div className={styles.errorMsg}>
             <p className={styles.title}>Error: 404 - Page not found</p>

@@ -46,4 +46,11 @@ Start the dev server
   npm run dev
 ```
 
+If on vscode and have typed-css-modules installed globally via npm
+
+```bash
+  ctrl+shift+p
+  run-task: dev
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

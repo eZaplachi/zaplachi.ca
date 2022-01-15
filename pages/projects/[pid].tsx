@@ -1,10 +1,11 @@
 import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import { getProjects, getProject } from "../../lib/contentfulHelper";
-import styles from "../../styles/pages/projects/[pid].module.css";
+import styles, { richText } from "../../styles/pages/projects/[pid].module.css";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await getProjects();
@@ -31,14 +32,18 @@ const Website = ({ myProject }: any) => {
   let codeLink = myProject.githubLink ? myProject.githubLink : "#";
   let codeLinkText = myProject.githubLink ? "Github Link" : "No code required";
 
-  const dateLength = 10;
-  const trimmedDate = myProject.lastUpdated.substring(0, dateLength);
+  const trimmedDate = myProject.lastUpdated.substring(0, 10);
   // console.log(myProjects);
-//TODO: maybe find a way to not require any
+  //TODO: maybe find a way to not require any sources
+  // TODO: add dynamic meta tags
   return (
     <div>
-      <Layout footerText={myProject.footerText} stickyOffset={0}>
-        <div className={styles.container}>
+      <Layout
+        footerText={myProject.footerText}
+        stickyOffset={20}
+        header={myProject.name}
+      >
+        <div className={styles.wrapper}>
           <div id={styles.aside1}>
             <Link href={backLink}>
               <a className={styles.iconContainer}>
@@ -46,14 +51,20 @@ const Website = ({ myProject }: any) => {
               </a>
             </Link>
           </div>
+          <div id={styles.aside2}>
+            <p id={styles.lastUpdated}>Last Updated: {trimmedDate}</p>
+          </div>
           <div className={styles.content}>
             <p className={styles.header}>{myProject.name}</p>
-            <p>
+            <p className={styles.codeLink}>
               Code for this project:&nbsp;
               <a className={styles.link} href={codeLink}>
                 {codeLinkText}
               </a>
             </p>
+            <div className={richText}>
+              {documentToReactComponents(myProject.buildLog.json!)}
+            </div>
             <div className={styles.scndHeader}>Sources:</div>
             <ul>
               {myProject.sources.map((url: any) => (
@@ -65,9 +76,6 @@ const Website = ({ myProject }: any) => {
               ))}
             </ul>
             <div className={styles.main}>hello there</div>
-          </div>
-          <div id={styles.aside2}>
-            <p id={styles.lastUpdated}>Last Updated: {trimmedDate}</p>
           </div>
         </div>
       </Layout>

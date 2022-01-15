@@ -1,5 +1,5 @@
 declare const styles: {
-  readonly "container": string;
+  readonly "wrapper": string;
   readonly "aside1": string;
   readonly "aside2": string;
   readonly "errorMsg": string;

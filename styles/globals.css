@@ -20,8 +20,8 @@ html {
   scroll-behavior: smooth;
 }
 
-html,
-body {
+html:lang(en-us),
+body:lang(en-us) {
   max-width: 100%;
   overflow-x: hidden;
 }
