@@ -34,7 +34,7 @@ const Website = ({ myProject }: any) => {
 
   const trimmedDate = myProject.lastUpdated.substring(0, 10);
   // console.log(myProjects);
-  //TODO: maybe find a way to not require any sources
+  //TODO: maybe find a way to not require any sources --> null from cms
   // TODO: add dynamic meta tags
   return (
     <div>
@@ -44,17 +44,16 @@ const Website = ({ myProject }: any) => {
         header={myProject.name}
       >
         <div className={styles.wrapper}>
-          <div id={styles.aside1}>
+          <div id={styles.aside1}></div>
+          <div id={styles.aside2}></div>
+          <div className={styles.content}>
             <Link href={backLink}>
               <a className={styles.iconContainer}>
                 <FontAwesomeIcon icon={faLongArrowAltLeft} />
               </a>
             </Link>
-          </div>
-          <div id={styles.aside2}>
             <p id={styles.lastUpdated}>Last Updated: {trimmedDate}</p>
-          </div>
-          <div className={styles.content}>
+
             <p className={styles.header}>{myProject.name}</p>
             <p className={styles.codeLink}>
               Code for this project:&nbsp;
@@ -75,7 +74,6 @@ const Website = ({ myProject }: any) => {
                 </li>
               ))}
             </ul>
-            <div className={styles.main}>hello there</div>
           </div>
         </div>
       </Layout>

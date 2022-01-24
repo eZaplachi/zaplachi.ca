@@ -15,9 +15,9 @@
 .navbar {
   overflow: hidden;
   background-color: var(--navbarBkgClr);
-  width: 105%;
-  padding: 8vmin;
-  margin-left: -3vmin;
+  width: calc(100% + 2px);
+  padding: 8ch;
+  margin-left: -2px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
