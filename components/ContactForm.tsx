@@ -102,6 +102,9 @@ const ContactForm = () => {
             setEmail(e.target.value);
           }}
         />
+        <label htmlFor={styles.emailIn} className="">
+          test
+        </label>
         <label
           htmlFor={styles.subjectIn}
           className={styles.inputLabel}
