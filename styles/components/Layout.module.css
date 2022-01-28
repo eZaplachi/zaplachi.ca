@@ -17,6 +17,7 @@
   background-color: var(--navbarBkgClr);
   width: calc(100% + 2px);
   padding: 8ch;
+  padding-bottom: 12ch;
   margin-left: -2px;
   display: flex;
   flex-flow: column nowrap;
