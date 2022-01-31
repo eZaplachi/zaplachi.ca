@@ -5,7 +5,9 @@ declare const styles: {
   readonly "aside1": string;
   readonly "aside2": string;
   readonly "content": string;
-  readonly "authorImg": string;
+  readonly "eduImg": string;
+  readonly "eduList": string;
+  readonly "tree": string;
 };
 export = styles;
 

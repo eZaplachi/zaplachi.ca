@@ -33,14 +33,20 @@
   color: var(--contentClr);
 }
 
-.authorImg {
+.eduImg {
   grid-column: content 1;
-  max-width: 60%;
+  max-width: 40%;
   max-height: 20%;
   display: block;
-  margin-left: 25%;
-  margin-top: -15%;
-  /* Border testing -- Remove */
-  border-radius: 20px;
-  border: 2px solid black;
+  margin-left: 50%;
+  margin-top: -20%;
+}
+
+.eduList {
+  padding: 3px;
+}
+
+.tree {
+  grid-column: content 2 / content 3;
+  padding: 24px;
 }
