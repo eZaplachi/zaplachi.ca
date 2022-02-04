@@ -4,7 +4,7 @@ import {
   faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "../styles/components/ContactForm.module.css";
 
 const ContactForm = () => {
@@ -15,50 +15,82 @@ const ContactForm = () => {
   const [fail, setFail] = useState(String);
   const ref = useRef<HTMLInputElement>(null);
 
-  // TODO: set character limits and responsive counter
-  let emailLength = email.length;
-  let subjectLength = subject.length;
-  let messageLength = message.length;
-  const emailLengthMax = 50;
+  // Response message default -- cant't set in Form Submit (If empty string {eg. ""} maybe defaults back to that before being rendered??)
+  let resMessage: string = "Character Limit Error";
+
+  // TODO:  Make responsive counter have more conditions (@) and prettier
+  let currentLength = {
+    email: email.length,
+    subject: subject.length,
+    message: message.length,
+  };
+
+  let maxLength = {
+    email: 50,
+    subject: 150,
+    message: 800,
+  };
+
+  let minLength = {
+    email: 5,
+    subject: 10,
+    message: 30,
+  };
+
+  const conditionsArray = [
+    maxLength.email > currentLength.email &&
+      currentLength.email > minLength.email,
+    maxLength.subject > currentLength.subject &&
+      currentLength.subject > minLength.subject,
+    maxLength.message > currentLength.message &&
+      currentLength.message > minLength.message,
+  ];
 
   const formSub = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log("Sending");
 
     let data = {
       email,
       subject,
-      message
-    }
+      message,
+    };
 
-    fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((res) => {
-      console.log("Response received");
-      if (res.status === 200) {
-        console.log("Response succeeded!");
-        setSubmitted("sub");
-        setEmail("");
-        setSubject("");
-        setMessage("");
-      } else {
-        // Todo: better error messages
-        setSubmitted("fail");
-        switch (res.status) {
-          case 500:
-            setFail("server");
-            break;
-          case 404:
-            setFail("client");
-            break;
+    if (!conditionsArray.includes(false)) {
+      console.log("Sending");
+
+      fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((res) => {
+        console.log("Response received");
+        if (res.status === 200) {
+          console.log("Response succeeded!");
+          setSubmitted("sub");
+          setEmail("");
+          setSubject("");
+          setMessage("");
+        } else {
+          // Todo: better error messages
+          setSubmitted("fail");
+          switch (res.status) {
+            case 500:
+              setFail("server");
+              break;
+            case 404:
+              setFail("client");
+              break;
+          }
         }
-      }
-    });
+      });
+    } else {
+      console.log("Character limit error");
+      document.getElementById(styles.failIcon)!.style.opacity = "1";
+      document.getElementById(styles.resMessage)!.style.opacity = "1";
+    }
   };
 
   if (ref && ref.current) {
@@ -68,11 +100,14 @@ const ContactForm = () => {
         document.getElementById(styles.failIcon)!.style.opacity = "0";
         document.getElementById(styles.resMessage)!.style.opacity = "1";
         document.documentElement.style.setProperty("--inputBorderClr", "green");
+        resMessage = "Confirmation Email Sent";
         break;
       case "fail":
         document.getElementById(styles.successIcon)!.style.opacity = "0";
         document.getElementById(styles.failIcon)!.style.opacity = "1";
+        document.getElementById(styles.resMessage)!.style.opacity = "1";
         document.documentElement.style.setProperty("--inputBorderClr", "red");
+        resMessage = "Server Error";
         break;
       default:
         document.getElementById(styles.successIcon)!.style.opacity = "0";
@@ -90,7 +125,10 @@ const ContactForm = () => {
           className={styles.inputLabel}
           id={styles.emailLabel}
         >
-          Email:
+          Email:{" "}
+          <span className={styles.lengthCounter}>
+            {currentLength.email}/{maxLength.email}
+          </span>
         </label>
         <input
           className={styles.smallInput}
@@ -102,15 +140,15 @@ const ContactForm = () => {
             setEmail(e.target.value);
           }}
         />
-        <label htmlFor={styles.emailIn} className="">
-          test
-        </label>
         <label
           htmlFor={styles.subjectIn}
           className={styles.inputLabel}
           id={styles.subjectLabel}
         >
-          Subject:
+          Subject:{" "}
+          <span className={styles.lengthCounter}>
+            {currentLength.subject}/{maxLength.subject}
+          </span>
         </label>
         <input
           className={styles.smallInput}
@@ -127,7 +165,10 @@ const ContactForm = () => {
           className={styles.inputLabel}
           id={styles.messageLabel}
         >
-          Question:
+          Question:{" "}
+          <span className={styles.lengthCounter}>
+            {currentLength.message}/{maxLength.message}
+          </span>
         </label>
         <input
           className={styles.largeInput}
@@ -150,7 +191,7 @@ const ContactForm = () => {
             id={styles.failIcon}
             className={styles.icon}
           />
-          <p id={styles.resMessage}>Confirmation email sent!</p>
+          <p id={styles.resMessage}>{resMessage}</p>
           <button className={styles.button} type="submit">
             <FontAwesomeIcon icon={faLongArrowAltRight} />
           </button>
