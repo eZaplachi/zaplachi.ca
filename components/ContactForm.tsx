@@ -90,6 +90,7 @@ const ContactForm = () => {
       console.log("Character limit error");
       document.getElementById(styles.failIcon)!.style.opacity = "1";
       document.getElementById(styles.resMessage)!.style.opacity = "1";
+      document.documentElement.style.setProperty("--inputBorderClr", "red");
     }
   };
 
