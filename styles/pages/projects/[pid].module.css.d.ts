@@ -1,5 +1,4 @@
 declare const styles: {
-  readonly "main": string;
   readonly "wrapper": string;
   readonly "aside1": string;
   readonly "aside2": string;

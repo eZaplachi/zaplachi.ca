@@ -5,6 +5,7 @@ declare const styles: {
   readonly "errorMsg": string;
   readonly "title": string;
   readonly "info": string;
+  readonly "homeBtn": string;
 };
 export = styles;
 

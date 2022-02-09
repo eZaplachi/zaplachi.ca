@@ -1,6 +1,7 @@
 declare const styles: {
   readonly "wrapper": string;
   readonly "inputLabel": string;
+  readonly "lengthCounter": string;
   readonly "smallInput": string;
   readonly "largeInput": string;
   readonly "button": string;
