@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           <Name />
         </header>
         <Layout
-          footerText="Feel free to send a message!!!"
+          footerText="Feel free to send a message!"
           stickyOffset={1}
           header="Home Page"
         >
