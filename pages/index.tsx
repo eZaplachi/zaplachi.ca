@@ -1,4 +1,6 @@
 import type { NextPage } from "next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAddressCard, faUniversity } from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
 import Image from "next/image";
 import Name from "../components/Name";
@@ -6,7 +8,6 @@ import Layout from "../components/Layout";
 import Tree from "../components/Tree";
 import styles from "../styles/pages/Home.module.css";
 import heroBkg from "../public/heroBG.jpg";
-import gradPA from "../public/Grad.png";
 
 const Home: NextPage = () => {
   return (
@@ -32,28 +33,32 @@ const Home: NextPage = () => {
           />
           <Name />
         </header>
-        <Layout footerText="cool Footer" stickyOffset={1} header="Home Page">
+        <Layout
+          footerText="Feel free to send a message!!!"
+          stickyOffset={1}
+          header="Home Page"
+        >
           <div className={styles.wrapper} style={{ marginTop: "15vh" }}>
             <div id={styles.aside1}></div>
-            <div className={styles.eduImg}>
-              <Image
-                src={gradPA}
-                alt="education pixel art"
-                layout="responsive"
-              />
+            <div className={styles.eduIcon}>
+              <FontAwesomeIcon icon={faUniversity} />
             </div>
-            <div className={styles.content}>
+            <div className={styles.eduContent}>
               <h3>Education</h3>
               <ul>
-                <li className={styles.eduList} >
+                <li className={styles.eduList}>
                   2.5 years Electrical engineering at the University of Alberta
                 </li>
-                <li className={styles.eduList} >Currently transferring into Web development at NAIT</li>
-                <li className={styles.eduList} >Glass 5 GDL Drivers License</li>
+                <li className={styles.eduList}>
+                  Currently transferring into Web development at NAIT
+                </li>
+                <li className={styles.eduList}>Glass 5 GDL Drivers License</li>
               </ul>
-              <p></p>
             </div>
-            <div className={styles.tree}>
+            <div className={styles.interestIcon}>
+              <FontAwesomeIcon icon={faAddressCard} />
+            </div>
+            <div className={styles.interestContent}>
               <Tree />
             </div>
             <div style={{ paddingBottom: "100vh" }} />

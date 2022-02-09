@@ -28,25 +28,35 @@
   grid-column: space 2;
 }
 
-.content {
+.eduContent {
   grid-column: content 2 / space 2;
   color: var(--contentClr);
+  margin-bottom: 6ch;
 }
 
-.eduImg {
+.eduIcon {
   grid-column: content 1;
-  max-width: 40%;
-  max-height: 20%;
+  font-size: 128px;
+  transform: translateX(300px);
   display: block;
-  margin-left: 50%;
-  margin-top: -20%;
+  color: var(--scndHeaderClr);
 }
 
 .eduList {
   padding: 3px;
 }
 
-.tree {
-  grid-column: content 2 / content 3;
-  padding: 24px;
+.interestContent {
+  grid-column: content 1 / content 3;
+  color: var(--contentClr);
+  transform: translateX(300px);
 }
+
+.interestIcon {
+  grid-column: content 3;
+  font-size: 128px;
+  transform: translateY(175px);
+  display: block;
+  color: var(--scndHeaderClr);
+}
+
