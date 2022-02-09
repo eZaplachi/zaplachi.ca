@@ -54,7 +54,8 @@ const ContactInfo = () => {
     <section>
       <div className={styles.wrapper}>
         <div className={styles.contact}>
-          <p className={styles.memoText}>Wise words of wisdom</p>
+          <p className={styles.memoText}>Click below to copy the nametag!</p>
+
         </div>
         <div className={styles.copyMsg} ref={copyRef}>
           <span>Copied {copy} link to clipboard</span>

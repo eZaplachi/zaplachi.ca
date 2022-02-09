@@ -28,19 +28,35 @@
   grid-column: space 2;
 }
 
-.content {
+.eduContent {
   grid-column: content 2 / space 2;
   color: var(--contentClr);
+  margin-bottom: 6ch;
 }
 
-.authorImg {
+.eduIcon {
   grid-column: content 1;
-  max-width: 60%;
-  max-height: 20%;
+  font-size: 128px;
+  transform: translateX(300px);
   display: block;
-  margin-left: 25%;
-  margin-top: -15%;
-  /* Border testing -- Remove */
-  border-radius: 20px;
-  border: 2px solid black;
+  color: var(--scndHeaderClr);
 }
+
+.eduList {
+  padding: 3px;
+}
+
+.interestContent {
+  grid-column: content 1 / content 3;
+  color: var(--contentClr);
+  transform: translateX(300px);
+}
+
+.interestIcon {
+  grid-column: content 3;
+  font-size: 128px;
+  transform: translateY(175px);
+  display: block;
+  color: var(--scndHeaderClr);
+}
+

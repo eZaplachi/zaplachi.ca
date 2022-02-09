@@ -29,20 +29,36 @@ export const getProjects = async () => {
 
 export const getProject = async (name?: string | string[]) => {
   const query = gql`
-  query getProject($name: String!) {
-    projectsCollection(where: {name: $name}) {
-      items {
-        name
-        lastUpdated
-        buildLog {
-          json
+    query getProject($name: String!) {
+      projectsCollection(where: { name: $name }) {
+        items {
+          name
+          lastUpdated
+          buildLog {
+            json
+          }
+          githubLink
+          sources
+          footerText
         }
-        githubLink
-        sources
-        footerText
       }
     }
-  }`;
+  `;
 
-  return graphQLClient.request(query, {name} );
+  return graphQLClient.request(query, { name });
+};
+
+export const getWorkspaces = async () => {
+  const query = gql`
+    {
+      workSpacesCollection {
+        items {
+          name
+          content
+        }
+      }
+    }
+  `;
+
+  return graphQLClient.request(query);
 };
