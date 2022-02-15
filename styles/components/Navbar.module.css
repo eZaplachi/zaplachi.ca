@@ -19,7 +19,7 @@
 
 .skipToContent {
   position: absolute;
-  transform: translateX(-150%);
+  transform: translateX(-75ch);
   transition: transform 0.3s ease-in;
 }
 
