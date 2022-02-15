@@ -1,26 +1,15 @@
 import type { NextPage } from "next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAddressCard, faUniversity } from "@fortawesome/free-solid-svg-icons";
-import Head from "next/head";
+import { faFutbol, faUniversity } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Name from "../components/Name";
 import Layout from "../components/Layout";
-import Tree from "../components/Tree";
 import styles from "../styles/pages/Home.module.css";
 import heroBkg from "../public/heroBG.jpg";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Evan&apos;s Website</title>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="author" content="Evan Zaplachinski" />
-        <meta name="description" content="Evan Zaplachinski Personal Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+    <main>
       <div>
         <header className={styles.appHeader}>
           <Image
@@ -56,17 +45,17 @@ const Home: NextPage = () => {
               </ul>
             </div>
             <div className={styles.interestIcon}>
-              <FontAwesomeIcon icon={faAddressCard} />
+              <FontAwesomeIcon icon={faFutbol} />
             </div>
             <div className={styles.interestContent}>
-              <Tree />
+              <h3>Interests</h3>
             </div>
             <div style={{ paddingBottom: "100vh" }} />
             <div id={styles.aside2}></div>
           </div>
         </Layout>
       </div>
-    </div>
+    </main>
   );
 };
 
