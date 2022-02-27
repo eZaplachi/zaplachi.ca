@@ -1,14 +1,19 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/components/Card.module.css";
 import defaultBkg from "../public/heroBG.jpg";
 
-const Card = (props: { title: string; content: string; cardLink: string; bkgImgUrl?: string; bkgImgTitle?: string }) => {
+const Card = (props: {
+  title: string;
+  content: string;
+  cardLink: string;
+  bkgImgUrl?: string;
+  bkgImgTitle?: string;
+}) => {
   let link = `/projects/${props.cardLink}`;
   let bkgImg = props.bkgImgUrl ? props.bkgImgUrl : defaultBkg;
-  let imgTitle = props.bkgImgTitle ? props.bkgImgTitle : "bkgImg"
+  let imgTitle = props.bkgImgTitle ? props.bkgImgTitle : "bkgImg";
 
   return (
     <section>
@@ -19,7 +24,7 @@ const Card = (props: { title: string; content: string; cardLink: string; bkgImgU
           <p className={styles.cardBody}>{props.content}</p>
           <Link href={link}>
             <a className={styles.button}>
-              <FontAwesomeIcon icon={faArrowAltCircleRight} />
+              <FaArrowAltCircleRight />
             </a>
           </Link>
         </div>

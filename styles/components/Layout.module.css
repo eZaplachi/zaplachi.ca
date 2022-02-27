@@ -15,10 +15,9 @@
 .navbar {
   overflow: hidden;
   background-color: var(--navbarBkgClr);
-  width: calc(100% + 2px);
+  width: clamp(99%, 100%, 101%);
   padding: 8ch;
   padding-bottom: 12ch;
-  margin-left: -2px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -29,7 +28,7 @@
   position: -webkit-sticky;
   top: 0;
   overflow: hidden;
-  height: 4ch;
+  min-height: 4ch;
   transition: 0.3s ease;
 }
 
@@ -49,6 +48,7 @@
 
 #hiddenHeader {
   top: 0;
+  left: 0;
   position: absolute;
   z-index: -1;
 }

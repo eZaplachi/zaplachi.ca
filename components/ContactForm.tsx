@@ -1,9 +1,8 @@
 import {
-  faLongArrowAltRight,
-  faCheckCircle,
-  faTimesCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  FaLongArrowAltRight,
+  FaCheckCircle,
+  FaTimesCircle,
+} from "react-icons/fa";
 import { useRef, useState } from "react";
 import styles from "../styles/components/ContactForm.module.css";
 
@@ -18,7 +17,7 @@ const ContactForm = () => {
   // Response message default -- cant't set in Form Submit (If empty string {eg. ""} maybe defaults back to that before being rendered??)
   let resMessage: string = "Character Limit Error";
 
-  // TODO:  Make responsive counter have more conditions (@) and prettier
+  // TODO:  Make responsive counter have more conditions (eg. @) and prettier
   let currentLength = {
     email: email.length,
     subject: subject.length,
@@ -182,19 +181,11 @@ const ContactForm = () => {
           }}
         />
         <div ref={ref} className={styles.iconWrapper}>
-          <FontAwesomeIcon
-            icon={faCheckCircle}
-            id={styles.successIcon}
-            className={styles.icon}
-          />
-          <FontAwesomeIcon
-            icon={faTimesCircle}
-            id={styles.failIcon}
-            className={styles.icon}
-          />
+          <FaCheckCircle id={styles.successIcon} className={styles.icon} />
+          <FaTimesCircle id={styles.failIcon} className={styles.icon} />
           <p id={styles.resMessage}>{resMessage}</p>
           <button className={styles.button} type="submit">
-            <FontAwesomeIcon icon={faLongArrowAltRight} />
+            <FaLongArrowAltRight />
           </button>
         </div>
       </form>

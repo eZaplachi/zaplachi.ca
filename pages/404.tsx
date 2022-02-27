@@ -1,13 +1,18 @@
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { FaHome } from "react-icons/fa";
 import Layout from "../components/Layout";
 import styles from "../styles/pages/404.module.css";
 // TODO Better error page
 const NotFound = () => {
   return (
     <div>
-      <Layout footerText="Error 404" stickyOffset={20} header="Error Page">
+      <Layout
+        footerText="Error 404"
+        stickyOffset={20}
+        header="Error Page"
+        description="Error 404"
+        keywords="error"
+      >
         <div className={styles.wrapper}>
           <div id={styles.aside1}></div>
           <div className={styles.errorMsg}>
@@ -20,7 +25,7 @@ const NotFound = () => {
             </p>
             <Link href="/">
               <a className={styles.homeBtn}>
-                <FontAwesomeIcon icon={faHome} />
+                <FaHome />
               </a>
             </Link>
           </div>
