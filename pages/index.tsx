@@ -1,26 +1,14 @@
 import type { NextPage } from "next";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAddressCard, faUniversity } from "@fortawesome/free-solid-svg-icons";
-import Head from "next/head";
+import { FaFutbol, FaUniversity } from "react-icons/fa";
 import Image from "next/image";
 import Name from "../components/Name";
 import Layout from "../components/Layout";
-import Tree from "../components/Tree";
 import styles from "../styles/pages/Home.module.css";
 import heroBkg from "../public/heroBG.jpg";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>Evan&apos;s Website</title>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="author" content="Evan Zaplachinski" />
-        <meta name="description" content="Evan Zaplachinski Personal Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+    <main>
       <div>
         <header className={styles.appHeader}>
           <Image
@@ -37,11 +25,13 @@ const Home: NextPage = () => {
           footerText="Feel free to send a message!"
           stickyOffset={1}
           header="Home Page"
+          description="Click to learn more about me"
+          keywords="react nextjs portfolio"
         >
           <div className={styles.wrapper} style={{ marginTop: "15vh" }}>
             <div id={styles.aside1}></div>
             <div className={styles.eduIcon}>
-              <FontAwesomeIcon icon={faUniversity} />
+              <FaUniversity />
             </div>
             <div className={styles.eduContent}>
               <h3>Education</h3>
@@ -56,17 +46,17 @@ const Home: NextPage = () => {
               </ul>
             </div>
             <div className={styles.interestIcon}>
-              <FontAwesomeIcon icon={faAddressCard} />
+              <FaFutbol />
             </div>
             <div className={styles.interestContent}>
-              <Tree />
+              <h3>Interests</h3>
             </div>
             <div style={{ paddingBottom: "100vh" }} />
             <div id={styles.aside2}></div>
           </div>
         </Layout>
       </div>
-    </div>
+    </main>
   );
 };
 

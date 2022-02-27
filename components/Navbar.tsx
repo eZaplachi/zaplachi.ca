@@ -1,10 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faSun,
-  faHome,
-  faMeteor,
-  faCampground,
-} from "@fortawesome/free-solid-svg-icons";
+  FaSun,
+  FaHome,
+  FaMeteor,
+  FaCampground,
+} from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/components/Navbar.module.css";
 import Link from "next/link";
@@ -164,17 +163,17 @@ const Navbar = () => {
           expand ? styles.themeBtn + " " + styles.rotate : styles.themeBtn
         }
       >
-        <FontAwesomeIcon icon={faSun} id="icon" />
+        <FaSun id="icon" />
       </a>
       <div ref={ref} className={styles.themeChg}>
         <a className={styles.theme} id={styles.firstTheme} onClick={setDefault}>
-          <FontAwesomeIcon icon={faHome} />
+          <FaHome />
         </a>
         <a className={styles.theme} onClick={setCamping}>
-          <FontAwesomeIcon icon={faCampground} />
+          <FaCampground />
         </a>
         <a className={styles.theme} onClick={setSaturn}>
-          <FontAwesomeIcon icon={faMeteor} />
+          <FaMeteor />
         </a>
       </div>
       <div className={styles.navbarIcon}>

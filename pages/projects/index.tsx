@@ -17,7 +17,13 @@ const Projects = ({ myProjects }: any) => {
   // console.log(myProjects);
   return (
     <div>
-      <Layout footerText="Feel free to suggest a change or a new project!" stickyOffset={20} header="Projects">
+      <Layout
+        footerText="Feel free to suggest a change or a new project!"
+        stickyOffset={20}
+        header="Projects"
+        description="Check out some of my projects"
+        keywords="Tech coding"
+      >
         <div className={styles.container}>
           <div id={styles.aside1} />
           <div className={styles.cardContainer}>

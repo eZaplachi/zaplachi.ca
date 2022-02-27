@@ -1,5 +1,4 @@
-import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "next/link";
@@ -42,6 +41,8 @@ const Website = ({ myProject }: any) => {
         footerText={myProject.footerText}
         stickyOffset={20}
         header={myProject.name}
+        description=""
+        keywords=""
       >
         <div className={styles.wrapper}>
           <div id={styles.aside1}></div>
@@ -49,7 +50,7 @@ const Website = ({ myProject }: any) => {
           <div className={styles.content}>
             <Link href={backLink}>
               <a className={styles.iconContainer}>
-                <FontAwesomeIcon icon={faLongArrowAltLeft} />
+                <FaLongArrowAltLeft />
               </a>
             </Link>
             <p id={styles.lastUpdated}>Last Updated: {trimmedDate}</p>
