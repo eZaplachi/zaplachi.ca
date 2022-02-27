@@ -18,6 +18,7 @@ laudantium
 NAIT
 nametag
 nemo
+nextjs
 numquam
 optio
 pariatur

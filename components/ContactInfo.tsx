@@ -1,6 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
+import { FaGithub, FaEnvelopeOpenText } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/components/ContactInfo.module.css";
 import { contactLinks } from "../lib/types";
@@ -55,19 +53,18 @@ const ContactInfo = () => {
       <div className={styles.wrapper}>
         <div className={styles.contact}>
           <p className={styles.memoText}>Click below to copy the nametag!</p>
-
         </div>
         <div className={styles.copyMsg} ref={copyRef}>
           <span>Copied {copy} link to clipboard</span>
         </div>
         <div className={styles.contact} onClick={copiedEmail}>
-          <FontAwesomeIcon icon={faEnvelopeOpenText} className={styles.icon} />
+          <FaEnvelopeOpenText className={styles.icon} />
           <span className={styles.contactText} id={styles.mail}>
             {links.email}
           </span>
         </div>
         <div className={styles.contact} onClick={copiedGithub}>
-          <FontAwesomeIcon icon={faGithub} className={styles.icon} />
+          <FaGithub className={styles.icon} />
           <span className={styles.contactText} id={styles.github}>
             {links.github}
           </span>

@@ -12,7 +12,7 @@ A portfolio website I made to learn some webdev.
 
 **CMS:** Contentful
 
-**Icons:** FortAwesome Icons
+**Icons:** React-Icons
 
 **Mail:** NodeMailer
 
