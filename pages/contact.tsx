@@ -8,7 +8,7 @@ const Contact = () => {
     <Layout
       footerText="Let me know your thoughts!"
       stickyOffset={20}
-      header="Contact Page"
+      header="Contact"
       description="Email me or find my links!!"
       keywords="Contact Email"
     >
