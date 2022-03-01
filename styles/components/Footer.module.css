@@ -10,3 +10,21 @@
     z-index: 50;
     margin: -2vmin;
 }
+
+@media screen and (max-width: 750px) {
+    .footer {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .footer {
+        font-size: 8px;
+    }
+}

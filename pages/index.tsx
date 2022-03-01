@@ -36,13 +36,13 @@ const Home: NextPage = () => {
             <div className={styles.eduContent}>
               <h3>Education</h3>
               <ul>
-                <li className={styles.eduList}>
+                <li className={styles.list}>
                   2.5 years Electrical engineering at the University of Alberta
                 </li>
-                <li className={styles.eduList}>
+                <li className={styles.list}>
                   Currently transferring into Web development at NAIT
                 </li>
-                <li className={styles.eduList}>Glass 5 GDL Drivers License</li>
+                <li className={styles.list}>Glass 5 GDL Drivers License</li>
               </ul>
             </div>
             <div className={styles.interestIcon}>
@@ -50,6 +50,11 @@ const Home: NextPage = () => {
             </div>
             <div className={styles.interestContent}>
               <h3>Interests</h3>
+              <ul>
+                <li className={styles.list}>Soccer</li>
+                <li className={styles.list}>Reading</li>
+                <li className={styles.list}>Computer Gaming</li>
+              </ul>
             </div>
             <div style={{ paddingBottom: "100vh" }} />
             <div id={styles.aside2}></div>

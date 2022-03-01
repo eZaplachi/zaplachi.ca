@@ -1,9 +1,4 @@
-import {
-  FaSun,
-  FaHome,
-  FaMeteor,
-  FaCampground,
-} from "react-icons/fa";
+import { FaSun, FaHome, FaMeteor, FaCampground } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
 import styles from "../styles/components/Navbar.module.css";
 import Link from "next/link";
@@ -19,6 +14,7 @@ import {
 } from "../lib/themeTypes";
 
 // TODO: cleanup color switcher code
+// TODO: Allow color change on enter 
 const Navbar = () => {
   const [expand, setExpand] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
@@ -158,6 +154,7 @@ const Navbar = () => {
         <a className={styles.navbarCon}>Contact</a>
       </Link>
       <a
+        tabIndex={0}
         onClick={expanded}
         className={
           expand ? styles.themeBtn + " " + styles.rotate : styles.themeBtn
@@ -166,13 +163,18 @@ const Navbar = () => {
         <FaSun id="icon" />
       </a>
       <div ref={ref} className={styles.themeChg}>
-        <a className={styles.theme} id={styles.firstTheme} onClick={setDefault}>
+        <a
+          tabIndex={0}
+          className={styles.theme}
+          id={styles.firstTheme}
+          onClick={setDefault}
+        >
           <FaHome />
         </a>
-        <a className={styles.theme} onClick={setCamping}>
+        <a tabIndex={0} className={styles.theme} onClick={setCamping}>
           <FaCampground />
         </a>
-        <a className={styles.theme} onClick={setSaturn}>
+        <a tabIndex={0} className={styles.theme} onClick={setSaturn}>
           <FaMeteor />
         </a>
       </div>
