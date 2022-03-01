@@ -9,7 +9,7 @@ const NotFound = () => {
       <Layout
         footerText="Error 404"
         stickyOffset={20}
-        header="Error Page"
+        header="Error"
         description="Error 404"
         keywords="error"
       >

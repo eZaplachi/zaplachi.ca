@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <Layout
           footerText="Feel free to send a message!"
           stickyOffset={1}
-          header="Home Page"
+          header="Home"
           description="Click to learn more about me"
           keywords="react nextjs portfolio"
         >
