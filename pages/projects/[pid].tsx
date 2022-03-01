@@ -34,15 +34,14 @@ const Website = ({ myProject }: any) => {
   const trimmedDate = myProject.lastUpdated.substring(0, 10);
   // console.log(myProjects);
   //TODO: maybe find a way to not require any sources --> null from cms
-  // TODO: add dynamic meta tags
   return (
     <div>
       <Layout
         footerText={myProject.footerText}
         stickyOffset={20}
         header={myProject.name}
-        description=""
-        keywords=""
+        description={myProject.description}
+        keywords={myProject.metaTags}
       >
         <div className={styles.wrapper}>
           <div id={styles.aside1}></div>
