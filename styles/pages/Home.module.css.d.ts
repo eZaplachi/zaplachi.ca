@@ -5,6 +5,7 @@ declare const styles: {
   readonly "aside1": string;
   readonly "aside2": string;
   readonly "eduContent": string;
+  readonly "icons": string;
   readonly "eduIcon": string;
   readonly "list": string;
   readonly "interestContent": string;
