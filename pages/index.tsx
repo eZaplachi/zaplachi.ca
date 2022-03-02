@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           footerText="Feel free to send a message!"
           stickyOffset={1}
           header="Home"
-          description="Click to learn more about me"
+          description="Information and sample projects from Evan Zaplachinski"
           keywords="react nextjs portfolio"
         >
           <div className={styles.wrapper} style={{ marginTop: "15vh" }}>
