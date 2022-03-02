@@ -36,13 +36,24 @@
   margin-bottom: 6ch;
 }
 
-.eduIcon {
-  grid-column: content 1;
+.icons {
   font-size: var(--iconSizing);
-  transform: translateX(var(--transformSizing));
   display: block;
   color: var(--scndHeaderClr);
   transition: 0.4s linear;
+  background: linear-gradient(
+    hsl(0 0% 0% / 0.1),
+    hsl(20 0% 0% / 0.2) 20%,
+    hsl(0 0% 0% / 0.3)
+  );
+  max-width: 2.1ch;
+  max-height: 2.1ch;
+  border-radius: 100%;
+}
+
+#eduIcon {
+  grid-column: content 1;
+  transform: translateX(var(--transformSizing));
 }
 
 .list {
@@ -55,13 +66,9 @@
   transform: translateX(var(--transformSizing));
 }
 
-.interestIcon {
+#interestIcon {
   grid-column: content 3;
-  font-size: var(--iconSizing);
   transform: translateY(175px);
-  display: block;
-  color: var(--scndHeaderClr);
-  transition: 0.4s linear;
 }
 
 @media screen and (max-width: 2000px) {
@@ -97,4 +104,3 @@
     --iconSizing: 40px;
   }
 }
-

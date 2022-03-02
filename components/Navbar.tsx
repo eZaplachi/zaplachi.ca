@@ -14,7 +14,7 @@ import {
 } from "../lib/themeTypes";
 
 // TODO: cleanup color switcher code
-// TODO: Allow color change on enter 
+// TODO: Allow color change on enter
 const Navbar = () => {
   const [expand, setExpand] = useState(false);
   const ref = useRef<HTMLInputElement>(null);

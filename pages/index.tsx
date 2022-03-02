@@ -1,5 +1,5 @@
+import { FcGraduationCap, FcBusinessman } from "react-icons/fc"
 import type { NextPage } from "next";
-import { FaFutbol, FaUniversity } from "react-icons/fa";
 import Image from "next/image";
 import Name from "../components/Name";
 import Layout from "../components/Layout";
@@ -25,13 +25,13 @@ const Home: NextPage = () => {
           footerText="Feel free to send a message!"
           stickyOffset={1}
           header="Home"
-          description="Click to learn more about me"
+          description="Information and sample projects from Evan Zaplachinski"
           keywords="react nextjs portfolio"
         >
           <div className={styles.wrapper} style={{ marginTop: "15vh" }}>
             <div id={styles.aside1}></div>
-            <div className={styles.eduIcon}>
-              <FaUniversity />
+            <div className={styles.icons} id={styles.eduIcon}>
+              <FcGraduationCap />
             </div>
             <div className={styles.eduContent}>
               <h3>Education</h3>
@@ -45,8 +45,8 @@ const Home: NextPage = () => {
                 <li className={styles.list}>Glass 5 GDL Drivers License</li>
               </ul>
             </div>
-            <div className={styles.interestIcon}>
-              <FaFutbol />
+            <div className={styles.icons} id={styles.interestIcon}>
+              <FcBusinessman />
             </div>
             <div className={styles.interestContent}>
               <h3>Interests</h3>

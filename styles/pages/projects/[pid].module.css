@@ -96,4 +96,7 @@
   .wrapper {
     grid-template-columns: [space] 5% [content] 90% [space] 5%;
   }
+  .sourcesList {
+    font-size: 0.5em;
+  }
 }
