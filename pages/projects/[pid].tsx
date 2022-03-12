@@ -32,7 +32,7 @@ const Website = ({ myProject }: any) => {
   let codeLinkText = myProject.githubLink ? "Github Link" : "No code required";
 
   const trimmedDate = myProject.lastUpdated.substring(0, 10);
-  // console.log(myProjects);
+
   //TODO: maybe find a way to not require any sources --> null from cms
   return (
     <div>
