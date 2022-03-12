@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           description="Information and sample projects from Evan Zaplachinski"
           keywords="react nextjs portfolio"
         >
-          <div className={styles.wrapper} style={{ marginTop: "15vh" }}>
+          <div className={styles.wrapper} style={{ marginTop: "90vh" }}>
             <div id={styles.aside1}></div>
             <div className={styles.icons} id={styles.eduIcon}>
               <FcGraduationCap />
