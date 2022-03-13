@@ -18,6 +18,7 @@ export type Theme = {
   formDenyClr: string;
 };
 
+// TODO: update formAccept and formDeny colors
 export const ThemeDefault: Theme = {
   accentClr: "#84d1fd",
   appHeaderClr: "white",
