@@ -14,6 +14,7 @@ earum
 facere
 Futbol
 laborum
+lastfm
 laudantium
 NAIT
 nametag
@@ -25,6 +26,7 @@ pariatur
 quas
 Quibusdam
 similique
+sloc
 Temporibus
 tenetur
 ullam

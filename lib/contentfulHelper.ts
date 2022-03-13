@@ -48,17 +48,18 @@ export const getProject = async (name?: string | string[]) => {
   return graphQLClient.request(query, { name });
 };
 
-export const getWorkspaces = async () => {
-  const query = gql`
-    {
-      workSpacesCollection {
-        items {
-          name
-          content
-        }
-      }
-    }
-  `;
+// TODO: add support for custom workspaces (eg. applications/settings )
+// export const getWorkspaces = async () => {
+//   const query = gql`
+//     {
+//       workSpacesCollection {
+//         items {
+//           name
+//           content
+//         }
+//       }
+//     }
+//   `;
 
-  return graphQLClient.request(query);
-};
+//   return graphQLClient.request(query);
+// };

@@ -1,173 +1,183 @@
 .wrapper {
-	display: inline-flex;
-	flex-flow: column nowrap;
-	z-index: 50;
-	height: 80%;
-	text-align: left;
-	justify-content: space-around;
-	align-items: baseline;
-	font-size: 1rem;
-	font-weight: bold;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  z-index: 50;
+  height: 80%;
+  text-align: left;
+  justify-content: space-around;
+  align-items: baseline;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .contact {
-	display: inline-block;
-	padding: 1ch;
-	transition: 0.3s ease;
+  display: inline-block;
+  padding: 1ch;
+  transition: 0.3s ease;
 }
 
 .icon {
-	font-size: calc(20px + 0.5vmin);
-	margin-left: -15%;
-	color: var(--scndHeaderClrDark);
-	transition: 0.3s ease;
-	display: inline-block;
+  font-size: calc(20px + 0.5vmin);
+  margin-left: -15%;
+  color: var(--scndHeaderClrDark);
+  transition: 0.3s ease;
+  display: inline-block;
 }
 
 .memoText {
-	margin-bottom: 1ch;
-	font-size: 0.9em;
+  margin-bottom: 1ch;
+  font-size: 0.9em;
 }
 
 .copyMsg {
-	border-radius: 4px;
-	display: inline-block;
-	overflow: hidden;
-	color: var(--navbarBkgClr);
-	opacity: 0;
-	background-color: var(--inputBkgClr);
-	border: 1px solid var(--scndHeaderClrLight);
-	margin: 1ch;
-	padding: 8px;
-	transition: 0.3s ease;
+  border-radius: 4px;
+  display: inline-block;
+  overflow: hidden;
+  color: var(--navbarBkgClr);
+  opacity: 0;
+  background-color: var(--inputBkgClr);
+  border: 1px solid var(--scndHeaderClrLight);
+  margin: 1ch;
+  padding: 8px;
+  transition: 0.3s ease;
 }
 
 .contactText {
-	margin-left: 15%;
+  margin-left: 15%;
 }
 
 .contactText::after {
-	content: "";
-	position: absolute;
-	height: 0.5ch;
-	background: var(--navbarActiveClr);
-	opacity: 0.8;
-	border-radius: 6px;
+  content: "";
+  position: absolute;
+  height: 0.5ch;
+  background: var(--navbarActiveClr);
+  opacity: 0.8;
+  border-radius: 6px;
 }
 
 #mail::after {
-	transform: translateY(2.75ch) translateX(-19ch);
-	width: 21ch;
+  transform: translateY(3.75ch) translateX(-19ch);
+  width: 21ch;
 }
 
 #github::after {
-	transform: translateY(2.75ch) translateX(-27ch);
-	width: 28ch;
+  transform: translateY(3.75ch) translateX(-27ch);
+  width: 28ch;
 }
 
 @media (hover) {
-	.icon:hover,
-	.icon:focus-visible {
-		color: var(--scndHeaderClrLight);
-	}
-	.contactText::after {
-		background: transparent;
-	}
+  .icon:hover,
+  .icon:focus-visible {
+    color: var(--scndHeaderClrLight);
+  }
+  .contactText::after {
+    background: transparent;
+  }
 }
 
 @media screen and (max-width: 1550px) {
-	.icon {
-		margin-left: -25%;
-	}
+  .icon {
+    margin-left: -25%;
+  }
 
-	.contactText {
-		margin-left: 12%;
-	}
+  .contactText {
+    margin-left: 12%;
+  }
 }
 
 @media screen and (max-width: 1300px) {
-	.contactText {
-		margin-left: 10%;
-	}
+  .contactText {
+    margin-left: 10%;
+  }
 }
 
 @media screen and (max-width: 1000px) {
-	.icon {
-		margin-left: -30%;
-	}
-	.contact {
-		font-size: 0.8rem;
-	}
+  .icon {
+    margin-left: -30%;
+  }
+  .contact {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (max-width: 900px) {
-	.contact {
-		font-size: 1rem;
-	}
+  .contact {
+    font-size: 1rem;
+  }
 
-	.contactText {
-		margin-left: 15%;
-	}
+  .contactText {
+    margin-left: 15%;
+  }
 
-	.icon {
-		margin-left: -15%;
-	}
+  .icon {
+    margin-left: -15%;
+  }
 }
 @media screen and (max-width: 500px) {
-	.contact {
-		font-size: 0.8rem;
-		transform: translateX(15%);
-	}
+  .contact {
+    font-size: 0.8rem;
+    transform: translateX(15%);
+  }
 
-	.contactText {
-		margin-left: 7%;
-	}
+  .contactText {
+    margin-left: 7%;
+  }
 
-	.icon {
-		margin-left: -10%;
-		font-size: calc(15px + 0.5vmin);
-	}
+  .icon {
+    margin-left: -10%;
+    font-size: calc(15px + 0.5vmin);
+  }
 
-	.copyMsg {
-		font-size: 0.8rem;
-	}
+  .copyMsg {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (max-width: 380px) {
-	.contact {
-		font-size: 0.7rem;
-		transform: translateX(5%);
-	}
+  .contact {
+    font-size: 0.7rem;
+    transform: translateX(5%);
+  }
 
-	#mail::after {
-		transform: translateY(-0.4ch) translateX(-19.5ch);
-		width: 20.5ch;
-	}
+  #mail::after {
+    transform: translateY(3.5ch) translateX(-19.5ch);
+    width: 20.5ch;
+  }
 
-	#github::after {
-		transform: translateY(-0.4ch) translateX(-28ch);
-		width: 29ch;
-	}
+  #github::after {
+    transform: translateY(3.5ch) translateX(-28ch);
+    width: 29ch;
+  }
 
-	.copyMsg {
-		font-size: 0.7rem;
-	}
+  .copyMsg {
+    font-size: 0.7rem;
+  }
 
-	.memoText {
-		font-size: 0.8rem;
-	}
+  .memoText {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (max-width: 300px) {
-	.contact {
-		font-size: 0.5rem;
-	}
+  .contact {
+    font-size: 0.5rem;
+  }
 
-	.copyMsg {
-		font-size: 0.5rem;
-	}
+  .copyMsg {
+    font-size: 0.5rem;
+  }
 
-	.memoText {
-		font-size: 0.6rem;
-	}
+  .memoText {
+    font-size: 0.6rem;
+  }
+
+  #mail::after {
+    transform: translateY(4.5ch) translateX(-19.5ch);
+    width: 20.5ch;
+  }
+
+  #github::after {
+    transform: translateY(4.5ch) translateX(-28ch);
+    width: 29ch;
+  }
 }
