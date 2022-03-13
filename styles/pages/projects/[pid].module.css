@@ -75,6 +75,8 @@
   display: block;
   color: var(--scndHeaderClrLight);
   text-align: right;
+  font-size: 1.3em;
+  transition: 0.3s ease;
 }
 
 #lastUpdated::after {
@@ -87,6 +89,9 @@
   .wrapper {
     grid-template-columns: [space] 10% [content] 80% [space] 10%;
   }
+  #lastUpdated {
+    font-size: 1.1em;
+  }
 }
 
 @media screen and (max-width: 525px) {
@@ -98,5 +103,8 @@
   }
   .sourcesList {
     font-size: 0.5em;
+  }
+  #lastUpdated {
+    font-size: 0.7em;
   }
 }
