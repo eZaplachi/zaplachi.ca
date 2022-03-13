@@ -58,7 +58,7 @@
 }
 
 .rotate {
-  transform: rotate(720deg);
+  transform: rotate(360deg);
 }
 
 .themeBtn:active,
