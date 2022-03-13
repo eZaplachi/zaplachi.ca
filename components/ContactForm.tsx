@@ -3,7 +3,7 @@ import {
   FaCheckCircle,
   FaTimesCircle,
 } from "react-icons/fa";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "../styles/components/ContactForm.module.css";
 
 const ContactForm = () => {
@@ -44,6 +44,46 @@ const ContactForm = () => {
     maxLength.message > currentLength.message &&
       currentLength.message > minLength.message,
   ];
+
+  // TODO: make labels return to def color after returning to 0 chars
+  useEffect(() => {
+    if (
+      (0 < currentLength.email && currentLength.email < minLength.email) ||
+      currentLength.email > maxLength.email
+    ) {
+      document.getElementById("emailLength")!.style.color = "red";
+      document.getElementById("emailLength")!.style.fontSize = "0.7em"
+    } else if (
+      minLength.email < currentLength.email &&
+      currentLength.email <= maxLength.email
+    ) {
+      document.getElementById("emailLength")!.style.color = "green";
+      document.getElementById("emailLength")!.style.fontSize = "0.9em"
+    } else if (
+      (0 < currentLength.subject && currentLength.subject < minLength.subject) ||
+      currentLength.subject > maxLength.subject
+    ) {
+      document.getElementById("subjectLength")!.style.color = "red";
+      document.getElementById("subjectLength")!.style.fontSize = "0.7em"
+    } else if (
+      minLength.subject < currentLength.subject &&
+      currentLength.subject <= maxLength.subject
+    ) {
+      document.getElementById("subjectLength")!.style.color = "green";
+      document.getElementById("subjectLength")!.style.fontSize = "0.9em"
+    } else if (
+      (0 < currentLength.message && currentLength.message < minLength.message) ||
+      currentLength.message > maxLength.message
+    ) {
+      document.getElementById("messageLength")!.style.color = "red";
+      document.getElementById("messageLength")!.style.fontSize = "0.7em"
+    } else if (
+      minLength.message < currentLength.message &&
+      currentLength.message <= maxLength.message
+    ) {
+      document.getElementById("messageLength")!.style.color = "green";
+      document.getElementById("messageLength")!.style.fontSize = "0.9em"
+    }});
 
   const formSub = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -126,7 +166,7 @@ const ContactForm = () => {
           id={styles.emailLabel}
         >
           Email:{" "}
-          <span className={styles.lengthCounter}>
+          <span className={styles.lengthCounter} id="emailLength">
             {currentLength.email}/{maxLength.email}
           </span>
         </label>
@@ -146,7 +186,7 @@ const ContactForm = () => {
           id={styles.subjectLabel}
         >
           Subject:{" "}
-          <span className={styles.lengthCounter}>
+          <span className={styles.lengthCounter} id="subjectLength">
             {currentLength.subject}/{maxLength.subject}
           </span>
         </label>
@@ -166,7 +206,7 @@ const ContactForm = () => {
           id={styles.messageLabel}
         >
           Question:{" "}
-          <span className={styles.lengthCounter}>
+          <span className={styles.lengthCounter} id="messageLength">
             {currentLength.message}/{maxLength.message}
           </span>
         </label>
