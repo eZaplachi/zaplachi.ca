@@ -45,45 +45,59 @@ const ContactForm = () => {
       currentLength.message > minLength.message,
   ];
 
-  // TODO: make labels return to def color after returning to 0 chars
   useEffect(() => {
     if (
       (0 < currentLength.email && currentLength.email < minLength.email) ||
       currentLength.email > maxLength.email
     ) {
-      document.getElementById("emailLength")!.style.color = "red";
-      document.getElementById("emailLength")!.style.fontSize = "0.7em"
+      document.getElementById("emailLength")!.style.color =
+        "var(--formDenyClr)";
+      document.getElementById("emailLength")!.style.fontSize = "0.8em";
+      document.getElementById("emailLength")!.style.fontWeight = "100";
     } else if (
       minLength.email < currentLength.email &&
       currentLength.email <= maxLength.email
     ) {
-      document.getElementById("emailLength")!.style.color = "green";
-      document.getElementById("emailLength")!.style.fontSize = "0.9em"
+      document.getElementById("emailLength")!.style.color =
+        "var(--formAcceptClr)";
+      document.getElementById("emailLength")!.style.fontSize = "0.9em";
+      document.getElementById("emailLength")!.style.fontWeight = "400";
     } else if (
-      (0 < currentLength.subject && currentLength.subject < minLength.subject) ||
+      (0 < currentLength.subject &&
+        currentLength.subject < minLength.subject) ||
       currentLength.subject > maxLength.subject
     ) {
-      document.getElementById("subjectLength")!.style.color = "red";
-      document.getElementById("subjectLength")!.style.fontSize = "0.7em"
+      document.getElementById("subjectLength")!.style.color =
+        "var(--formDenyClr)";
+      document.getElementById("subjectLength")!.style.fontSize = "0.8em";
+      document.getElementById("subjectLength")!.style.fontWeight = "100";
     } else if (
       minLength.subject < currentLength.subject &&
       currentLength.subject <= maxLength.subject
     ) {
-      document.getElementById("subjectLength")!.style.color = "green";
-      document.getElementById("subjectLength")!.style.fontSize = "0.9em"
+      document.getElementById("subjectLength")!.style.color =
+        "var(--formAcceptClr)";
+      document.getElementById("subjectLength")!.style.fontSize = "0.9em";
+      document.getElementById("subjectLength")!.style.fontWeight = "400";
     } else if (
-      (0 < currentLength.message && currentLength.message < minLength.message) ||
+      (0 < currentLength.message &&
+        currentLength.message < minLength.message) ||
       currentLength.message > maxLength.message
     ) {
-      document.getElementById("messageLength")!.style.color = "red";
-      document.getElementById("messageLength")!.style.fontSize = "0.7em"
+      document.getElementById("messageLength")!.style.color =
+        "var(--formDenyClr)";
+      document.getElementById("messageLength")!.style.fontSize = "0.8em";
+      document.getElementById("messageLength")!.style.fontWeight = "100";
     } else if (
       minLength.message < currentLength.message &&
       currentLength.message <= maxLength.message
     ) {
-      document.getElementById("messageLength")!.style.color = "green";
-      document.getElementById("messageLength")!.style.fontSize = "0.9em"
-    }});
+      document.getElementById("messageLength")!.style.color =
+        "var(--formAcceptClr)";
+      document.getElementById("messageLength")!.style.fontSize = "0.9em";
+      document.getElementById("messageLength")!.style.fontWeight = "400";
+    }
+  });
 
   const formSub = (e: { preventDefault: () => void }) => {
     e.preventDefault();

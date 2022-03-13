@@ -14,6 +14,8 @@ export type Theme = {
   scndHeaderClr: string;
   scndHeaderClrLight: string;
   scndHeaderClrDark: string;
+  formAcceptClr: string;
+  formDenyClr: string;
 };
 
 export const ThemeDefault: Theme = {
@@ -32,6 +34,8 @@ export const ThemeDefault: Theme = {
   scndHeaderClr: "rgba(220, 220, 220, 0.7)",
   scndHeaderClrLight: "rgba(220, 220, 220, 1)",
   scndHeaderClrDark: "rgba(200, 200, 200, 0.5)",
+  formAcceptClr: "green",
+  formDenyClr: "red",
 };
 
 export const ThemeCamping: Theme = {
@@ -50,6 +54,8 @@ export const ThemeCamping: Theme = {
   scndHeaderClr: "#a4b4a1",
   scndHeaderClrLight: "#C4D3C2",
   scndHeaderClrDark: "#5b6859",
+  formAcceptClr: "green",
+  formDenyClr: "red",
 };
 
 // TODO: Add more themes
@@ -70,4 +76,6 @@ export const ThemeSaturn: Theme = {
   scndHeaderClr: "#a4b4a1",
   scndHeaderClrLight: "#C4D3C2",
   scndHeaderClrDark: "##685963",
+  formAcceptClr: "green",
+  formDenyClr: "red",
 };
