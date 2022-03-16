@@ -15,7 +15,7 @@
   --scndHeaderClrDark: rgba(200, 200, 200, 0.5);
   --scndHeaderClrLight: rgba(220, 220, 220, 1);
   --formAcceptClr: green;
-  --formDenyClr: red;
+  --formDenyClr: rgb(240, 18, 18);
 }
 
 html {
