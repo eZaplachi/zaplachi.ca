@@ -1,6 +1,6 @@
 version: "3"
 services:
-# If vpn enabled by default restart docker service and systemctl
+# If vpn enabled by default restart docker service and systemctl-daemon after vpn is disabled
   nextjs-app:
     stdin_open: true
     # tty: true
