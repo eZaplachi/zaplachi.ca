@@ -1,0 +1,132 @@
+.wrapper {
+  display: inline-flex;
+  flex-flow: column nowrap;
+  width: 80%;
+  color: var(--scndHeaderClrDark);
+  border-radius: 4px;
+  text-align: left;
+  gap: 1ch;
+}
+
+.inputLabel {
+  font-weight: bold;
+  color: var(--scndHeaderClr);
+}
+
+.lengthCounter {
+  text-align: right;
+  opacity: 0.7;
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 0.8em;
+  transition: 0.3s ease;
+}
+
+.smallInput {
+  height: min-content;
+}
+
+.largeInput {
+  height: 16pc;
+}
+
+.smallInput,
+.largeInput {
+  border-radius: 4px;
+  background-color: var(--inputBkgClr);
+  border: 2px solid var(--inputBorderClr);
+}
+
+.smallInput::placeholder,
+.largeInput::placeholder {
+  color: black;
+  opacity: 0.6;
+}
+
+.button {
+  background-color: var(--accentClr);
+  border-radius: 12px;
+  color: var(--neutralClr);
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.4em;
+  width: 5ch;
+  font-size: 3ch;
+  font-weight: bolder;
+  opacity: 1;
+  order: 5;
+  align-self: flex-end;
+  border: none;
+  margin-left: 90%;
+  transform: translateY(-80%);
+  transition: 0.3s ease;
+}
+
+.button:hover,
+.button:focus {
+  opacity: 0.5;
+  border-radius: 18px 6px;
+  transition: 0.4s ease-in-out;
+}
+
+.iconWrapper {
+  order: 4;
+  display: inline-block;
+}
+
+.icon {
+  order: 4;
+  display: inline-block;
+  font-size: calc(40px + 0.5vmin);
+  margin-top: 4%;
+}
+
+#resMessage {
+  order: 4;
+  margin-left: 2ch;
+  display: inline;
+  text-align: left;
+  opacity: 0;
+  color: var(--inputBorderClr);
+}
+
+#emailIn {
+  order: 1;
+}
+
+#subjectIn {
+  order: 2;
+}
+
+#messageIn {
+  order: 3;
+}
+
+#emailLabel {
+  order: 1;
+}
+
+#subjectLabel {
+  order: 2;
+}
+
+#messageLabel {
+  order: 3;
+}
+
+#successIcon {
+  color: var(--formAcceptClr);
+  opacity: 0;
+}
+
+#failIcon {
+  color: var(--formDenyClr);
+  opacity: 0;
+}
+
+@media screen  and (max-width: 600px) {
+.button {
+  margin-left: 70%;
+}
+}
