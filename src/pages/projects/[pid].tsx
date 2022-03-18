@@ -2,7 +2,7 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Link from "next/link";
-import Layout from "../../components/Layout";
+import Layout from "../../components/Layout/Layout";
 import { getProjects, getProject } from "../../lib/contentfulHelper";
 import styles, { richText } from "../../styles/pages/projects/[pid].module.css";
 

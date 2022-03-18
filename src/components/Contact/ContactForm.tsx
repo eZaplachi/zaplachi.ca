@@ -4,7 +4,8 @@ import {
   FaTimesCircle,
 } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
-import styles from "../styles/components/ContactForm.module.css";
+import { contactLengths } from "../../lib/types";
+import styles from "../../styles/components/ContactForm.module.css";
 
 const ContactForm = () => {
   const [email, setEmail] = useState("");
@@ -18,19 +19,19 @@ const ContactForm = () => {
   let resMessage: string = "Character Limit Error";
 
   // TODO:  Make responsive counter have more conditions (eg. @) and prettier
-  let currentLength = {
+  let currentLength: contactLengths = {
     email: email.length,
     subject: subject.length,
     message: message.length,
   };
 
-  let maxLength = {
+  let maxLength: contactLengths = {
     email: 50,
     subject: 150,
     message: 800,
   };
 
-  let minLength = {
+  let minLength: contactLengths = {
     email: 5,
     subject: 10,
     message: 30,
@@ -62,7 +63,9 @@ const ContactForm = () => {
         "var(--formAcceptClr)";
       document.getElementById("emailLength")!.style.fontSize = "0.9em";
       document.getElementById("emailLength")!.style.fontWeight = "400";
-    } else if (
+    }
+
+    if (
       (0 < currentLength.subject &&
         currentLength.subject < minLength.subject) ||
       currentLength.subject > maxLength.subject
@@ -79,7 +82,9 @@ const ContactForm = () => {
         "var(--formAcceptClr)";
       document.getElementById("subjectLength")!.style.fontSize = "0.9em";
       document.getElementById("subjectLength")!.style.fontWeight = "400";
-    } else if (
+    }
+
+    if (
       (0 < currentLength.message &&
         currentLength.message < minLength.message) ||
       currentLength.message > maxLength.message
@@ -186,13 +191,14 @@ const ContactForm = () => {
         </label>
         <input
           className={styles.smallInput}
-          type="text"
+          type="email"
           name="emailIn"
           id={styles.emailIn}
           placeholder="example@example.com"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
+          required
         />
         <label
           htmlFor={styles.subjectIn}

@@ -15,11 +15,13 @@
 }
 
 .wrapper {
+  --iconSizing: 128px;
+  --transformSizing: 300px;
   display: grid;
   grid-template-columns: [space] 17% [content] 22% [content] 22% [content] 22% [space] 17%;
   justify-content: space-between;
-  --iconSizing: 128px;
-  --transformSizing: 300px;
+  margin-top: 95vh;
+  padding-bottom: 20vh;;
 }
 
 #aside1 {

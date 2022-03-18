@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
-import Layout from "../components/Layout";
+import Layout from "../components/Layout/Layout";
 import styles from "../styles/pages/404.module.css";
 // TODO Better error page
 const NotFound = () => {

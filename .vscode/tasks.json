@@ -6,17 +6,17 @@
         {
             "label": "npm dev",
             "type": "shell",
-            "command": "npm run dev",
+            "command": "docker-compose up --build",
         },
         {
             "label": "tcm dev comp",
             "type": "shell",
-            "command": "tcm styles/components -w",
+            "command": "tcm src/styles/components -w",
         },
         {
             "label": "tcm dev pg",
             "type": "shell",
-            "command": "tcm styles/pages -w",
+            "command": "tcm src/styles/pages -w",
         },
         {
             "label": "dev",

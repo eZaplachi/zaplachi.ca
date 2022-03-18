@@ -1,18 +1,18 @@
 import { FaSun, FaHome, FaMeteor, FaCampground } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
-import styles from "../styles/components/Navbar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import logo from "../public/myLogo.png";
-import useScroll from "../hooks/useScroll";
-import useLocalStorage from "../hooks/useLocalStorage";
+import logo from "../../public/logo192.png";
+import useScroll from "./useScroll";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import {
   Theme,
   ThemeDefault,
   ThemeCamping,
   ThemeSaturn,
-} from "../lib/themeTypes";
+} from "../../lib/themeTypes";
+import styles from "../../styles/components/Navbar.module.css";
 
 // TODO: cleanup color switcher code
 // TODO: Allow color change on enter

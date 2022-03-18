@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 // import { getWorkspaces } from "../lib/contentfulHelper";
-import styles from "../styles/components/Dropdown.module.css";
+import styles from "../../styles/components/Dropdown.module.css";
 
 // export const getStaticProps: GetStaticProps = async () => {
 //   const data = await getWorkspaces();

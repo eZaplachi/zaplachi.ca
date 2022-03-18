@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
-import ContactForm from "../components/ContactForm";
-import ContactInfo from "../components/ContactInfo";
+import Layout from "../components/Layout/Layout";
+import ContactForm from "../components/Contact/ContactForm";
+import ContactInfo from "../components/Contact/ContactInfo";
 import styles from "../styles/pages/Contact.module.css";
 
 const Contact = () => {

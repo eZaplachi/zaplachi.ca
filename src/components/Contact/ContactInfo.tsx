@@ -1,7 +1,7 @@
 import { FaGithub, FaEnvelopeOpenText } from "react-icons/fa";
 import { useEffect, useState, useRef } from "react";
-import styles from "../styles/components/ContactInfo.module.css";
-import { contactLinks } from "../lib/types";
+import { contactLinks } from "../../lib/types";
+import styles from "../../styles/components/ContactInfo.module.css";
 
 const links: contactLinks = {
   email: "evan@zaplachi.ca",

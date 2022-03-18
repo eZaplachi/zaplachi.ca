@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { getProjects } from "../../lib/contentfulHelper";
-import Card from "../../components/Card";
-import Layout from "../../components/Layout";
+import Card from "../../components/Containers/Card";
+import Layout from "../../components/Layout/Layout";
 import styles from "../../styles/pages/projects/Projects.module.css";
 
 export const getStaticProps: GetStaticProps = async () => {

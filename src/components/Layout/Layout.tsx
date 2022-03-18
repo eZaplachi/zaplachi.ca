@@ -1,9 +1,9 @@
 import { ReactChild, useState } from "react";
 import Head from "next/head";
-import useScroll from "../hooks/useScroll";
+import useScroll from "./useScroll";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import styles from "../styles/components/Layout.module.css";
+import styles from "../../styles/components/Layout.module.css";
 
 const Layout = (props: {
   children: ReactChild;

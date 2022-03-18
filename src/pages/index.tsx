@@ -1,10 +1,10 @@
-import { FcGraduationCap, FcBusinessman } from "react-icons/fc"
+import { FcGraduationCap, FcBusinessman } from "react-icons/fc";
 import type { NextPage } from "next";
 import Image from "next/image";
-import Name from "../components/Name";
-import Layout from "../components/Layout";
-import styles from "../styles/pages/Home.module.css";
+import Name from "../components/Decorative/Name";
+import Layout from "../components/Layout/Layout";
 import heroBkg from "../public/heroBG.jpg";
+import styles from "../styles/pages/Home.module.css";
 
 const Home: NextPage = () => {
   return (
@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           description="Information and sample projects from Evan Zaplachinski"
           keywords="react nextjs portfolio"
         >
-          <div className={styles.wrapper} style={{ marginTop: "90vh" }}>
+          <div className={styles.wrapper}>
             <div id={styles.aside1}></div>
             <div className={styles.icons} id={styles.eduIcon}>
               <FcGraduationCap />
@@ -56,7 +56,6 @@ const Home: NextPage = () => {
                 <li className={styles.list}>Computer Gaming</li>
               </ul>
             </div>
-            <div style={{ paddingBottom: "100vh" }} />
             <div id={styles.aside2}></div>
           </div>
         </Layout>
