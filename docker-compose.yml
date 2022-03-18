@@ -1,8 +1,9 @@
 version: "3"
 services:
+# If vpn enabled by default restart docker service and systemctl
   nextjs-app:
-    # stdin_open: true
-    tty: true
+    stdin_open: true
+    # tty: true
     build: .
     ports:
       - "3000:3000"
