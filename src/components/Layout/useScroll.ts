@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+// TODO: fix undefined window error when tabbed off screen
 
 const useScroll = (callback: any) => {
 	useEffect(function mount() {
