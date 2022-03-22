@@ -56,6 +56,7 @@ const Navbar = () => {
     setExpand(!expand);
   };
 
+  // Janky workaround to keep color changer visible at small screen widths
   useEffect(() => {
     let width = document.documentElement.clientWidth!;
     if (ref && ref.current) {
