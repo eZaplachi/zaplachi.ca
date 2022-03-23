@@ -199,6 +199,8 @@ const ContactForm = () => {
             setEmail(e.target.value);
           }}
           required
+          minLength={minLength.email}
+          maxLength={maxLength.email}
         />
         <label
           htmlFor={styles.subjectIn}
@@ -219,6 +221,9 @@ const ContactForm = () => {
           onChange={(e) => {
             setSubject(e.target.value);
           }}
+          required
+          minLength={minLength.subject}
+          maxLength={maxLength.subject}
         />
         <label
           htmlFor={styles.messageIn}
@@ -239,6 +244,9 @@ const ContactForm = () => {
           onChange={(e) => {
             setMessage(e.target.value);
           }}
+          required
+          minLength={minLength.message}
+          maxLength={maxLength.message}
         />
         <div ref={ref} className={styles.iconWrapper}>
           <FaCheckCircle id={styles.successIcon} className={styles.icon} />

@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import Name from "../components/Decorative/Name";
 import Layout from "../components/Layout/Layout";
-import heroBkg from "../public/heroBG.jpg";
+import heroBkg from "../../public/heroBG.jpg";
 import styles from "../styles/pages/Home.module.css";
 
 const Home: NextPage = () => {
@@ -16,8 +16,8 @@ const Home: NextPage = () => {
             layout="fill"
             alt="bkg-img"
             objectFit="cover"
-            placeholder="blur"
             priority
+            placeholder="blur"
           />
           <Name />
         </header>

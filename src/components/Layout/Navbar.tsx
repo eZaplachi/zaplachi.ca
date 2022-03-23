@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import logo from "../../public/logo192.png";
+// import logo from "/logo192.png";  --> import vs static serve to next/image ????
 import useScroll from "./useScroll";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import {
@@ -56,6 +56,7 @@ const Navbar = () => {
     setExpand(!expand);
   };
 
+  // Janky workaround to keep color changer visible at small screen widths
   useEffect(() => {
     let width = document.documentElement.clientWidth!;
     if (ref && ref.current) {
@@ -224,9 +225,8 @@ const Navbar = () => {
       </div>
       <div className={styles.navbarIcon}>
         <Image
-          src={logo}
+          src="/logo192.png"
           alt="Logo"
-          placeholder="blur"
           className={styles.iconSizing}
           height={75}
           width={75}
