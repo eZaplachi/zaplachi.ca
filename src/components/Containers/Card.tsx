@@ -1,7 +1,7 @@
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import defaultBkg from "../../public/heroBG.jpg";
+import defaultBkg from "../../../public/heroBG.jpg";
 import styles from "../../styles/components/Card.module.css";
 
 const Card = (props: {
