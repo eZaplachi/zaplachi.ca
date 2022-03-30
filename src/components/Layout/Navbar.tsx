@@ -175,7 +175,7 @@ const Navbar = () => {
   };
 
   return (
-    <section>
+    <section className={styles.wrapper}>
       <a href="#skip" className={styles.skipToContent}>
         Skip to content
       </a>
