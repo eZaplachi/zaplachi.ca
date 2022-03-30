@@ -1,4 +1,5 @@
 declare const styles: {
+  readonly "wrapper": string;
   readonly "navbarCon": string;
   readonly "skipToContent": string;
   readonly "navbarIcon": string;
