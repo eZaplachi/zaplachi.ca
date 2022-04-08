@@ -1,6 +1,7 @@
 .wrapper {
   --parentIconSizing: calc(45px + 0.5vmin);
   --childIconSizing: calc(20px + 0.5vmin);
+  --navContentSizing: calc(15px + 0.5vmin);
 }
 
 .navbarCon {
@@ -10,9 +11,10 @@
   padding: 14px 16px 14px 16px;
   border-radius: 18px 6px;
   gap: 5px;
-  font-size: calc(15px + 0.5vmin);
+  font-size: var(--navContentSizing);
   justify-content: baseline;
   order: 1;
+  transition: 0.3s ease;
 }
 
 .navbarCon:hover,
@@ -90,7 +92,7 @@
   background-color: transparent;
   justify-content: baseline;
   text-align: center;
-  padding: 14px 16px 14px 16px;
+  padding: 12px 14px 12px 14px;
   gap: 7px;
   border: none;
   border-radius: 50%;
@@ -107,6 +109,10 @@
 
 #firstTheme {
   margin-left: 3vw;
+}
+
+#lastTheme {
+  margin-right: 1vw;
 }
 
 @keyframes rotate {
@@ -146,18 +152,21 @@
 }
 
 @media screen and (max-width: 640px) {
+  .wrapper {
+    --parentIconSizing: calc(28px + 0.5vmin);
+    --childIconSizing: calc(14px + 0.5vmin);
+    --navContentSizing: calc(12px + 0.5vmin);
+  }
+
   .navbarCon {
-    font-size: calc(12px + 0.5vmin);
     gap: 2px;
   }
   .themeBtn {
-    font-size: calc(28px + 0.5vmin);
     margin-left: 2vw;
     padding: 8px;
     padding-top: 12px;
   }
   .theme {
-    font-size: calc(12px + 0.5vmin);
     gap: 2px;
   }
   .themeBtn {
@@ -177,6 +186,6 @@
 
   .themeBtn {
     display: block;
-    max-width: 2ch;
+    margin-top: 1ch;
   }
 }
