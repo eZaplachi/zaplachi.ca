@@ -17,7 +17,7 @@
 
 .navbarCon:hover,
 .navbarCon:active,
-.navbarCon:focus {
+.navbarCon:focus-within {
   background-color: var(--navbarActiveClr);
   opacity: 0.6;
 }
@@ -50,13 +50,15 @@
 }
 
 .themeBtn {
-  margin-left: 3vw;
-  justify-content: baseline;
-  color: var(--appHeaderClr);
-  text-align: center;
   font-size: var(--parentIconSizing);
+  color: var(--appHeaderClr);
+  background-color: transparent;
+  justify-content: baseline;
+  margin-left: 3vw;
+  text-align: center;
   padding: 12px;
   padding-top: 16px;
+  border: none;
   border-radius: 100%;
   transition: 0.6s ease-in-out;
   order: 2;
@@ -72,9 +74,7 @@
 .themeBtn:focus-within {
   background-color: var(--navbarActiveClr);
   opacity: 0.6;
-  font-size: calc(var(--parentIconSizing
-
-  ) + 3px);
+  font-size: calc(var(--parentIconSizing) + 3px);
 }
 
 .themeChg {
@@ -87,10 +87,12 @@
 .theme {
   font-size: var(--childIconSizing);
   color: var(--appHeaderClr);
-  padding: 14px 16px 14px 16px;
-  text-align: center;
+  background-color: transparent;
   justify-content: baseline;
+  text-align: center;
+  padding: 14px 16px 14px 16px;
   gap: 7px;
+  border: none;
   border-radius: 50%;
   transition: 0.4s ease;
 }

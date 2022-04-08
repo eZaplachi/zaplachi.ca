@@ -15,7 +15,6 @@ import {
 import styles from "../../styles/components/Navbar.module.css";
 
 // TODO: cleanup color switcher code
-// TODO: Allow color change on enter
 const Navbar = () => {
   const router = useRouter();
 
@@ -198,30 +197,30 @@ const Navbar = () => {
           Contact
         </a>
       </Link>
-      <a
-        tabIndex={0}
+      <button
         onClick={expanded}
+        tabIndex={0}
         className={
           expand ? styles.themeBtn + " " + styles.rotate : styles.themeBtn
         }
       >
         <FaSun id="icon" />
-      </a>
+      </button>
       <div ref={ref} className={styles.themeChg}>
-        <a
+        <button
           tabIndex={0}
           className={styles.theme}
           id={styles.firstTheme}
           onClick={setDefault}
         >
           <FaHome />
-        </a>
-        <a tabIndex={0} className={styles.theme} onClick={setCamping}>
+        </button>
+        <button tabIndex={0} className={styles.theme} onClick={setCamping}>
           <FaCampground />
-        </a>
-        <a tabIndex={0} className={styles.theme} onClick={setSaturn}>
+        </button>
+        <button tabIndex={0} className={styles.theme} onClick={setSaturn}>
           <FaMeteor />
-        </a>
+        </button>
       </div>
       <div className={styles.navbarIcon}>
         <Image
