@@ -13,6 +13,7 @@ const Contact = () => {
       keywords="Contact Email"
     >
       <div className={styles.wrapper}>
+        {/* multiple containers for responsive background */}
         <div className={styles.container} />
         <div className={styles.inputCon} />
         <div className={styles.input}>
