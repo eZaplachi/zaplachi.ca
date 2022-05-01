@@ -29,7 +29,7 @@ const Navbar = () => {
   // CSS :active doesn't play nice with Next/link -- workaround that maintains Next/link's optimizations
   useEffect(() => {
     const currentPath = router.pathname!;
-    console.log(currentPath);
+    // console.log(currentPath);
 
     switch (currentPath) {
       case "/":

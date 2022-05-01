@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ReactChild, useState } from "react";
 import Head from "next/head";
 import useScroll from "./useScroll";
@@ -37,7 +37,7 @@ const Layout = (props: {
         <meta name="keywords" content={props.keywords} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AnimatePresence exitBeforeEnter>
+      <div>
         <div className={styles.navbar} id={scrolled ? styles.scrolled : ""}>
           <Navbar />
         </div>
@@ -47,12 +47,19 @@ const Layout = (props: {
           className={styles.wrapper}
           id={scrolled ? styles.scrolledSpace : ""}
         >
-          <motion.div className={styles.content} exit={{opacity: 0}} initial={{opacity: 0}} animate={{opacity: 1}}>{props.children}</motion.div>
+          <motion.div
+            className={styles.content}
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            {props.children}
+          </motion.div>
         </div>
         <footer id={styles.footerSpace}>
           <Footer text={props.footerText} />
         </footer>
-      </AnimatePresence>
+      </div>
     </section>
   );
 };
