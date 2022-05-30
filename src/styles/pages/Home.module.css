@@ -1,3 +1,13 @@
+.wrapper {
+  --iconSizing: 128px;
+  --transformSizing: 300px;
+  display: grid;
+  grid-template-columns: [space] 17% [content] 22% [content] 22% [content] 22% [space] 17%;
+  justify-content: space-between;
+  margin-top: 95vh;
+  padding-bottom: 20vh;
+}
+
 .appHeader {
   background-size: cover;
   min-height: 90vh;
@@ -14,28 +24,12 @@
   margin-top: 12vh;
 }
 
-.wrapper {
-  --iconSizing: 128px;
-  --transformSizing: 300px;
-  display: grid;
-  grid-template-columns: [space] 17% [content] 22% [content] 22% [content] 22% [space] 17%;
-  justify-content: space-between;
-  margin-top: 95vh;
-  padding-bottom: 20vh;;
-}
-
 #aside1 {
   grid-column: space 1;
 }
 
 #aside2 {
   grid-column: space 2;
-}
-
-.eduContent {
-  grid-column: content 2 / space 2;
-  color: var(--contentClr);
-  margin-bottom: 6ch;
 }
 
 .icons {
@@ -51,6 +45,12 @@
   max-width: 2.1ch;
   max-height: 2.1ch;
   border-radius: 100%;
+}
+
+.eduContent {
+  grid-column: content 2 / space 2;
+  color: var(--contentClr);
+  margin-bottom: 6ch;
 }
 
 #eduIcon {
