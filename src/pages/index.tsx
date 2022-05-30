@@ -4,7 +4,7 @@ import { FcGraduationCap, FcBusinessman } from "react-icons/fc";
 import type { NextPage } from "next";
 import Image from "next/image";
 // import useOnScreen from "../hooks/useOnScreen";
-import Name2 from "../components/Decorative/Name2";
+import Name from "../components/Decorative/Name";
 import Layout from "../components/Layout/Layout";
 import heroBkg from "../../public/heroBG.jpg";
 import styles from "../styles/pages/Home.module.css";
@@ -25,7 +25,7 @@ const Home: NextPage = () => {
             priority
             placeholder="blur"
           />
-          <Name2 />
+          <Name />
         </header>
         <Layout
           footerText="Feel free to send a message!"
