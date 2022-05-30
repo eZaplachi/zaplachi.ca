@@ -3,7 +3,7 @@ import { motion }from "framer-motion"
 import { FcGraduationCap, FcBusinessman } from "react-icons/fc";
 import type { NextPage } from "next";
 import Image from "next/image";
-import useOnScreen from "../hooks/useOnScreen";
+// import useOnScreen from "../hooks/useOnScreen";
 import Name from "../components/Decorative/Name";
 import Layout from "../components/Layout/Layout";
 import heroBkg from "../../public/heroBG.jpg";
@@ -11,7 +11,7 @@ import styles from "../styles/pages/Home.module.css";
 
 const Home: NextPage = () => {
   const ref:any = useRef<HTMLDivElement>(null);
-  const onScreen: boolean = useOnScreen<HTMLDivElement>(ref, "-300px");
+  // const onScreen: boolean = useOnScreen<HTMLDivElement>(ref, "-300px");
 
   return (
     <main>
