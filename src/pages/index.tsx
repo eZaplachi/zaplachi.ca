@@ -121,7 +121,7 @@ const Home: NextPage = () => {
             </LazyMotion>
           </div>
 
-          <div className={styles.container}>
+          <div className={styles.container} ref={ref2}>
             <LazyMotion features={domAnimation}>
               <m.div
                 className={styles.icons}
