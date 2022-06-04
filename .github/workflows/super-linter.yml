@@ -8,7 +8,7 @@ name: Lint Code Base
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: ["dev"]
 jobs:
   run-lint:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 0
 
       - name: Lint Code Base
-        uses: docker://github/super-linter@v4
+        uses: github/super-linter@v4
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: "main"
