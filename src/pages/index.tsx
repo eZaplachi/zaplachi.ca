@@ -99,11 +99,7 @@ const Home: NextPage = () => {
                 <FcGraduationCap />
               </m.div>
 
-              <m.div
-                className={styles.eduContent}
-                animate={animation1}
-                variants={list}
-              >
+              <m.div className={styles.eduContent} animate={animation1}>
                 <m.h3 variants={list}>Education</m.h3>
                 <m.ul variants={list}>
                   <m.li className={styles.list} variants={itemRight}>
