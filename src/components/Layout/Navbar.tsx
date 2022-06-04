@@ -1,4 +1,5 @@
-import { FaSun, FaHome, FaMeteor, FaCampground } from "react-icons/fa";
+import { FaHome, FaMeteor, FaCampground } from "react-icons/fa";
+import { IoColorPalette } from "react-icons/io5";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,10 +13,9 @@ import {
   ThemeCamping,
   ThemeSaturn,
 } from "../../lib/themeTypes";
+import useTheme from "./useTheme";
 import styles from "../../styles/components/Navbar.module.css";
 
-// TODO: cleanup color switcher code
-// TODO: Allow color change on enter
 const Navbar = () => {
   const router = useRouter();
 
@@ -25,10 +25,11 @@ const Navbar = () => {
     contact: "transparent",
   };
 
+  // TODO: Cleanup highlights
   // CSS :active doesn't play nice with Next/link -- workaround that maintains Next/link's optimizations
   useEffect(() => {
     const currentPath = router.pathname!;
-    console.log(currentPath);
+    // console.log(currentPath);
 
     switch (currentPath) {
       case "/":
@@ -85,94 +86,21 @@ const Navbar = () => {
     }
   });
 
-  const [theme, setTheme] = useLocalStorage("theme", "Default");
-
-  useEffect(() => {
-    let currentTheme: Theme = ThemeDefault;
-
-    switch (theme) {
-      case "Default":
-        currentTheme = ThemeDefault;
-        break;
-      case "Camping":
-        currentTheme = ThemeCamping;
-        break;
-      case "Saturn":
-        currentTheme = ThemeSaturn;
-        break;
-    }
-
-    // Changing css custom properties to colors defined in theme types -- easily add more themes
-    document.documentElement.style.setProperty(
-      "--accentClr",
-      currentTheme.accentClr
-    );
-    document.documentElement.style.setProperty(
-      "--appHeaderClr",
-      currentTheme.appHeaderClr
-    );
-    document.documentElement.style.setProperty("--bkgClr", currentTheme.bkgClr);
-    document.documentElement.style.setProperty(
-      "--cardBkgClr",
-      currentTheme.cardBkgClr
-    );
-    document.documentElement.style.setProperty(
-      "--contentClr",
-      currentTheme.contentClr
-    );
-    document.documentElement.style.setProperty(
-      "--extLinkActiveClr",
-      currentTheme.extLinkActiveClr
-    );
-    document.documentElement.style.setProperty(
-      "--extLinkClr",
-      currentTheme.extLinkClr
-    );
-    document.documentElement.style.setProperty(
-      "--inputBkgClr",
-      currentTheme.inputBkgClr
-    );
-    document.documentElement.style.setProperty(
-      "--inputBorderClr",
-      currentTheme.inputBorderClr
-    );
-    document.documentElement.style.setProperty(
-      "--navbarActiveClr",
-      currentTheme.navbarActiveClr
-    );
-    document.documentElement.style.setProperty(
-      "--navbarBkgClr",
-      currentTheme.navbarBkgClr
-    );
-    document.documentElement.style.setProperty(
-      "--neutralClr",
-      currentTheme.neutralClr
-    );
-    document.documentElement.style.setProperty(
-      "--scndHeaderClr",
-      currentTheme.scndHeaderClr
-    );
-    document.documentElement.style.setProperty(
-      "--scndHeaderClrDark",
-      currentTheme.scndHeaderClrDark
-    );
-    document.documentElement.style.setProperty(
-      "--scndHeaderClrLight",
-      currentTheme.scndHeaderClrLight
-    );
-  }, [theme]);
+  const [theme, setTheme] = useLocalStorage("theme", ThemeDefault);
 
   const setDefault = () => {
-    setTheme("Default");
+    setTheme(ThemeDefault);
   };
 
   const setCamping = () => {
-    setTheme("Camping");
+    setTheme(ThemeCamping);
   };
 
   const setSaturn = () => {
-    setTheme("Saturn");
+    setTheme(ThemeSaturn);
   };
+
+  useTheme(theme);
 
   return (
     <section className={styles.wrapper}>
@@ -198,30 +126,35 @@ const Navbar = () => {
           Contact
         </a>
       </Link>
-      <a
-        tabIndex={0}
+      <button
         onClick={expanded}
+        tabIndex={0}
         className={
           expand ? styles.themeBtn + " " + styles.rotate : styles.themeBtn
         }
       >
-        <FaSun id="icon" />
-      </a>
+        <IoColorPalette id="icon" />
+      </button>
       <div ref={ref} className={styles.themeChg}>
-        <a
+        <button
           tabIndex={0}
           className={styles.theme}
-          id={styles.firstTheme}
           onClick={setDefault}
+          id={styles.firstTheme}
         >
           <FaHome />
-        </a>
-        <a tabIndex={0} className={styles.theme} onClick={setCamping}>
+        </button>
+        <button tabIndex={0} className={styles.theme} onClick={setCamping}>
           <FaCampground />
-        </a>
-        <a tabIndex={0} className={styles.theme} onClick={setSaturn}>
+        </button>
+        <button
+          tabIndex={0}
+          className={styles.theme}
+          onClick={setSaturn}
+          id={styles.lastTheme}
+        >
           <FaMeteor />
-        </a>
+        </button>
       </div>
       <div className={styles.navbarIcon}>
         <Image

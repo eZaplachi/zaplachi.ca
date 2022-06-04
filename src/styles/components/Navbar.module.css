@@ -1,6 +1,7 @@
 .wrapper {
   --parentIconSizing: calc(45px + 0.5vmin);
   --childIconSizing: calc(20px + 0.5vmin);
+  --navContentSizing: calc(15px + 0.5vmin);
 }
 
 .navbarCon {
@@ -10,14 +11,15 @@
   padding: 14px 16px 14px 16px;
   border-radius: 18px 6px;
   gap: 5px;
-  font-size: calc(15px + 0.5vmin);
+  font-size: var(--navContentSizing);
   justify-content: baseline;
   order: 1;
+  transition: 0.3s ease;
 }
 
 .navbarCon:hover,
 .navbarCon:active,
-.navbarCon:focus {
+.navbarCon:focus-within {
   background-color: var(--navbarActiveClr);
   opacity: 0.6;
 }
@@ -50,13 +52,15 @@
 }
 
 .themeBtn {
-  margin-left: 3vw;
-  justify-content: baseline;
-  color: var(--appHeaderClr);
-  text-align: center;
   font-size: var(--parentIconSizing);
+  color: var(--appHeaderClr);
+  background-color: transparent;
+  justify-content: baseline;
+  margin-left: 3vw;
+  text-align: center;
   padding: 12px;
   padding-top: 16px;
+  border: none;
   border-radius: 100%;
   transition: 0.6s ease-in-out;
   order: 2;
@@ -64,7 +68,7 @@
 }
 
 .rotate {
-  transform: rotate(360deg);
+  transform: rotate(320deg);
 }
 
 .themeBtn:active,
@@ -72,9 +76,7 @@
 .themeBtn:focus-within {
   background-color: var(--navbarActiveClr);
   opacity: 0.6;
-  font-size: calc(var(--parentIconSizing
-
-  ) + 3px);
+  font-size: calc(var(--parentIconSizing) + 3px);
 }
 
 .themeChg {
@@ -87,10 +89,12 @@
 .theme {
   font-size: var(--childIconSizing);
   color: var(--appHeaderClr);
-  padding: 14px 16px 14px 16px;
-  text-align: center;
+  background-color: transparent;
   justify-content: baseline;
+  text-align: center;
+  padding: 12px 14px 12px 14px;
   gap: 7px;
+  border: none;
   border-radius: 50%;
   transition: 0.4s ease;
 }
@@ -105,6 +109,10 @@
 
 #firstTheme {
   margin-left: 3vw;
+}
+
+#lastTheme {
+  margin-right: 1vw;
 }
 
 @keyframes rotate {
@@ -144,18 +152,21 @@
 }
 
 @media screen and (max-width: 640px) {
+  .wrapper {
+    --parentIconSizing: calc(28px + 0.5vmin);
+    --childIconSizing: calc(14px + 0.5vmin);
+    --navContentSizing: calc(12px + 0.5vmin);
+  }
+
   .navbarCon {
-    font-size: calc(12px + 0.5vmin);
     gap: 2px;
   }
   .themeBtn {
-    font-size: calc(28px + 0.5vmin);
     margin-left: 2vw;
     padding: 8px;
     padding-top: 12px;
   }
   .theme {
-    font-size: calc(12px + 0.5vmin);
     gap: 2px;
   }
   .themeBtn {
@@ -175,6 +186,6 @@
 
   .themeBtn {
     display: block;
-    max-width: 2ch;
+    margin-top: 1ch;
   }
 }

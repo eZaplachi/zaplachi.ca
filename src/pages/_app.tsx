@@ -1,5 +1,6 @@
-import "../styles/globals.css";
+import { AnimatePresence } from "framer-motion";
 import type { AppProps } from "next/app";
+import "../styles/globals.css";
 
 // TODO: fix docker production build
 
@@ -7,7 +8,11 @@ import type { AppProps } from "next/app";
 
 // TODO: add titles to all buttons for accessability
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <Component {...pageProps} />;
+    </AnimatePresence>
+  );
 }
 
 export default MyApp;

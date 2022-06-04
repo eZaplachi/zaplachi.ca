@@ -39,7 +39,7 @@
   border: 1px solid var(--scndHeaderClrLight);
   margin: 1ch;
   padding: 8px;
-  transition: 0.3s ease;
+  transition: 0.4s ease-in;
 }
 
 .contactText {

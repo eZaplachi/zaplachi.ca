@@ -1,43 +1,51 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "npm dev",
-            "type": "shell",
-            "command": "docker-compose -f docker-compose-dev.yml up --build",
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+        "label": "prod",
+        "type": "shell",
+        "command": "docker-compose -f docker-compose-dev.yml up --build",
+        "problemMatcher": [
+            "$eslint-stylish"
+        ]
+    },
+    {
+        "label": "npm dev",
+        "type": "shell",
+        "command": "docker-compose -f docker-compose-dev.yml up --build"
+    },
+    {
+        "label": "tcm dev comp",
+        "type": "shell",
+        "command": "tcm src/styles/components -w"
+    },
+    {
+        "label": "tcm dev pg",
+        "type": "shell",
+        "command": "tcm src/styles/pages -w"
+    },
+    {
+        "label": "dev",
+        "type": "shell",
+        "dependsOn": [
+            "tcm dev comp",
+            "tcm dev pg",
+            "npm dev"
+        ],
+        "isBackground": true,
+        "presentation": {
+            "echo": true,
+            "reveal": "silent",
+            "focus": false,
+            "panel": "dedicated",
+            "showReuseMessage": true,
+            "clear": true
         },
-        {
-            "label": "tcm dev comp",
-            "type": "shell",
-            "command": "tcm src/styles/components -w",
-        },
-        {
-            "label": "tcm dev pg",
-            "type": "shell",
-            "command": "tcm src/styles/pages -w",
-        },
-        {
-            "label": "dev",
-            "type": "shell",
-            "dependsOn": [
-                "tcm dev comp",
-                "tcm dev pg",
-                "npm dev"
-            ],
-            "isBackground": true,
-            "presentation": {
-                "echo": true,
-                "reveal": "silent",
-                "focus": false,
-                "panel": "dedicated",
-                "showReuseMessage": true,
-                "clear": true
-            },
-            "problemMatcher": [
-                "$eslint-stylish"
-            ]
-        }
-    ]
+        "problemMatcher": [
+            "$eslint-stylish"
+        ]
+    }
+]
 }
