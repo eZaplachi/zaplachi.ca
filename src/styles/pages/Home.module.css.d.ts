@@ -4,6 +4,7 @@ declare const styles: {
   readonly "scndHeader": string;
   readonly "aside1": string;
   readonly "aside2": string;
+  readonly "container": string;
   readonly "icons": string;
   readonly "eduContent": string;
   readonly "eduIcon": string;
