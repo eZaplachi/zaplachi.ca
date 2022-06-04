@@ -1,0 +1,43 @@
+.wrapper {
+  position: absolute;
+  min-height: 40%;
+  min-width: 60%;
+  z-index: 90;
+  top: 4
+
+  0%;
+  left: 20%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.closeBtn {
+  position: absolute;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  z-index: 99;
+}
+
+.resCon {
+  font-size: 1rem;
+  color: black;
+}
+
+#resMessage {
+  order: 4;
+  margin-left: 2ch;
+  display: inline;
+  text-align: left;
+  color: var(--inputBorderClr);
+}
+
+#successIcon {
+  color: var(--formAcceptClr);
+  opacity: 0;
+}
+
+#failIcon {
+  color: var(--formDenyClr);
+  opacity: 0;
+}

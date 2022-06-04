@@ -1,9 +1,7 @@
-import {
-  FaLongArrowAltRight,
-  FaCheckCircle,
-  FaTimesCircle,
-} from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import { FaLongArrowAltRight } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+// import ContactModal from "./ContactModal";
 import { contactLengths } from "../../lib/types";
 import styles from "../../styles/components/ContactForm.module.css";
 
@@ -13,10 +11,8 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState("nonSub");
   const [fail, setFail] = useState(String);
-  const ref = useRef<HTMLInputElement>(null);
-
-  // Response message default -- cant't set in Form Submit (If empty string {eg. ""} maybe defaults back to that before being rendered??)
-  let resMessage: string = "Character Limit Error";
+  const [loading, setLoading] = useState("Default");
+  // const [modalOpen, setModalOpen] = useState(false);
 
   // TODO:  Make responsive counter have more conditions (eg. @) and prettier
   let currentLength: contactLengths = {
@@ -37,7 +33,7 @@ const ContactForm = () => {
     message: 30,
   };
 
-  const conditionsArray = [
+  const sendConditionsArray = [
     maxLength.email > currentLength.email &&
       currentLength.email > minLength.email,
     maxLength.subject > currentLength.subject &&
@@ -104,8 +100,75 @@ const ContactForm = () => {
     }
   });
 
+  let loadingHidden = {
+    initialArrow: 1,
+    height: "0rem",
+    opacity: 0,
+  };
+
+  const loadingCon = {
+    width: "2rem",
+    height: `${loadingHidden.height}`,
+    display: "flex",
+    justifyContent: "space-around",
+    opacity: `${loadingHidden.opacity}`,
+  };
+
+  const loadingCircle = {
+    display: "block",
+    width: "0.5rem",
+    height: "0.5rem",
+    backgroundColor: "black",
+    borderRadius: "0.25rem",
+  };
+
+  const loadingConVariants = {
+    start: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+    end: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const loadingCircleVariants = {
+    start: {
+      y: "50%",
+    },
+    end: {
+      y: "150%",
+    },
+  };
+
+  const loadingCircleTrans = {
+    duration: 0.5,
+    repeat: Infinity,
+    ease: "easeInOut",
+  };
+
+  const arrowRef = useRef<HTMLInputElement>(null);
+  const loadingRef = useRef<HTMLInputElement>(null);
+
   const formSub = (e: { preventDefault: () => void }) => {
     e.preventDefault();
+
+    if (arrowRef && arrowRef.current && loadingRef && loadingRef.current) {
+      arrowRef.current.style.opacity = "0";
+      loadingRef.current.style.opacity = "1";
+      loadingRef.current.style.height = "2rem";
+    }
+
+    // setLoading("loading");
+
+    // loadingHidden = {
+    //   initialArrow: 0,
+    //   height: "2rem",
+    //   opacity: 1,
+    // };
 
     let data = {
       email,
@@ -113,7 +176,7 @@ const ContactForm = () => {
       message,
     };
 
-    if (!conditionsArray.includes(false)) {
+    if (!sendConditionsArray.includes(false)) {
       console.log("Sending");
 
       fetch("/api/contact", {
@@ -144,40 +207,29 @@ const ContactForm = () => {
           }
         }
       });
-    } else {
-      console.log("Character limit error");
-      document.getElementById(styles.failIcon)!.style.opacity = "1";
-      document.getElementById(styles.resMessage)!.style.opacity = "1";
-      document.documentElement.style.setProperty("--inputBorderClr", "red");
     }
+    // setModalOpen(true);
   };
 
-  if (ref && ref.current) {
-    switch (submitted) {
-      case "sub":
-        document.getElementById(styles.successIcon)!.style.opacity = "1";
-        document.getElementById(styles.failIcon)!.style.opacity = "0";
-        document.getElementById(styles.resMessage)!.style.opacity = "1";
-        document.documentElement.style.setProperty("--inputBorderClr", "green");
-        resMessage = "Confirmation Email Sent";
-        break;
-      case "fail":
-        document.getElementById(styles.successIcon)!.style.opacity = "0";
-        document.getElementById(styles.failIcon)!.style.opacity = "1";
-        document.getElementById(styles.resMessage)!.style.opacity = "1";
-        document.documentElement.style.setProperty("--inputBorderClr", "red");
-        resMessage = "Server Error";
-        break;
-      default:
-        document.getElementById(styles.successIcon)!.style.opacity = "0";
-        document.getElementById(styles.failIcon)!.style.opacity = "0";
-        document.getElementById(styles.resMessage)!.style.opacity = "0";
-        break;
+  const successRef = useRef<HTMLInputElement>(null);
+  const failRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (arrowRef && arrowRef.current && loadingRef && loadingRef.current) {
+      if (loading === "loading") {
+        arrowRef.current.style.opacity = "0";
+        loadingRef.current.style.opacity = "1";
+      }
+      console.log(loading);
     }
-  }
+  }, [loading]);
 
   return (
     <section>
+      {/* {modalOpen && (
+        <ContactModal onClose={() => setModalOpen(false)} res={submitted} />
+      )} */}
+
       <form onSubmit={formSub} className={styles.wrapper}>
         <label
           htmlFor={styles.emailIn}
@@ -248,12 +300,33 @@ const ContactForm = () => {
           minLength={minLength.message}
           maxLength={maxLength.message}
         />
-        <div ref={ref} className={styles.iconWrapper}>
-          <FaCheckCircle id={styles.successIcon} className={styles.icon} />
-          <FaTimesCircle id={styles.failIcon} className={styles.icon} />
-          <p id={styles.resMessage}>{resMessage}</p>
+        <div className={styles.iconWrapper}>
           <button className={styles.button} type="submit">
-            <FaLongArrowAltRight />
+            <motion.div ref={arrowRef}>
+              <FaLongArrowAltRight />
+            </motion.div>
+            <motion.div
+              style={loadingCon}
+              variants={loadingConVariants}
+              initial="start"
+              animate="end"
+            >
+              <motion.span
+                style={loadingCircle}
+                variants={loadingCircleVariants}
+                transition={loadingCircleTrans}
+              />
+              <motion.span
+                style={loadingCircle}
+                variants={loadingCircleVariants}
+                transition={loadingCircleTrans}
+              />
+              <motion.span
+                style={loadingCircle}
+                variants={loadingCircleVariants}
+                transition={loadingCircleTrans}
+              />
+            </motion.div>
           </button>
         </div>
       </form>

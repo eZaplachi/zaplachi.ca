@@ -8,38 +8,37 @@ export default async function handler(
 ) {
   // Get email key as json to access google service account
   // TODO fix mailer credentials
-  const keyEnvVar = process.env.CREDS;
-  if (!keyEnvVar) {
+  const keyEnvVar = {
+    user: process.env.EMAIL_USERNAME,
+    pass: process.env.EMAIL_PASSWORD,
+  };
+  if (!(keyEnvVar.pass || keyEnvVar.user)) {
     res.status(500);
     throw new Error("The $CREDS env variable was not found!");
   }
 
-  const keys = JSON.parse(keyEnvVar);
-
   // Sanitize to prevent xss attacks
-  const email: string = req.body.email
-  const subject: string = req.body.subject
-  const message: string = req.body.message
+  const email: string = req.body.email;
+  const subject: string = req.body.subject;
+  const message: string = req.body.message;
 
-  const sanitizedEmail: string = DOMPurify.sanitize(email)
-  const sanitizedSubject: string = DOMPurify.sanitize(subject)
-  const sanitizedMessage: string = DOMPurify.sanitize(message)
+  const sanitizedEmail: string = DOMPurify.sanitize(email);
+  const sanitizedSubject: string = DOMPurify.sanitize(subject);
+  const sanitizedMessage: string = DOMPurify.sanitize(message);
 
   try {
     const transporter = createTransport({
-      port: 465,
-      host: "smtp.gmail.com",
+      host: "smtp.mailtrap.io",
+      port: 2525,
       auth: {
-        type: "OAuth2",
-        user: "evan@zaplachi.ca",
-        serviceClient: keys.client_id,
-        privateKey: keys.private_key,
+        user: process.env.EMAIL_USERNAME,
+        pass: process.env.EMAIL_PASSWORD,
       },
       secure: true,
     });
 
     const mailData = {
-      from: process.env.CLIENT_EMAIL,
+      from: process.env.EMAIL_USERNAME,
       to: ["evan@zaplachi.ca", sanitizedEmail],
       subject: "Thank you for contacting Evan Zap",
       text:

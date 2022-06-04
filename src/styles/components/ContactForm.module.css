@@ -43,23 +43,26 @@
   opacity: 0.6;
 }
 
+.iconWrapper {
+  display: inline-block;
+  order: 4;
+  transform: translateY(4ch);
+}
+
 .button {
   background-color: var(--accentClr);
   border-radius: 12px;
   color: var(--neutralClr);
   cursor: pointer;
-  display: inline-block;
   text-decoration: none;
   padding: 0.4em;
   width: 5ch;
   font-size: 3ch;
   font-weight: bolder;
   opacity: 1;
-  order: 5;
   align-self: flex-end;
   border: none;
   margin-left: 90%;
-  transform: translateY(-80%);
   transition: 0.3s ease;
 }
 
@@ -70,25 +73,19 @@
   transition: 0.4s ease-in-out;
 }
 
-.iconWrapper {
-  order: 4;
-  display: inline-block;
+.loadingCon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-around;
 }
 
-.icon {
-  order: 4;
-  display: inline-block;
-  font-size: calc(40px + 0.5vmin);
-  margin-top: 4%;
-}
-
-#resMessage {
-  order: 4;
-  margin-left: 2ch;
-  display: inline;
-  text-align: left;
-  opacity: 0;
-  color: var(--inputBorderClr);
+.loadingCircle {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: black;
+  border-radius: 0.25rem;
 }
 
 #emailIn {
@@ -115,18 +112,8 @@
   order: 3;
 }
 
-#successIcon {
-  color: var(--formAcceptClr);
-  opacity: 0;
-}
-
-#failIcon {
-  color: var(--formDenyClr);
-  opacity: 0;
-}
-
-@media screen  and (max-width: 600px) {
-.button {
-  margin-left: 70%;
-}
+@media screen and (max-width: 600px) {
+  .button {
+    margin-left: 70%;
+  }
 }

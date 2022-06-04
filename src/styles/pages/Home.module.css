@@ -1,3 +1,13 @@
+.wrapper {
+  --iconSizing: 128px;
+  --transformSizing: 300px;
+  display: grid;
+  grid-template-columns: [space] 17% [content] 66% [space] 17%;
+  justify-content: space-between;
+  margin-top: 95vh;
+  padding-bottom: 20vh;
+}
+
 .appHeader {
   background-size: cover;
   min-height: 90vh;
@@ -14,16 +24,6 @@
   margin-top: 12vh;
 }
 
-.wrapper {
-  --iconSizing: 128px;
-  --transformSizing: 300px;
-  display: grid;
-  grid-template-columns: [space] 17% [content] 22% [content] 22% [content] 22% [space] 17%;
-  justify-content: space-between;
-  margin-top: 95vh;
-  padding-bottom: 20vh;;
-}
-
 #aside1 {
   grid-column: space 1;
 }
@@ -32,10 +32,12 @@
   grid-column: space 2;
 }
 
-.eduContent {
-  grid-column: content 2 / space 2;
-  color: var(--contentClr);
-  margin-bottom: 6ch;
+.container {
+  grid-column: content;
+  display: flex;
+  width: max-width;
+  justify-content: space-around;
+  margin-bottom: 4rem;
 }
 
 .icons {
@@ -51,10 +53,19 @@
   max-width: 2.1ch;
   max-height: 2.1ch;
   border-radius: 100%;
+  margin: 2ch;
+}
+
+.eduContent {
+  order: 2;
+  align-self: flex-end;
+  color: var(--contentClr);
+  margin-bottom: 6ch;
 }
 
 #eduIcon {
-  grid-column: content 1;
+  order: 1;
+  align-self: flex-start;
   transform: translateX(var(--transformSizing));
 }
 
@@ -63,14 +74,15 @@
 }
 
 .interestContent {
-  grid-column: content 1 / content 3;
+  order: 1;
+  align-self: flex-start;
   color: var(--contentClr);
   transform: translateX(var(--transformSizing));
 }
 
 #interestIcon {
-  grid-column: content 3;
-  transform: translateY(175px);
+  order: 2;
+  transform: translateY(-6rem);
 }
 
 @media screen and (max-width: 2000px) {

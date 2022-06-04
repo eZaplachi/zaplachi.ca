@@ -9,6 +9,7 @@ declare const styles: {
   readonly "themeChg": string;
   readonly "theme": string;
   readonly "firstTheme": string;
+  readonly "lastTheme": string;
 };
 export = styles;
 

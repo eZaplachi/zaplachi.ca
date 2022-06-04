@@ -3,12 +3,13 @@ services:
   # If vpn enabled by default restart docker service and systemctl-daemon after vpn is disabled
   nextjs-app:
     stdin_open: true
-    # tty: true
+    tty: true
     build:
       context: .
       dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
+      - "2525:2525"
       - "9229:9229"
     volumes:
       - ./src:/app/src:ro
