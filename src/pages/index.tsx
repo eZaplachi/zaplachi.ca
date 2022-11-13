@@ -2,7 +2,7 @@ import { useInView } from "react-intersection-observer";
 import { m, LazyMotion, domAnimation, useAnimation } from "framer-motion";
 import { FcGraduationCap, FcBusinessman } from "react-icons/fc";
 import { useEffect } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import type { NextPage } from "next";
 import Name from "../components/Decorative/Name";
 import Layout from "../components/Layout/Layout";

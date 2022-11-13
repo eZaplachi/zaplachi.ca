@@ -3,7 +3,7 @@ import { IoColorPalette } from "react-icons/io5";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import Image from "next/legacy/image";
 // import logo from "/logo192.png";  --> import vs static serve to next/image ????
 import useScroll from "./useScroll";
 import useLocalStorage from "../../hooks/useLocalStorage";
