@@ -22,10 +22,10 @@ const Card = (props: {
         <div className={styles.cardContent}>
           <h2 className={styles.cardTitle}>{props.title}</h2>
           <p className={styles.cardBody}>{props.content}</p>
-          <Link href={link}>
-            <a className={styles.button}>
-              <FaArrowAltCircleRight />
-            </a>
+          <Link href={link} className={styles.button}>
+
+            <FaArrowAltCircleRight />
+
           </Link>
         </div>
       </div>

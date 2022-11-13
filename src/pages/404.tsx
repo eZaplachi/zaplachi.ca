@@ -24,10 +24,10 @@ const NotFound = () => {
               or email at:&nbsp;
               <u>evan@zaplachi.ca</u>
             </p>
-            <Link href="/">
-              <a className={styles.homeBtn}>
-                <FaHome />
-              </a>
+            <Link href="/" className={styles.homeBtn}>
+
+              <FaHome />
+
             </Link>
           </motion.div>
           <div id={styles.aside2}></div>

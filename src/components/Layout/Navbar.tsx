@@ -107,24 +107,24 @@ const Navbar = () => {
       <a href="#skip" className={styles.skipToContent}>
         Skip to content
       </a>
-      <Link href="/">
-        <a
-          className={styles.navbarCon}
-          id="home"
-          style={{ backgroundColor: `${highlight.home}` }}
-        >
+      <Link
+        href="/"
+        className={styles.navbarCon}
+        id="home"
+        style={{ backgroundColor: `${highlight.home}` }}>
+        
           Home
-        </a>
+        
       </Link>
-      <Link href="/projects">
-        <a className={styles.navbarCon} id="projects">
+      <Link href="/projects" className={styles.navbarCon} id="projects">
+        
           Projects
-        </a>
+        
       </Link>
-      <Link href="/contact">
-        <a className={styles.navbarCon} id="contact">
+      <Link href="/contact" className={styles.navbarCon} id="contact">
+        
           Contact
-        </a>
+        
       </Link>
       <button
         onClick={expanded}

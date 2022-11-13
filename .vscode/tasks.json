@@ -12,10 +12,11 @@
         ]
     },
     {
-        "label": "npm dev",
-        "type": "shell",
-        "command": "docker-compose -f docker-compose-dev.yml up --build"
-    },
+			"label": "npm dev",
+			"type": "shell",
+			"command": "docker-compose -f docker-compose-dev.yml up --build",
+			"problemMatcher": ["$eslint-stylish"]
+		},
     {
         "label": "tcm dev comp",
         "type": "shell",
@@ -27,25 +28,19 @@
         "command": "tcm src/styles/pages -w"
     },
     {
-        "label": "dev",
-        "type": "shell",
-        "dependsOn": [
-            // "tcm dev comp",
-            // "tcm dev pg",
-            "npm dev"
-        ],
-        "isBackground": true,
-        "presentation": {
-            "echo": true,
-            "reveal": "silent",
-            "focus": false,
-            "panel": "dedicated",
-            "showReuseMessage": true,
-            "clear": true
-        },
-        "problemMatcher": [
-            "$eslint-stylish"
-        ]
-    }
+			"label": "dev",
+			"type": "shell",
+			"dependsOn": ["npm dev"],
+			"isBackground": true,
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"problemMatcher": ["$eslint-stylish"]
+		}
 ]
 }

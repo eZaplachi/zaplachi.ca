@@ -47,10 +47,10 @@ const Website = ({ myProject }: any) => {
           <div id={styles.aside1}></div>
           <div id={styles.aside2}></div>
           <div className={styles.content}>
-            <Link href={backLink}>
-              <a className={styles.iconContainer}>
-                <FaLongArrowAltLeft />
-              </a>
+            <Link href={backLink} className={styles.iconContainer}>
+
+              <FaLongArrowAltLeft />
+
             </Link>
             <p id={styles.lastUpdated}>Last Updated: {trimmedDate}</p>
 
