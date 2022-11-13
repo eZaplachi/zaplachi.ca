@@ -6,7 +6,7 @@
     {
         "label": "prod",
         "type": "shell",
-        "command": "docker-compose -f docker-compose-dev.yml up --build",
+        "command": "docker-compose -f docker-compose-prod.yml up --build",
         "problemMatcher": [
             "$eslint-stylish"
         ]
@@ -30,8 +30,8 @@
         "label": "dev",
         "type": "shell",
         "dependsOn": [
-            "tcm dev comp",
-            "tcm dev pg",
+            // "tcm dev comp",
+            // "tcm dev pg",
             "npm dev"
         ],
         "isBackground": true,
