@@ -18,19 +18,14 @@
 			"problemMatcher": ["$eslint-stylish"]
 		},
     {
-        "label": "tcm dev comp",
+        "label": "ztcm",
         "type": "shell",
-        "command": "tcm src/styles/components -w"
-    },
-    {
-        "label": "tcm dev pg",
-        "type": "shell",
-        "command": "tcm src/styles/pages -w"
+        "command": "./ztcm src -r -c -w 3"
     },
     {
 			"label": "dev",
 			"type": "shell",
-			"dependsOn": ["npm dev"],
+			"dependsOn": ["npm dev", "ztcm"],
 			"isBackground": true,
 			"presentation": {
 				"echo": true,

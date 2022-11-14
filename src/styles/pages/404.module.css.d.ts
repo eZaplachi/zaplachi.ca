@@ -1,11 +1,11 @@
 declare const styles: {
-  readonly "wrapper": string;
-  readonly "aside1": string;
-  readonly "aside2": string;
-  readonly "errorMsg": string;
-  readonly "title": string;
-  readonly "info": string;
-  readonly "homeBtn": string;
+ readonly 'aside2': string;
+ readonly 'errorMsg': string;
+ readonly 'info': string;
+ readonly 'wrapper': string;
+ readonly 'title': string;
+ readonly 'aside1': string;
+ readonly 'homeBtn': string;
+
 };
 export = styles;
-

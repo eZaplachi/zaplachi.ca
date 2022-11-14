@@ -1,10 +1,10 @@
 declare const styles: {
-  readonly "wrapper": string;
-  readonly "closeBtn": string;
-  readonly "resCon": string;
-  readonly "resMessage": string;
-  readonly "successIcon": string;
-  readonly "failIcon": string;
+ readonly 'failIcon': string;
+ readonly 'closeBtn': string;
+ readonly 'resMessage': string;
+ readonly 'resCon': string;
+ readonly 'successIcon': string;
+ readonly 'wrapper': string;
+
 };
 export = styles;
-
