@@ -4,6 +4,7 @@ const Name = () => {
   return (
     <section>
       <div className={styles.nameCon}>
+        <div className={styles.background}></div>
         <span className={styles.nameFirstCon}>I &nbsp;</span>
         <span className={styles.nameScndCon}>A</span>
         <span className={styles.nameThirdCon}>m</span>

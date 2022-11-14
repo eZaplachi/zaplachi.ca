@@ -1,16 +1,17 @@
 declare const styles: {
- readonly 'wrapper': string;
- readonly 'eduContent': string;
- readonly 'list': string;
- readonly 'interestContent': string;
- readonly 'container': string;
  readonly 'interestIcon': string;
  readonly 'aside2': string;
- readonly 'scndHeader': string;
- readonly 'eduIcon': string;
- readonly 'appHeader': string;
  readonly 'aside1': string;
+ readonly 'wrapper': string;
+ readonly 'container': string;
+ readonly 'list': string;
+ readonly 'scndHeader': string;
  readonly 'icons': string;
+ readonly 'imgWrapper': string;
+ readonly 'appHeader': string;
+ readonly 'eduContent': string;
+ readonly 'eduIcon': string;
+ readonly 'interestContent': string;
 
 };
 export = styles;

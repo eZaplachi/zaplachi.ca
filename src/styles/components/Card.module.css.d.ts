@@ -1,8 +1,8 @@
 declare const styles: {
  readonly 'cardTitle': string;
+ readonly 'cardBody': string;
  readonly 'card': string;
  readonly 'cardContent': string;
- readonly 'cardBody': string;
  readonly 'button': string;
 
 };

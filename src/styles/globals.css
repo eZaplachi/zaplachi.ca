@@ -52,6 +52,7 @@ body::-webkit-scrollbar {
     transition-delay: 0s !important;
   }
 }
+/* TODO: fix bem to camel case conversion */
 
 /* Alt font family:
 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,

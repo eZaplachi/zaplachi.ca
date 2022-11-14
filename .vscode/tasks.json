@@ -20,7 +20,7 @@
     {
         "label": "ztcm",
         "type": "shell",
-        "command": "./ztcm src -r -c -w 3"
+        "command": "./ztcm src -r -w 3"
     },
     {
 			"label": "dev",
