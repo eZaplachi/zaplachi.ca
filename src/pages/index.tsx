@@ -93,22 +93,23 @@ const Home: NextPage = () => {
 								<FcGraduationCap />
 							</m.div>
 
-							<m.div className={styles.eduContent} animate={animation1} variants={list}>
-								<m.h3 variants={list}>Education</m.h3>
-								<m.ul variants={list}>
-									<m.li className={styles.list} variants={itemRight}>
-										2.5 years Electrical engineering at the University of Alberta
-									</m.li>
-									<m.li className={styles.list} variants={itemRight}>
-										Currently transferring into Web development at NAIT
-									</m.li>
-									<m.li className={styles.list} variants={itemRight}>
-										Glass 5 GDL Drivers License
-									</m.li>
-								</m.ul>
-							</m.div>
-						</LazyMotion>
-					</div>
+              <m.div className={styles.eduContent} animate={animation1}>
+                <m.h3 variants={list}>Education</m.h3>
+                <m.ul variants={list}>
+                  <m.li className={styles.list} variants={itemRight}>
+                    2.5 years Electrical engineering at the University of
+                    Alberta
+                  </m.li>
+                  <m.li className={styles.list} variants={itemRight}>
+                    Currently transferring into Web development at NAIT
+                  </m.li>
+                  <m.li className={styles.list} variants={itemRight}>
+                    Glass 5 GDL Drivers License
+                  </m.li>
+                </m.ul>
+              </m.div>
+            </LazyMotion>
+          </div>
 
 					<div className={styles.container} ref={ref2}>
 						<LazyMotion features={domAnimation}>
