@@ -34,6 +34,7 @@ body {
   font-family: Consolas, monaco, monospace;
   background-color: var(--bkgClr);
   scrollbar-width: 0;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {

@@ -15,7 +15,7 @@
 .navbar {
   overflow: hidden;
   background-color: var(--navbarBkgClr);
-  width: clamp(99%, 100%, 101%);
+  width: clamp(95%, 99%, 100%);
   padding: 4ch;
   padding-bottom: 6ch;
   display: flex;
